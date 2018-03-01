@@ -12,7 +12,7 @@ import net.minecraft.item.ItemBlock;
 
 public class BlockBase extends Block implements IHasModel {
 
-	/* test
+	/* 
 	 * This class is for basic blocks without any function. (e.g. decoration blocks, blocks for crafting, etc.)
 	 * */
 	
