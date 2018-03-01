@@ -1,0 +1,97 @@
+---- Minecraft Crash Report ----
+// On the bright side, I bought you a teddy bear!
+
+Time: 3/1/18 11:58 AM
+Description: Tesselating block in world
+
+java.lang.IllegalArgumentException: Cannot get property PropertyInteger{name=level, clazz=class java.lang.Integer, values=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]} as it does not exist in BlockStateContainer{block=kfc:seaweed_block, properties=[age]}
+	at net.minecraft.block.state.BlockStateContainer$StateImplementation.getValue(BlockStateContainer.java:204)
+	at net.minecraft.client.renderer.BlockFluidRenderer.getFluidHeight(BlockFluidRenderer.java:300)
+	at net.minecraft.client.renderer.BlockFluidRenderer.renderFluid(BlockFluidRenderer.java:70)
+	at net.minecraft.client.renderer.BlockRendererDispatcher.renderBlock(BlockRendererDispatcher.java:84)
+	at net.minecraft.client.renderer.chunk.RenderChunk.rebuildChunk(RenderChunk.java:203)
+	at net.minecraft.client.renderer.chunk.ChunkRenderWorker.processTask(ChunkRenderWorker.java:122)
+	at net.minecraft.client.renderer.chunk.ChunkRenderWorker.run(ChunkRenderWorker.java:50)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at net.minecraft.block.state.BlockStateContainer$StateImplementation.getValue(BlockStateContainer.java:204)
+	at net.minecraft.client.renderer.BlockFluidRenderer.getFluidHeight(BlockFluidRenderer.java:300)
+	at net.minecraft.client.renderer.BlockFluidRenderer.renderFluid(BlockFluidRenderer.java:70)
+
+-- Block being tesselated --
+Details:
+	Block type: ID #9 (tile.water // net.minecraft.block.BlockStaticLiquid)
+	Block data value: 0 / 0x0 / 0b0000
+	Block location: World: (-53,62,180), Chunk: (at 11,3,4 in -4,11; contains blocks -64,0,176 to -49,255,191), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+Stacktrace:
+	at net.minecraft.client.renderer.BlockRendererDispatcher.renderBlock(BlockRendererDispatcher.java:84)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Korlimann'/1051, l='MpServer', x=7.50, y=69.36, z=252.50]]
+	Chunk stats: MultiplayerChunkCache: 169, 169
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (4,64,256), Chunk: (at 4,4,0 in 0,16; contains blocks 0,0,256 to 15,255,271), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 72 game time, 72 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 89 total; [EntityZombie['Zombie'/3076, l='MpServer', x=18.50, y=21.00, z=260.50], EntityZombie['Zombie'/3078, l='MpServer', x=-8.31, y=38.00, z=301.29], EntitySkeleton['Skeleton'/3086, l='MpServer', x=42.50, y=39.00, z=185.50], EntityZombie['Zombie'/3103, l='MpServer', x=74.50, y=57.00, z=305.50], EntityZombie['Zombie'/3104, l='MpServer', x=76.50, y=57.00, z=306.50], EntityWolf['Wolf'/56, l='MpServer', x=-63.50, y=70.00, z=318.50], EntityWolf['Wolf'/57, l='MpServer', x=-65.50, y=70.00, z=318.50], EntityWolf['Wolf'/58, l='MpServer', x=-65.50, y=70.00, z=314.50], EntityWolf['Wolf'/59, l='MpServer', x=-68.50, y=70.00, z=312.50], EntityWolf['Wolf'/60, l='MpServer', x=-46.50, y=70.00, z=185.50], EntityWolf['Wolf'/61, l='MpServer', x=-48.50, y=68.00, z=186.50], EntityWolf['Wolf'/62, l='MpServer', x=-47.50, y=68.00, z=185.50], EntityWolf['Wolf'/63, l='MpServer', x=-49.50, y=69.00, z=187.50], EntityWolf['Wolf'/64, l='MpServer', x=-47.50, y=74.00, z=259.50], EntityWolf['Wolf'/65, l='MpServer', x=-45.72, y=74.08, z=260.65], EntityWolf['Wolf'/66, l='MpServer', x=-44.50, y=72.00, z=259.50], EntityWolf['Wolf'/67, l='MpServer', x=-46.50, y=75.00, z=261.50], EntityWolf['Wolf'/76, l='MpServer', x=-0.50, y=69.00, z=300.75], EntityBat['Bat'/2124, l='MpServer', x=23.49, y=24.00, z=301.25], EntityWolf['Wolf'/77, l='MpServer', x=3.70, y=70.00, z=298.49], EntityWolf['Wolf'/78, l='MpServer', x=3.24, y=70.00, z=297.69], EntityBat['Bat'/2126, l='MpServer', x=18.31, y=24.52, z=230.54], EntityWolf['Wolf'/79, l='MpServer', x=4.50, y=71.00, z=299.50], EntityBat['Bat'/2127, l='MpServer', x=20.75, y=25.03, z=237.00], EntityWolf['Wolf'/80, l='MpServer', x=22.50, y=77.00, z=202.50], EntityWolf['Wolf'/81, l='MpServer', x=22.50, y=74.00, z=205.50], EntityWolf['Wolf'/82, l='MpServer', x=23.50, y=79.00, z=201.50], EntityWolf['Wolf'/83, l='MpServer', x=23.49, y=79.17, z=202.24], EntitySheep['Sheep'/84, l='MpServer', x=9.50, y=64.00, z=210.50], EntitySheep['Sheep'/85, l='MpServer', x=8.50, y=64.00, z=211.50], EntitySheep['Sheep'/86, l='MpServer', x=10.50, y=64.00, z=208.50], EntitySheep['Sheep'/87, l='MpServer', x=10.50, y=64.00, z=210.50], EntityWolf['Wolf'/88, l='MpServer', x=19.52, y=64.00, z=224.98], EntityWolf['Wolf'/89, l='MpServer', x=20.50, y=65.00, z=229.50], EntityWolf['Wolf'/90, l='MpServer', x=22.50, y=66.00, z=230.50], EntityWolf['Wolf'/91, l='MpServer', x=22.50, y=66.00, z=230.50], EntityWolf['Wolf'/96, l='MpServer', x=34.50, y=67.00, z=173.50], EntityWolf['Wolf'/100, l='MpServer', x=24.50, y=68.00, z=300.50], EntityWolf['Wolf'/101, l='MpServer', x=25.50, y=68.00, z=300.50], EntityWolf['Wolf'/102, l='MpServer', x=26.50, y=68.00, z=299.50], EntityWolf['Wolf'/103, l='MpServer', x=26.49, y=68.00, z=307.75], EntityWolf['Wolf'/112, l='MpServer', x=71.50, y=65.00, z=213.50], EntityWolf['Wolf'/113, l='MpServer', x=71.50, y=65.00, z=213.50], EntityWolf['Wolf'/114, l='MpServer', x=69.50, y=67.00, z=212.50], EntityWolf['Wolf'/115, l='MpServer', x=68.50, y=68.00, z=212.50], EntityCreeper['Creeper'/2425, l='MpServer', x=-22.50, y=19.00, z=234.50], EntitySkeleton['Skeleton'/2454, l='MpServer', x=78.50, y=12.00, z=242.50], EntityBat['Bat'/2464, l='MpServer', x=2.75, y=45.05, z=322.58], EntityBat['Bat'/2465, l='MpServer', x=2.49, y=44.10, z=321.25], EntityBat['Bat'/2526, l='MpServer', x=-68.60, y=43.38, z=260.28], EntitySkeleton['Skeleton'/2583, l='MpServer', x=-7.50, y=41.00, z=313.50], EntityBat['Bat'/2603, l='MpServer', x=41.46, y=25.55, z=299.98], EntityCreeper['Creeper'/2607, l='MpServer', x=-9.50, y=26.00, z=316.50], EntityZombie['Zombie'/2608, l='MpServer', x=-7.50, y=26.00, z=321.50], EntityCreeper['Creeper'/2609, l='MpServer', x=-6.50, y=26.00, z=321.50], EntityPlayerSP['Korlimann'/1051, l='MpServer', x=7.50, y=69.37, z=252.50], EntityEnderman['Enderman'/2626, l='MpServer', x=35.50, y=38.00, z=186.50], EntityZombie['Zombie'/2627, l='MpServer', x=37.50, y=39.25, z=185.11], EntityZombie['Zombie'/2628, l='MpServer', x=38.50, y=38.00, z=185.50], EntityCreeper['Creeper'/2710, l='MpServer', x=-8.50, y=18.00, z=213.50], EntityCreeper['Creeper'/2711, l='MpServer', x=54.50, y=16.00, z=290.50], EntitySkeleton['Skeleton'/2760, l='MpServer', x=17.50, y=24.00, z=275.50], EntityCreeper['Creeper'/2763, l='MpServer', x=59.50, y=34.00, z=196.50], EntityBat['Bat'/2773, l='MpServer', x=-23.75, y=20.09, z=239.48], EntityCreeper['Creeper'/2783, l='MpServer', x=34.50, y=54.00, z=303.50], EntityCreeper['Creeper'/2784, l='MpServer', x=35.50, y=54.00, z=302.50], EntityCreeper['Creeper'/2786, l='MpServer', x=80.50, y=40.00, z=272.50], EntityZombie['Zombie'/2793, l='MpServer', x=-6.50, y=37.00, z=294.50], EntityCreeper['Creeper'/2794, l='MpServer', x=-7.50, y=37.00, z=297.50], EntityZombie['Zombie'/2797, l='MpServer', x=-10.50, y=28.00, z=220.50], EntityZombie['Zombie'/2829, l='MpServer', x=73.50, y=23.00, z=271.50], EntityZombie['Zombie'/2847, l='MpServer', x=-33.50, y=21.00, z=326.50], EntityZombie['Zombie'/2848, l='MpServer', x=-33.50, y=21.00, z=325.50], EntityCreeper['Creeper'/2850, l='MpServer', x=-35.50, y=21.00, z=328.50], EntityCreeper['Creeper'/2852, l='MpServer', x=20.50, y=24.00, z=213.50], EntityZombie['Zombie'/2890, l='MpServer', x=29.50, y=33.00, z=275.50], EntityCreeper['Creeper'/2909, l='MpServer', x=37.50, y=22.00, z=307.50], EntitySkeleton['Skeleton'/2910, l='MpServer', x=41.50, y=22.00, z=309.50], EntityCreeper['Creeper'/2915, l='MpServer', x=80.50, y=33.00, z=284.50], EntityCreeper['Creeper'/2924, l='MpServer', x=71.92, y=18.39, z=326.22], EntityZombie['Zombie'/2938, l='MpServer', x=73.50, y=25.00, z=193.50], EntityZombie['Zombie'/2953, l='MpServer', x=14.50, y=20.00, z=233.50], EntityCreeper['Creeper'/2969, l='MpServer', x=13.50, y=31.00, z=202.50], EntityZombie['Zombie'/3014, l='MpServer', x=11.50, y=30.00, z=207.50], EntityZombie['Zombie'/3042, l='MpServer', x=60.50, y=19.00, z=201.50], EntitySkeleton['Skeleton'/3045, l='MpServer', x=63.50, y=13.03, z=329.78], EntitySkeleton['Skeleton'/3046, l='MpServer', x=60.50, y=13.00, z=331.50], EntityZombie['Zombie'/3047, l='MpServer', x=62.50, y=13.00, z=332.50], EntityCreeper['Creeper'/3067, l='MpServer', x=69.50, y=56.00, z=299.50]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:461)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2896)
+	at net.minecraft.client.renderer.chunk.ChunkRenderWorker.run(ChunkRenderWorker.java:60)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_162, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 605267064 bytes (577 MB) / 1038876672 bytes (990 MB) up to 4260102144 bytes (4062 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx4096M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.2.2611 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID        | Version      | Source                           | Signature |
+	|:--------- |:--------- |:------------ |:-------------------------------- |:--------- |
+	| UCHIJAAAA | minecraft | 1.12.2       | minecraft.jar                    | None      |
+	| UCHIJAAAA | mcp       | 9.42         | minecraft.jar                    | None      |
+	| UCHIJAAAA | FML       | 8.0.99.99    | forgeSrc-1.12.2-14.23.2.2611.jar | None      |
+	| UCHIJAAAA | forge     | 14.23.2.2611 | forgeSrc-1.12.2-14.23.2.2611.jar | None      |
+	| UCHIJAAAA | kfc       | v1.0         | bin                              | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Launched Version: 1.12.2
+	LWJGL: 2.9.4
+	OpenGL: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 4x Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz

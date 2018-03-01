@@ -1,0 +1,91 @@
+---- Minecraft Crash Report ----
+// Would you like a cupcake?
+
+Time: 2/27/18 12:03 PM
+Description: Ticking player
+
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at net.minecraft.stats.StatList.getObjectsPickedUpStats(StatList.java:123)
+	at net.minecraft.entity.item.EntityItem.onCollideWithPlayer(EntityItem.java:451)
+	at net.minecraft.entity.player.EntityPlayer.collideWithPlayer(EntityPlayer.java:664)
+	at net.minecraft.entity.player.EntityPlayer.onLivingUpdate(EntityPlayer.java:635)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2396)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:272)
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:423)
+	at net.minecraft.network.NetHandlerPlayServer.update(NetHandlerPlayServer.java:185)
+	at net.minecraftforge.fml.common.network.handshake.NetworkDispatcher$1.update(NetworkDispatcher.java:212)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:307)
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:197)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:863)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:741)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:590)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.stats.StatList.getObjectsPickedUpStats(StatList.java:123)
+	at net.minecraft.entity.item.EntityItem.onCollideWithPlayer(EntityItem.java:451)
+	at net.minecraft.entity.player.EntityPlayer.collideWithPlayer(EntityPlayer.java:664)
+	at net.minecraft.entity.player.EntityPlayer.onLivingUpdate(EntityPlayer.java:635)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2396)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:272)
+
+-- Player being ticked --
+Details:
+	Entity Type: null (net.minecraft.entity.player.EntityPlayerMP)
+	Entity ID: 303
+	Entity Name: Korlimann
+	Entity's Exact location: -43.40, 63.00, 267.31
+	Entity's Block location: World: (-44,63,267), Chunk: (at 4,3,11 in -3,16; contains blocks -48,0,256 to -33,255,271), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:423)
+	at net.minecraft.network.NetHandlerPlayServer.update(NetHandlerPlayServer.java:185)
+	at net.minecraftforge.fml.common.network.handshake.NetworkDispatcher$1.update(NetworkDispatcher.java:212)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:307)
+
+-- Ticking connection --
+Details:
+	Connection: net.minecraft.network.NetworkManager@3b44badc
+Stacktrace:
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:197)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:863)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:741)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:590)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_162, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 754931112 bytes (719 MB) / 1038876672 bytes (990 MB) up to 4260102144 bytes (4062 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx4096M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.2.2611 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID        | Version      | Source                           | Signature |
+	|:--------- |:--------- |:------------ |:-------------------------------- |:--------- |
+	| UCHIJAAAA | minecraft | 1.12.2       | minecraft.jar                    | None      |
+	| UCHIJAAAA | mcp       | 9.42         | minecraft.jar                    | None      |
+	| UCHIJAAAA | FML       | 8.0.99.99    | forgeSrc-1.12.2-14.23.2.2611.jar | None      |
+	| UCHIJAAAA | forge     | 14.23.2.2611 | forgeSrc-1.12.2-14.23.2.2611.jar | None      |
+	| UCHIJAAAA | kfc       | v1.0         | bin                              | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['Korlimann'/303, l='Testworld1', x=-43.40, y=63.00, z=267.31]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

@@ -1,0 +1,30 @@
+[13:17:50] [main/INFO]: Logging in with username & password
+[13:17:55] [main/INFO]: Setting user: Korlimann
+[13:17:59] [main/WARN]: Skipping bad option: lastServer:
+[13:18:00] [main/INFO]: LWJGL Version: 2.9.4
+[13:18:03] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
+[13:18:06] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[13:18:06] [Thread-5/INFO]: Initializing LWJGL OpenAL
+[13:18:06] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[13:18:06] [Thread-5/INFO]: OpenAL initialized.
+[13:18:06] [Sound Library Loader/INFO]: Sound engine started
+[13:18:14] [main/INFO]: Created: 512x512 textures-atlas
+[13:18:17] [main/WARN]: Skipping bad option: lastServer:
+[13:18:17] [main/INFO]: Narrator library for x64 successfully loaded
+[13:18:20] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[13:18:20] [Server thread/INFO]: Generating keypair
+[13:18:21] [Server thread/INFO]: Loaded 488 advancements
+[13:18:21] [Server thread/INFO]: Preparing start region for level 0
+[13:18:22] [Server thread/INFO]: Preparing spawn area: 46%
+[13:18:23] [Server thread/INFO]: Changing view distance to 6, from 10
+[13:18:24] [Server thread/INFO]: Korlimann[local:E:45b55525] logged in with entity id 312 at (-43.36353359764555, 63.0, 267.53769607182886)
+[13:18:24] [Server thread/INFO]: Korlimann joined the game
+[13:18:25] [Server thread/INFO]: Saving and pausing game...
+[13:18:25] [Server thread/INFO]: Saving chunks for level 'Testworld1'/overworld
+[13:18:25] [Server thread/INFO]: Saving chunks for level 'Testworld1'/the_nether
+[13:18:25] [Server thread/INFO]: Saving chunks for level 'Testworld1'/the_end
+[13:18:26] [main/INFO]: Loaded 25 advancements
+[13:18:28] [Server thread/INFO]: Saving and pausing game...
+[13:18:28] [Server thread/INFO]: Saving chunks for level 'Testworld1'/overworld
+[13:18:28] [Server thread/INFO]: Saving chunks for level 'Testworld1'/the_nether
+[13:18:28] [Server thread/INFO]: Saving chunks for level 'Testworld1'/the_end

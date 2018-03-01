@@ -1,0 +1,90 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cross"
+    },
+    "variants": {
+        "age": {
+            "0": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "1": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "2": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "3": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "4": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "5": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "6": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "7": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "8": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "9": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "10": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "11": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "12": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "13": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "14": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            },
+            "15": {
+                "textures": {
+                    "cross": "kfc:blocks/seaweed_block"
+                }
+            }
+        }
+    }
+}
