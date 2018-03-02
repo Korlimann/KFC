@@ -36,7 +36,7 @@ public class BlockOreGen implements IWorldGenerator
 		case 0:
 			
 			runGenerator(salt_ore, world, random, chunkX, chunkZ, 10, 0, 120);
-			runGenerator(seaweed_block, world, random, chunkX, chunkZ, 100, 0, 256);
+			runGenerator(seaweed_block, world, random, chunkX, chunkZ, 50, 0, 256);
 			
 			break;
 			
