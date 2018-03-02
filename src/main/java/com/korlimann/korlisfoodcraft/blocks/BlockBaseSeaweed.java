@@ -225,7 +225,7 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
 
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(Items.REEDS);
+        return new ItemStack(ModItems.SEAWEED);
     }
 
     /**

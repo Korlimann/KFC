@@ -6,6 +6,7 @@ import java.util.List;
 import com.korlimann.korlisfoodcraft.items.ItemBase;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFood;
 import com.korlimann.korlisfoodcraft.items.ItemBaseSeed;
+import com.korlimann.korlisfoodcraft.items.ItemBlockBaseSpecial;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -25,7 +26,7 @@ public class ModItems {
 	public static final Item RICE = new ItemBaseSeed(ModBlocks.CROP_RICE, Blocks.FARMLAND, "rice"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	public static final Item AVOCADO = new ItemBaseFood("avocado", 3, 0.3f, false); //Wächst an Bäumen - Einzeln im CT = Seeds für Avocadobaum
 	public static final Item GURKE = new ItemBase("gurke"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
-	public static final Item SEAWEED = new ItemBase("seaweed"); //Droppt von (neuen?) Unterwasserpflanzen
+	public static final Item SEAWEED = new ItemBlockBaseSpecial(ModBlocks.SEAWEED_BLOCK, "seaweed"); //Droppt von (neuen?) Unterwasserpflanzen
 	public static final Item CORN_SEED = new ItemBaseSeed(ModBlocks.CROP_CORN, Blocks.FARMLAND, "corn_seed"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	public static final Item CORN = new ItemBaseFood("corn", 2, 0.3f, false);
 	public static final Item OLIVE = new ItemBase("olive"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
