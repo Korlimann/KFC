@@ -40,7 +40,7 @@ public class WorldGenSeaweed extends WorldGenerator{
 
                     for (int k = 0; k < j; ++k)
                     {
-                        if (block.canBlockStay(worldIn, blockpos))
+                        if (block.canPlaceBlockAt(worldIn, blockpos.up(k)))
                         {
                             worldIn.setBlockState(blockpos.up(k), block.getDefaultState(), 2);
                         }
