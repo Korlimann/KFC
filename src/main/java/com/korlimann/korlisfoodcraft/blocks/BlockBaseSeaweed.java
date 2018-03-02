@@ -5,6 +5,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import com.korlimann.korlisfoodcraft.Main;
+import com.korlimann.korlisfoodcraft.blocks.material.MaterialSeaweed;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
@@ -12,6 +13,7 @@ import com.korlimann.korlisfoodcraft.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockReed;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
@@ -36,8 +38,10 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
 
 	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
 	
+	public static MaterialSeaweed seaweed = new MaterialSeaweed(MapColor.DIRT);
+	
 	public BlockBaseSeaweed(String name) {
-		super(Material.GROUND);
+		super(seaweed);
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(Main.korlissushicraft);
@@ -47,19 +51,25 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
 	
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
+		//Gets the block where the seaweed is going to be placed on top of
         IBlockState state = worldIn.getBlockState(pos.down());
         Block block = state.getBlock();
-        
+        //Gets the block where the seaweed actually is going to be
         IBlockState state2 = worldIn.getBlockState(pos);
         Block block2 = state.getBlock();
-        
-        if(state2.getMaterial() == Material.WATER) {
-        	if (block.canSustainPlant(state, worldIn, pos.down(), EnumFacing.UP, this)) return true;
-	
+        //Gets the block above the seaweed
+        IBlockState state3 = worldIn.getBlockState(pos.up());
+        Block block3 = state.getBlock();
+        //Checks if the block where the seaweed is going to be is water and if the block above is also water
+        if(state2.getMaterial() == Material.WATER && state3.getMaterial() == Material.WATER) {
+        	//Checks if the block where the seaweed is going to be placed can sustain the seaweed
+        	//if (block.canSustainPlant(state, worldIn, pos.down(), EnumFacing.UP, this)) return true;
+        	//Checks if the block where the seaweed is going to be placed IS already seaweed (just like how you can place a reed block on top of another)
 	        if (block == this)
 	        {
 	            return true;
 	        }
+	        //Checks if the block where the seaweed is going to be placed is anything BUT the given blocks
 	        else if (block != Blocks.GRASS && block != Blocks.DIRT && block != Blocks.SAND)
 	        {
 	            return false;
@@ -78,18 +88,23 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
 	                }
 	            }
 	
-	            return false;
+	            return true;
 	        }
         } else {
         	return false;
         }
     }
 	
+	/*@Override
+	public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
+		if();
+	}*/
+	
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
-		
+		//Gets the block above the seaweed
 		IBlockState state2 = worldIn.getBlockState(pos.up());
-        
+        //Checks if the block is seaweed
         if (worldIn.getBlockState(pos.down()).getBlock() == ModBlocks.SEAWEED_BLOCK || this.checkForDrop(worldIn, pos, state))
         {
             if (state2.getMaterial() == Material.WATER)
@@ -149,7 +164,36 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
 
     public boolean canBlockStay(World worldIn, BlockPos pos)
     {
-        return this.canPlaceBlockAt(worldIn, pos);
+    	//Gets the block where the seaweed is going to be placed on top of
+        IBlockState state = worldIn.getBlockState(pos.down());
+        Block block = state.getBlock();
+        //Gets the block where the seaweed actually is going to be
+        IBlockState state2 = worldIn.getBlockState(pos);
+        Block block2 = state.getBlock();
+        //Gets the block above the seaweed
+        IBlockState state3 = worldIn.getBlockState(pos.up());
+        Block block3 = state.getBlock();
+        //Checks if the block where the seaweed is going to be is water and if the block above is also water
+     if(state3.getMaterial() == Material.WATER||state3.getMaterial() == seaweed)
+     {
+        	//Checks if the block where the seaweed is going to be placed can sustain the seaweed
+        	//if (block.canSustainPlant(state, worldIn, pos.down(), EnumFacing.UP, this)) return true;
+        	//Checks if the block where the seaweed is going to be placed IS already seaweed (just like how you can place a reed block on top of another)
+	        if (block == this)
+	        {
+	            return true;
+	        }
+	        //Checks if the block where the seaweed is going to be placed is anything BUT the given blocks
+	        else if (block != Blocks.GRASS && block != Blocks.DIRT && block != Blocks.SAND)
+	        {
+	            return false;
+	        }
+	        
+        
+        	return true;
+     }
+     return false;
+
     }
 
     @Nullable
@@ -218,7 +262,7 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
 
 	@Override
 	public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
-		return EnumPlantType.Crop;
+		return EnumPlantType.Water;
 	}
 
 	@Override
