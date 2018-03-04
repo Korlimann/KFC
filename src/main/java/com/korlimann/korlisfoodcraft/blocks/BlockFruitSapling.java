@@ -3,19 +3,23 @@ package com.korlimann.korlisfoodcraft.blocks;
 import java.util.Random;
 
 import com.korlimann.korlisfoodcraft.Main;
+import com.korlimann.korlisfoodcraft.gen.WorldGenFruitTree;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockOldLog;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockSapling;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenBigTree;
@@ -30,7 +34,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BlockFruitSapling extends BlockSapling implements IHasModel {
 
-	public static final PropertyEnum<BlockPlanks.EnumType> TYPE = PropertyEnum.<BlockPlanks.EnumType>create("fruitType", BlockPlanks.EnumType.class);
+	public static final PropertyEnum<BlockFruitSapling.EnumType> TYPE = PropertyEnum.<BlockFruitSapling.EnumType>create("fruitType", BlockFruitSapling.EnumType.class);
 	
 	public BlockFruitSapling(String name) {
 		setUnlocalizedName(name);
@@ -53,92 +57,13 @@ public class BlockFruitSapling extends BlockSapling implements IHasModel {
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	    {
 	        if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
-	        WorldGenerator worldgenerator = (WorldGenerator)(rand.nextInt(10) == 0 ? new WorldGenBigTree(true) : new WorldGenTrees(true));
+	        WorldGenerator worldgenerator = new WorldGenFruitTree(true, 3, Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK), Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false)), ((BlockFruitSapling.EnumType)state.getValue(TYPE)).getFruit());;
 	        int i = 0;
 	        int j = 0;
 	        boolean flag = false;
-
-	        switch ((BlockPlanks.EnumType)state.getValue(TYPE))
-	        {
-	            case SPRUCE:
-	                label68:
-
-	                for (i = 0; i >= -1; --i)
-	                {
-	                    for (j = 0; j >= -1; --j)
-	                    {
-	                        if (this.isTwoByTwoOfType(worldIn, pos, i, j, BlockPlanks.EnumType.SPRUCE))
-	                        {
-	                            worldgenerator = new WorldGenMegaPineTree(false, rand.nextBoolean());
-	                            flag = true;
-	                            break label68;
-	                        }
-	                    }
-	                }
-
-	                if (!flag)
-	                {
-	                    i = 0;
-	                    j = 0;
-	                    worldgenerator = new WorldGenTaiga2(true);
-	                }
-
-	                break;
-	            case BIRCH:
-	                worldgenerator = new WorldGenBirchTree(true, false);
-	                break;
-	            case JUNGLE:
-	                IBlockState iblockstate = Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.JUNGLE);
-	                IBlockState iblockstate1 = Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.JUNGLE).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
-	                label82:
-
-	                for (i = 0; i >= -1; --i)
-	                {
-	                    for (j = 0; j >= -1; --j)
-	                    {
-	                        if (this.isTwoByTwoOfType(worldIn, pos, i, j, BlockPlanks.EnumType.JUNGLE))
-	                        {
-	                            worldgenerator = new WorldGenMegaJungle(true, 10, 20, iblockstate, iblockstate1);
-	                            flag = true;
-	                            break label82;
-	                        }
-	                    }
-	                }
-
-	                if (!flag)
-	                {
-	                    i = 0;
-	                    j = 0;
-	                    worldgenerator = new WorldGenTrees(true, 4 + rand.nextInt(7), iblockstate, iblockstate1, false);
-	                }
-
-	                break;
-	            case ACACIA:
-	                worldgenerator = new WorldGenSavannaTree(true);
-	                break;
-	            case DARK_OAK:
-	                label96:
-
-	                for (i = 0; i >= -1; --i)
-	                {
-	                    for (j = 0; j >= -1; --j)
-	                    {
-	                        if (this.isTwoByTwoOfType(worldIn, pos, i, j, BlockPlanks.EnumType.DARK_OAK))
-	                        {
-	                            worldgenerator = new WorldGenCanopyTree(true);
-	                            flag = true;
-	                            break label96;
-	                        }
-	                    }
-	                }
-
-	                if (!flag)
-	                {
-	                    return;
-	                }
-
-	            case OAK:
-	        }
+	        
+	        
+	        
 
 	        IBlockState iblockstate2 = Blocks.AIR.getDefaultState();
 
@@ -170,8 +95,84 @@ public class BlockFruitSapling extends BlockSapling implements IHasModel {
 	        }
 	    }
 	
-	private boolean isTwoByTwoOfType(World worldIn, BlockPos pos, int p_181624_3_, int p_181624_4_, BlockPlanks.EnumType type)
+	
+	
+	public static enum EnumType implements IStringSerializable
     {
-        return this.isTypeAt(worldIn, pos.add(p_181624_3_, 0, p_181624_4_), type) && this.isTypeAt(worldIn, pos.add(p_181624_3_ + 1, 0, p_181624_4_), type) && this.isTypeAt(worldIn, pos.add(p_181624_3_, 0, p_181624_4_ + 1), type) && this.isTypeAt(worldIn, pos.add(p_181624_3_ + 1, 0, p_181624_4_ + 1), type);
+		//spätere änderung der Fruit auf den Richtigen Block notwendig
+        AVOCADO(0, "avocado", MapColor.WOOD,null);
+        
+
+        private static final BlockFruitSapling.EnumType[] META_LOOKUP = new BlockFruitSapling.EnumType[values().length];
+        private final int meta;
+        private final String name;
+        private final String unlocalizedName;
+        /** The color that represents this entry on a map. */
+        private final MapColor mapColor;
+        private final BlockBaseFruit fruit;
+
+        private EnumType(int metaIn, String nameIn, MapColor mapColorIn, BlockBaseFruit fruit)
+        {
+            this(metaIn, nameIn, nameIn, mapColorIn, fruit);
+        }
+
+        public Block getFruit() {
+			return fruit;
+		}
+
+		private EnumType(int metaIn, String nameIn, String unlocalizedNameIn, MapColor mapColorIn, BlockBaseFruit fruit)
+        {
+            this.meta = metaIn;
+            this.name = nameIn;
+            this.unlocalizedName = unlocalizedNameIn;
+            this.mapColor = mapColorIn;
+            this.fruit = fruit;
+        }
+
+        public int getMetadata()
+        {
+            return this.meta;
+        }
+
+        /**
+         * The color which represents this entry on a map.
+         */
+        public MapColor getMapColor()
+        {
+            return this.mapColor;
+        }
+
+        public String toString()
+        {
+            return this.name;
+        }
+
+        public static BlockFruitSapling.EnumType byMetadata(int meta)
+        {
+            if (meta < 0 || meta >= META_LOOKUP.length)
+            {
+                meta = 0;
+            }
+
+            return META_LOOKUP[meta];
+        }
+
+        public String getName()
+        {
+            return this.name;
+        }
+
+        public String getUnlocalizedName()
+        {
+            return this.unlocalizedName;
+        }
+
+        static
+        {
+            for (BlockFruitSapling.EnumType fruits$enumtype : values())
+            {
+                META_LOOKUP[fruits$enumtype.getMetadata()] = fruits$enumtype;
+            }
+        }
     }
 }
