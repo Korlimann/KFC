@@ -165,7 +165,7 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
         IBlockState state = worldIn.getBlockState(pos.down());
         Block block = state.getBlock();
         //Gets the block where the seaweed actually is going to be
-        IBlockState state2 = worldIn.getBlockState(pos);
+        //IBlockState state2 = worldIn.getBlockState(pos);
         //Block block2 = state.getBlock();
         //Gets the block above the seaweed
         IBlockState state3 = worldIn.getBlockState(pos.up());
