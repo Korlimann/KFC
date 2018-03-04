@@ -94,7 +94,8 @@ public class BlockFruitSapling extends BlockSapling implements IHasModel {
 	public static enum EnumType implements IStringSerializable
     {
 		//---------------------------------------------------------------------------
-		//Alle Fruits die Einen Sapling brauchen müssen hier eingetragen werden:
+		//All Fruits that Create a Sapling have to be entered here
+		//Else every Sapling will Default to Avocado
         AVOCADO(0, MapColor.WOOD,ModBlocks.AVOCADO_BLOCK);
         
 
