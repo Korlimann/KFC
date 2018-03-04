@@ -8,11 +8,13 @@ import com.korlimann.korlisfoodcraft.blocks.BlockBaseCake;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCraftingTable;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropCorn;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropRice;
+import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruit;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSaltOre;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSeaweed;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSunflower;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 
 public class ModBlocks {
 	
@@ -23,14 +25,15 @@ public class ModBlocks {
 	
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
+	//Crafting Tables
 	public static final Block KITCHENBOARD_BLOCK = new BlockBaseCraftingTable("kitchenboard_block");
 	
 	//Crops
 	public static final BlockBaseCropCorn CROP_CORN = new BlockBaseCropCorn();
 	public static final BlockBaseCropRice CROP_RICE = new BlockBaseCropRice();
 	
-	public static final Block SUNFLOWER = new BlockBaseSunflower("sunflower");
 	
+	//"Cakes"
 	public static final Block BEER = new BlockBaseCake("beer");
 	
 	//Ores
@@ -38,4 +41,6 @@ public class ModBlocks {
 	
 	//Flowers/Plants
 	public static final BlockBaseSeaweed SEAWEED_BLOCK = new BlockBaseSeaweed("seaweed_block");
+	public static final Block SUNFLOWER = new BlockBaseSunflower("sunflower");
+	public static final Block AVOCADO_BLOCK = new BlockBaseFruit("avocado_block", Material.PLANTS, 0D, 0D, 0D, 0D, 0D, 0D, ModItems.AVOCADO, true, true);
 }
