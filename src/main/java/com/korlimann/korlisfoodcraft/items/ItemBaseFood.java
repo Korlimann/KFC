@@ -1,7 +1,6 @@
 package com.korlimann.korlisfoodcraft.items;
 
 import com.korlimann.korlisfoodcraft.Main;
-import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.item.ItemFood;

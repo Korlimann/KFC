@@ -11,8 +11,6 @@ import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockReed;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -20,7 +18,6 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
@@ -56,10 +53,10 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
         Block block = state.getBlock();
         //Gets the block where the seaweed actually is going to be
         IBlockState state2 = worldIn.getBlockState(pos);
-        Block block2 = state.getBlock();
+        //Block block2 = state.getBlock();
         //Gets the block above the seaweed
         IBlockState state3 = worldIn.getBlockState(pos.up());
-        Block block3 = state.getBlock();
+        //Block block3 = state.getBlock();
         //Checks if the block where the seaweed is going to be is water and if the block above is also water
         if(state2.getMaterial() == Material.WATER && state3.getMaterial() == Material.WATER) {
         	//Checks if the block where the seaweed is going to be placed can sustain the seaweed
@@ -169,10 +166,10 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
         Block block = state.getBlock();
         //Gets the block where the seaweed actually is going to be
         IBlockState state2 = worldIn.getBlockState(pos);
-        Block block2 = state.getBlock();
+        //Block block2 = state.getBlock();
         //Gets the block above the seaweed
         IBlockState state3 = worldIn.getBlockState(pos.up());
-        Block block3 = state.getBlock();
+        //Block block3 = state.getBlock();
         //Checks if the block where the seaweed is going to be is water and if the block above is also water
      if(state3.getMaterial() == Material.WATER||state3.getMaterial() == seaweed)
      {

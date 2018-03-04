@@ -1,12 +1,9 @@
 package com.korlimann.korlisfoodcraft.items;
 
 import com.korlimann.korlisfoodcraft.Main;
-import com.korlimann.korlisfoodcraft.init.ModBlocks;
-import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemSeeds;
 
 public class ItemBaseSeed extends ItemSeeds implements IHasModel {

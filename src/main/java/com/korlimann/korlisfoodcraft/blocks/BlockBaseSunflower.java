@@ -4,7 +4,6 @@ import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockFlower;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockRenderLayer;

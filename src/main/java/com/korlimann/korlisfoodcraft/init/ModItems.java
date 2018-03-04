@@ -8,10 +8,8 @@ import com.korlimann.korlisfoodcraft.items.ItemBaseFood;
 import com.korlimann.korlisfoodcraft.items.ItemBaseSeed;
 import com.korlimann.korlisfoodcraft.items.ItemBlockBaseSpecial;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 
 public class ModItems {
 

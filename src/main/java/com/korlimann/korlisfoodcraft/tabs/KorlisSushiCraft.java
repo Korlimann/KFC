@@ -3,7 +3,6 @@ package com.korlimann.korlisfoodcraft.tabs;
 import com.korlimann.korlisfoodcraft.init.ModItems;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class KorlisSushiCraft extends CreativeTabs {
