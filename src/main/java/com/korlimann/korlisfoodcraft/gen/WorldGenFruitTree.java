@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockCocoa;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockOldLog;
@@ -144,7 +145,7 @@ public class WorldGenFruitTree extends WorldGenTrees {
                     	if(!(fruitPlaces.size()<3))
                     	{
                     		int place = random.nextInt(fruitPlaces.size());
-                    		placeFruit(worldIn, 0,fruitPlaces.get(place));
+                    		placeFruit(worldIn, random.nextInt(3),fruitPlaces.get(place));
                     		fruitPlaces.remove(fruitPlaces.get(place));    
                     	}
                     }
@@ -160,6 +161,6 @@ public class WorldGenFruitTree extends WorldGenTrees {
         }
 	 
 	public void placeFruit(World worldIn, int p_181652_2_, BlockPos pos) {
-		
+		this.setBlockAndNotifyAdequately(worldIn, pos, fruit.getDefaultState().withProperty(BlockCocoa.AGE, Integer.valueOf(p_181652_2_)));
 	}
 }
