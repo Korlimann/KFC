@@ -28,10 +28,12 @@ public class BlockFruitSapling extends BlockSapling implements IHasModel {
 
 	public static final PropertyEnum<BlockFruitSapling.EnumType> TYPE = PropertyEnum.<BlockFruitSapling.EnumType>create("fruitType", BlockFruitSapling.EnumType.class);
 	
-	public BlockFruitSapling(String name) {
+	
+	public BlockFruitSapling(String name, BlockBaseFruit fruit) {
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(Main.korlissushicraft);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, BlockFruitSapling.EnumType.getByName(fruit.getUnlocalizedName())).withProperty(STAGE, Integer.valueOf(0)));
 	}
 	
 	@Override
@@ -169,6 +171,17 @@ public class BlockFruitSapling extends BlockSapling implements IHasModel {
             {
                 META_LOOKUP[fruits$enumtype.getMetadata()] = fruits$enumtype;
             }
+        }
+        public static BlockFruitSapling.EnumType getByName(String name)
+        {
+        	for(BlockFruitSapling.EnumType e : META_LOOKUP)
+        	{
+        		if(e.getName().equals(name))
+        		{
+        			return e;
+        		}
+        	}
+        	return META_LOOKUP[0];
         }
     }
 }

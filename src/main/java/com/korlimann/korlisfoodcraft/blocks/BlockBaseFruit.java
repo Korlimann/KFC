@@ -154,5 +154,16 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
     {
         return AABB;
     }
+	
+	//Only Call When a Value for this already exists in BlockFruitSaplings.EnumType
+	//Automaticly Creates Sapling that creates a FruitTree
+	//Only Call once for each Fruit
+	public BlockFruitSapling createFruitTreeAndSapling()
+	{
+		BlockFruitSapling ret = new BlockFruitSapling(this.getUnlocalizedName()+"sapling",this);
+		
+		return ret;
+	}
+	
 
 }
