@@ -134,6 +134,18 @@ public class WorldGenFruitTree extends WorldGenTrees {
                             this.setBlockAndNotifyAdequately(worldIn, position.up(j3), this.metaWood);                            
                         }
                     }
+                    for(BlockPos blockpos:fruitPlaces) {
+                    	IBlockState canPlaceFruit = worldIn.getBlockState(blockpos.down());                                        
+                        if(!(canPlaceFruit.getMaterial() == Material.AIR)) {
+                        	fruitPlaces.remove(blockpos);
+                        }
+                    }
+                    Random random = new Random();
+                    for(int index = 0; index < 5; i++) {
+                    	int place = random.nextInt(fruitPlaces.size());
+                    	placeFruit(fruitPlaces.get(place));
+                    	fruitPlaces.remove(fruitPlaces.get(place));                   	
+                    }
                 }
         	}
                 return true;
@@ -144,4 +156,7 @@ public class WorldGenFruitTree extends WorldGenTrees {
             }
         }
 	 
+	public void placeFruit(BlockPos pos) {
+		
+	}
 }
