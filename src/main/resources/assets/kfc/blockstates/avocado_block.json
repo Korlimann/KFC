@@ -1,25 +1,16 @@
 {
     "forge_marker": 1,
-    "defaults": {
-        "model": "kfc:avocado_block"
-    },
     "variants": {
         "age": {
-            "0": {
-                "textures": {
-                    "cross": "kfc:blocks/avocado_block"
-                }
-            },
-            "1": {
-                "textures": {
-                    "cross": "kfc:blocks/avocado_block"
-                }
-            },
-            "2": {
-                "textures": {
-                    "cross": "kfc:blocks/avocado_block"
-                }
-            }
+            "0": [
+            	{ "model": "kfc:avocado_block_1" }
+        	],
+            "1": [
+            	{ "model": "kfc:avocado_block_2" }
+        	],
+            "2": [
+            	{ "model": "kfc:avocado_block_3" }
+        	]
         }
     }
 }
