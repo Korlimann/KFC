@@ -1,0 +1,231 @@
+{
+	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
+	"elements": [
+		{
+			"name": "cube",
+			"from": [7.5, 15, 7.5],
+			"to": [8.5, 16, 8.5],
+			"faces": {
+				"north": {
+					"uv": [0, 0, 1, 1],
+					"texture": "#missing"
+				},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"south": {
+					"uv": [0, 0, 1, 1],
+					"texture": "#missing"
+				},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#missing"}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cube",
+			"from": [6.5, 11.5, 6.5],
+			"to": [9.5, 15, 9.5],
+			"faces": {
+				"north": {
+					"uv": [0, 0, 3, 3.5],
+					"texture": "#missing"
+				},
+				"east": {
+					"uv": [0, 0, 3, 3.5],
+					"texture": "#missing"
+				},
+				"south": {
+					"uv": [0, 0, 3, 3.5],
+					"texture": "#missing"
+				},
+				"west": {
+					"uv": [0, 0, 3, 3.5],
+					"texture": "#missing"
+				},
+				"up": {"uv": [0, 0, 3, 3], "texture": "#missing"},
+				"down": {"uv": [0, 0, 3, 3], "texture": "#missing"}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cube",
+			"from": [9.5, 12, 7],
+			"to": [9.75, 14.5, 9],
+			"faces": {
+				"north": {
+					"uv": [0, 0, 0.25, 2.5],
+					"texture": "#missing"
+				},
+				"east": {
+					"uv": [0, 0, 2, 2.5],
+					"texture": "#missing"
+				},
+				"south": {
+					"uv": [0, 0, 0.25, 2.5],
+					"texture": "#missing"
+				},
+				"west": {
+					"uv": [0, 0, 2, 2.5],
+					"texture": "#missing"
+				},
+				"up": {
+					"uv": [0, 0, 2, 0.25],
+					"rotation": 270,
+					"texture": "#missing"
+				},
+				"down": {
+					"uv": [0, 0, 2, 0.25],
+					"rotation": 90,
+					"texture": "#missing"
+				}
+			},
+			"rotation": {
+				"origin": [8, 8, 8],
+				"axis": "y",
+				"angle": 0
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cube",
+			"from": [7, 12, 9.5],
+			"to": [9, 14.5, 9.75],
+			"faces": {
+				"north": {
+					"uv": [0, 0, 2, 2.5],
+					"texture": "#missing"
+				},
+				"east": {
+					"uv": [0, 0, 0.25, 2.5],
+					"texture": "#missing"
+				},
+				"south": {
+					"uv": [0, 0, 2, 2.5],
+					"texture": "#missing"
+				},
+				"west": {
+					"uv": [0, 0, 0.25, 2.5],
+					"texture": "#missing"
+				},
+				"up": {
+					"uv": [0, 0, 2, 0.25],
+					"texture": "#missing"
+				},
+				"down": {
+					"uv": [0, 0, 2, 0.25],
+					"texture": "#missing"
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cube",
+			"from": [6.25, 12, 7],
+			"to": [6.5, 14.5, 9],
+			"faces": {
+				"north": {
+					"uv": [0, 0, 0.25, 2.5],
+					"texture": "#missing"
+				},
+				"east": {
+					"uv": [0, 0, 2, 2.5],
+					"texture": "#missing"
+				},
+				"south": {
+					"uv": [0, 0, 0.25, 2.5],
+					"texture": "#missing"
+				},
+				"west": {
+					"uv": [0, 0, 2, 2.5],
+					"texture": "#missing"
+				},
+				"up": {
+					"uv": [0, 0, 2, 0.25],
+					"rotation": 270,
+					"texture": "#missing"
+				},
+				"down": {
+					"uv": [0, 0, 2, 0.25],
+					"rotation": 90,
+					"texture": "#missing"
+				}
+			},
+			"rotation": {
+				"origin": [8, 8, 8],
+				"axis": "y",
+				"angle": 0
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cube",
+			"from": [7, 11.25, 7],
+			"to": [9, 11.5, 9],
+			"faces": {
+				"north": {
+					"uv": [0, 0, 2, 0.25],
+					"rotation": 180,
+					"texture": "#missing"
+				},
+				"east": {
+					"uv": [0, 0, 0.25, 2],
+					"rotation": 90,
+					"texture": "#missing"
+				},
+				"south": {
+					"uv": [0, 0, 2, 0.25],
+					"texture": "#missing"
+				},
+				"west": {
+					"uv": [0, 0, 0.25, 2],
+					"rotation": 270,
+					"texture": "#missing"
+				},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#missing"},
+				"down": {
+					"uv": [0, 0, 2, 2],
+					"rotation": 180,
+					"texture": "#missing"
+				}
+			},
+			"rotation": {
+				"origin": [8, 13, 13],
+				"axis": "x",
+				"angle": 0
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cube",
+			"from": [7, 12, 6.25],
+			"to": [9, 14.5, 6.5],
+			"faces": {
+				"north": {
+					"uv": [0, 0, 2, 2.5],
+					"texture": "#missing"
+				},
+				"east": {
+					"uv": [0, 0, 0.25, 2.5],
+					"texture": "#missing"
+				},
+				"south": {
+					"uv": [0, 0, 2, 2.5],
+					"texture": "#missing"
+				},
+				"west": {
+					"uv": [0, 0, 0.25, 2.5],
+					"texture": "#missing"
+				},
+				"up": {
+					"uv": [0, 0, 2, 0.25],
+					"texture": "#missing"
+				},
+				"down": {
+					"uv": [0, 0, 2, 0.25],
+					"texture": "#missing"
+				}
+			},
+			"type": "cube"
+		}
+	]
+}

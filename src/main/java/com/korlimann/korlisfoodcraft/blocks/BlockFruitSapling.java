@@ -57,7 +57,7 @@ public class BlockFruitSapling extends BlockSapling implements IHasModel {
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	    {
 	        if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
-	        WorldGenerator worldgenerator = new WorldGenFruitTree(true, 3, Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK), Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false)), ((BlockFruitSapling.EnumType)state.getValue(TYPE)).getFruit());;
+	        WorldGenerator worldgenerator = new WorldGenFruitTree(true, 3, Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK), Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false)), ((BlockFruitSapling.EnumType)state.getValue(TYPE)).getFruit());
 	        int i = 0;
 	        int j = 0;
 	        boolean flag = false;
@@ -100,7 +100,7 @@ public class BlockFruitSapling extends BlockSapling implements IHasModel {
 	public static enum EnumType implements IStringSerializable
     {
 		//spätere änderung der Fruit auf den Richtigen Block notwendig
-        AVOCADO(0, "avocado", MapColor.WOOD,null);
+        AVOCADO(0, "avocado", MapColor.WOOD ,null);
         
 
         private static final BlockFruitSapling.EnumType[] META_LOOKUP = new BlockFruitSapling.EnumType[values().length];
