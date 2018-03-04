@@ -3,6 +3,7 @@ package com.korlimann.korlisfoodcraft.gen;
 import java.util.ArrayList;
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockOldLog;
@@ -24,14 +25,18 @@ public class WorldGenFruitTree extends WorldGenTrees {
     private final IBlockState metaWood;
     /** The metadata value of the leaves to use in tree generation. */
     private final IBlockState metaLeaves;
+    
     private ArrayList<BlockPos> fruitPlaces = new ArrayList<BlockPos>();
+    
+    private final Block fruit;
 
-	public WorldGenFruitTree(boolean notify, int minTreeHeightIn, IBlockState woodMeta, IBlockState p_i46446_4_)
+	public WorldGenFruitTree(boolean notify, int minTreeHeightIn, IBlockState woodMeta, IBlockState p_i46446_4_, Block fruit)
     {
         super(notify);
         this.minTreeHeight = minTreeHeightIn;
         this.metaWood = woodMeta;
         this.metaLeaves = p_i46446_4_;
+        this.fruit = fruit;
     }
 	
 	public boolean generate(World worldIn, Random rand, BlockPos position)
@@ -87,8 +92,6 @@ public class WorldGenFruitTree extends WorldGenTrees {
                 if (state.getBlock().canSustainPlant(state, worldIn, position.down(), net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING) && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     state.getBlock().onPlantGrow(state, worldIn, position.down(), position);
-                    int k2 = 3;
-                    int l2 = 0;
 
                     for (int i3 = position.getY() - 3 + i; i3 <= position.getY() + i; ++i3)
                     {

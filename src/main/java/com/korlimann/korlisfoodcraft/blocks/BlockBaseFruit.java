@@ -2,44 +2,44 @@ package com.korlimann.korlisfoodcraft.blocks;
 
 import java.util.Random;
 
-import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class BlockAvocado extends BlockBaseFruit implements IGrowable, IHasModel {
+public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 
-	public BlockAvocado(String name, Material materialIn) {
+	public BlockBaseFruit(Material materialIn) {
 		super(materialIn);
-		setUnlocalizedName(name);
-		setRegistryName(name);
-		setCreativeTab(Main.korlissushicraft);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void registerModels() {
-		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
-		return true;
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-		return true;
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
 	public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-			
+		// TODO Auto-generated method stub
+		
 	}
 
 }
