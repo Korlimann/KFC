@@ -135,19 +135,23 @@ public class WorldGenFruitTree extends WorldGenTrees {
                         }
                     }
                     for(BlockPos blockpos:fruitPlaces) {
-                    	IBlockState canPlaceFruit = worldIn.getBlockState(blockpos.down());                                        
+                    	IBlockState canPlaceFruit = worldIn.getBlockState(blockpos);                                        
                         if(!(canPlaceFruit.getMaterial() == Material.AIR)) {
                         	fruitPlaces.remove(blockpos);
                         }
                     }
                     Random random = new Random();
                     for(int index = 0; index < 5; i++) {
-                    	int place = random.nextInt(fruitPlaces.size());
-                    	placeFruit(fruitPlaces.get(place));
-                    	fruitPlaces.remove(fruitPlaces.get(place));                   	
+                    	if(!(fruitPlaces.size()<3))
+                    	{
+                    		int place = random.nextInt(fruitPlaces.size());
+                    		placeFruit(worldIn, 0,fruitPlaces.get(place));
+                    		fruitPlaces.remove(fruitPlaces.get(place));    
+                    	}
                     }
                 }
         	}
+            	fruitPlaces.clear();
                 return true;
             }
             else
@@ -156,7 +160,7 @@ public class WorldGenFruitTree extends WorldGenTrees {
             }
         }
 	 
-	public void placeFruit(BlockPos pos) {
+	public void placeFruit(World worldIn, int p_181652_2_, BlockPos pos) {
 		
 	}
 }
