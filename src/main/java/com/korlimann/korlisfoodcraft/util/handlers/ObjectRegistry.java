@@ -3,6 +3,7 @@ package com.korlimann.korlisfoodcraft.util.handlers;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.blocks.kitchenboard.TileEntityKitchenboard;
 import com.korlimann.korlisfoodcraft.gen.KFCWorldGen;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
@@ -16,6 +17,7 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @EventBusSubscriber
@@ -136,5 +138,6 @@ public class ObjectRegistry {
 	public static void Common() {
 		GameRegistry.registerWorldGenerator(new KFCWorldGen(), 0);
 		GameRegistry.registerTileEntity(TileEntityKitchenboard.class, "tileentitykitchenboard");
+		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 	}
 }

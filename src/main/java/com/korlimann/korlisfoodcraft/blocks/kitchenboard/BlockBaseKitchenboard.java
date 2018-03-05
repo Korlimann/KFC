@@ -1,9 +1,8 @@
-package com.korlimann.korlisfoodcraft.blocks;
+package com.korlimann.korlisfoodcraft.blocks.kitchenboard;
 
 import javax.annotation.Nullable;
 
 import com.korlimann.korlisfoodcraft.Main;
-import com.korlimann.korlisfoodcraft.blocks.kitchenboard.TileEntityKitchenboard;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 import com.korlimann.korlisfoodcraft.util.handlers.GuiHandler;
@@ -15,6 +14,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -60,7 +60,7 @@ public class BlockBaseKitchenboard extends Block implements IHasModel {
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
             ItemStack heldItem = player.getHeldItem(hand);
-            TileEntityKitchenboard tile = getTileEntity(world, pos);
+            TileEntityKitchenboard tile = getTileEntity();
             IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
             if (!player.isSneaking()) {
                 if (heldItem.isEmpty()) {
@@ -73,11 +73,11 @@ public class BlockBaseKitchenboard extends Block implements IHasModel {
                 player.openGui(Main.instance, GuiHandler.KITCHENBOARD, world, pos.getX(), pos.getY(), pos.getZ());
             }
             return true;
-        }       
+        }   
 
     @Override
     public void breakBlock(World world, BlockPos pos, IBlockState state) {
-        TileEntityKitchenboard tile = getTileEntity(world, pos);
+        TileEntityKitchenboard tile = getTileEntity();
         IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
         ItemStack stack = itemHandler.getStackInSlot(0);
         ItemStack ped = new ItemStack(ModBlocks.KITCHENBOARD_BLOCK);
@@ -89,12 +89,9 @@ public class BlockBaseKitchenboard extends Block implements IHasModel {
         }
         super.breakBlock(world, pos, state);
     }
-    
-    protected TileEntityKitchenboard getTileEntity(IBlockAccess world, BlockPos pos) {
-        return (TileEntityKitchenboard) world.getTileEntity(pos);
-    }
 
-    public Class<TileEntityKitchenboard> getTileEntityClass() {
+    @Override
+	protected TileEntityKitchenboard getTileEntity() {
         return TileEntityKitchenboard.class;
     }
 
@@ -103,9 +100,8 @@ public class BlockBaseKitchenboard extends Block implements IHasModel {
         return true;
     }
 
-    @Nullable
     @Override
-    public TileEntityKitchenboard createTileEntity(World world, IBlockState state) {
+    public TileEntity createTileEntity(World world, IBlockState state) {
         return new TileEntityKitchenboard();
     }
     
