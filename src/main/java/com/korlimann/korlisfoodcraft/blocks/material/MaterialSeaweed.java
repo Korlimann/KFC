@@ -18,5 +18,9 @@ public class MaterialSeaweed extends Material {
         return true;
     }
 
+	@Override
+	public boolean isSolid() {
+		return false;
+	}
 	
 }

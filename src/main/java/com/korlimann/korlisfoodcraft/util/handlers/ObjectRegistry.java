@@ -3,7 +3,7 @@ package com.korlimann.korlisfoodcraft.util.handlers;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.korlimann.korlisfoodcraft.gen.BlockOreGen;
+import com.korlimann.korlisfoodcraft.gen.KFCWorldGen;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
@@ -133,6 +133,6 @@ public class ObjectRegistry {
 	}
 	
 	public static void Common() {
-		GameRegistry.registerWorldGenerator(new BlockOreGen(), 0);
+		GameRegistry.registerWorldGenerator(new KFCWorldGen(), 0);
 	}
 }
