@@ -5,12 +5,15 @@ import javax.annotation.Nullable;
 import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.blocks.kitchenboard.TileEntityKitchenboard;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
+import com.korlimann.korlisfoodcraft.util.IHasModel;
 import com.korlimann.korlisfoodcraft.util.handlers.GuiHandler;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -21,12 +24,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 
-public class BlockBaseKitchenboard extends BlockTileEntity<TileEntityKitchenboard> {
+public class BlockBaseKitchenboard extends Block implements IHasModel {
 	
 	public BlockBaseKitchenboard() {
-        super(Material.ROCK, "kitchenboard_block");
+        super(Material.ROCK);
         String name = "kitchenboard_block";
         this.setUnlocalizedName(name);
+        this.setRegistryName(name);
     }
 
 
@@ -85,8 +89,11 @@ public class BlockBaseKitchenboard extends BlockTileEntity<TileEntityKitchenboar
         }
         super.breakBlock(world, pos, state);
     }
+    
+    protected TileEntityKitchenboard getTileEntity(IBlockAccess world, BlockPos pos) {
+        return (TileEntityKitchenboard) world.getTileEntity(pos);
+    }
 
-    @Override
     public Class<TileEntityKitchenboard> getTileEntityClass() {
         return TileEntityKitchenboard.class;
     }
@@ -101,5 +108,10 @@ public class BlockBaseKitchenboard extends BlockTileEntity<TileEntityKitchenboar
     public TileEntityKitchenboard createTileEntity(World world, IBlockState state) {
         return new TileEntityKitchenboard();
     }
+    
+    @Override
+	public void registerModels() {
+		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+	}
 
 }
