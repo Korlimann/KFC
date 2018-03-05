@@ -12,7 +12,7 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
-public class BlockOreGen implements IWorldGenerator
+public class KFCWorldGen implements IWorldGenerator
 {
 	/*
 	 * This class is used for implementing, for example, new ores into the world generation.
@@ -22,7 +22,7 @@ public class BlockOreGen implements IWorldGenerator
 	private WorldGenerator salt_ore;
 	private WorldGenerator seaweed_block;
 	
-	public BlockOreGen() 
+	public KFCWorldGen() 
 	{
 		salt_ore = new WorldGenMinable(ModBlocks.SALT_ORE.getDefaultState(), 15);
 		seaweed_block = new WorldGenSeaweed(ModBlocks.SEAWEED_BLOCK);
