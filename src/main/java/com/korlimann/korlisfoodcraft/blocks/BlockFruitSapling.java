@@ -51,7 +51,9 @@ public class BlockFruitSapling extends BlockSapling implements IHasModel {
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	    {
 	        if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
+
 	        WorldGenerator worldgenerator = new WorldGenFruitTree(true, 3, Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK), Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false)), ((BlockBaseFruit.EnumType)state.getValue(TYPE)).getFruit());
+
 	        int i = 0;
 	        int j = 0;
 	        boolean flag = false;
@@ -88,8 +90,5 @@ public class BlockFruitSapling extends BlockSapling implements IHasModel {
 	            }
 	        }
 	    }
-	
-	
-	
 	
 }
