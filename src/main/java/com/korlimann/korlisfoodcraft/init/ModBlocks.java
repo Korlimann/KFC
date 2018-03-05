@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCake;
-import com.korlimann.korlisfoodcraft.blocks.BlockBaseCraftingTable;
+import com.korlimann.korlisfoodcraft.blocks.BlockBaseKitchenboard;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropCorn;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropRice;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruit;
@@ -26,7 +26,7 @@ public class ModBlocks {
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
 	//Crafting Tables
-	public static final Block KITCHENBOARD_BLOCK = new BlockBaseCraftingTable("kitchenboard_block");
+	public static final Block KITCHENBOARD_BLOCK = new BlockBaseKitchenboard("kitchenboard_block");
 	
 	//Crops
 	public static final BlockBaseCropCorn CROP_CORN = new BlockBaseCropCorn();
