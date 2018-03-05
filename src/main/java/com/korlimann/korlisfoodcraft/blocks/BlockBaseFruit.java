@@ -3,10 +3,12 @@ package com.korlimann.korlisfoodcraft.blocks;
 import java.util.Random;
 
 import com.korlimann.korlisfoodcraft.Main;
+import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
@@ -17,6 +19,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -154,5 +157,111 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
     {
         return AABB;
     }
+	
+	//Only Call When a Value for this already exists in BlockBaseFruit.EnumType
+	//Automaticly Creates Sapling that creates a FruitTree
+	//Only Call once for each Fruit
+	public BlockFruitSapling createFruitTreeAndSapling()
+	{
+		BlockFruitSapling ret = new BlockFruitSapling(this.getUnlocalizedName()+"Sapling",this);
+		
+		return ret;
+	}
+	
+	public static enum EnumType implements IStringSerializable
+    {
+		//---------------------------------------------------------------------------
+		//All Fruits that Create a Sapling have to be entered here
+		//Else every Sapling will Default to Avocado
+        AVOCADO(0, MapColor.WOOD,ModBlocks.AVOCADO_BLOCK);
+        
+
+		
+		//------------------------------------------------------------------------------
+        private static final BlockBaseFruit.EnumType[] META_LOOKUP = new BlockBaseFruit.EnumType[values().length];
+        private final int meta;
+        private final String name;
+        private final String unlocalizedName;
+        /** The color that represents this entry on a map. */
+        private final MapColor mapColor;
+        private final BlockBaseFruit fruit;
+
+       
+
+        public Block getFruit() {
+			return fruit;
+		}
+
+		private EnumType(int metaIn, MapColor mapColorIn, Block fruit)
+        {
+			if(!(fruit instanceof BlockBaseFruit))
+				fruit = ModBlocks.AVOCADO_BLOCK;
+            this.meta = metaIn;
+            this.name = fruit.getUnlocalizedName();
+            this.unlocalizedName = fruit.getUnlocalizedName();;
+            this.mapColor = mapColorIn;
+            
+            this.fruit = (BlockBaseFruit)fruit;
+            
+        }
+
+        public int getMetadata()
+        {
+            return this.meta;
+        }
+
+        /**
+         * The color which represents this entry on a map.
+         */
+        public MapColor getMapColor()
+        {
+            return this.mapColor;
+        }
+
+        public String toString()
+        {
+            return this.name;
+        }
+
+        public static BlockBaseFruit.EnumType byMetadata(int meta)
+        {
+            if (meta < 0 || meta >= META_LOOKUP.length)
+            {
+                meta = 0;
+            }
+
+            return META_LOOKUP[meta];
+        }
+
+        public String getName()
+        {
+            return this.name;
+        }
+
+        public String getUnlocalizedName()
+        {
+            return this.unlocalizedName;
+        }
+
+        static
+        {
+            for (BlockBaseFruit.EnumType fruits$enumtype : values())
+            {
+                META_LOOKUP[fruits$enumtype.getMetadata()] = fruits$enumtype;
+            }
+        }
+        public static BlockBaseFruit.EnumType getByName(String name)
+        {
+        	for(BlockBaseFruit.EnumType e : META_LOOKUP)
+        	{
+        		if(e.getName().equals(name))
+        		{
+        			return e;
+        		}
+        	}
+        	return META_LOOKUP[0];
+        }
+    }
+	
 
 }
