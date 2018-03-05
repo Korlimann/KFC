@@ -25,11 +25,11 @@ import net.minecraft.world.IInteractionObject;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.internal.FMLNetworkHandler;
 
-public class BlockBaseCraftingTable extends BlockWorkbench implements IHasModel {
+public class BlockBaseKitchenboard extends BlockWorkbench implements IHasModel {
 	
 	public String name;
 	
-	public BlockBaseCraftingTable(String name) {
+	public BlockBaseKitchenboard(String name) {
 		this.name = name;
 		setUnlocalizedName(name);
 		setRegistryName(name);
