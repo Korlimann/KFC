@@ -1,135 +1,105 @@
 package com.korlimann.korlisfoodcraft.blocks;
 
-import com.korlimann.korlisfoodcraft.Main;
-import com.korlimann.korlisfoodcraft.util.IHasModel;
-import com.korlimann.korlisfoodcraft.util.Reference;
+import javax.annotation.Nullable;
 
-import net.minecraft.block.BlockWorkbench;
+import com.korlimann.korlisfoodcraft.Main;
+import com.korlimann.korlisfoodcraft.blocks.kitchenboard.TileEntityKitchenboard;
+import com.korlimann.korlisfoodcraft.init.ModBlocks;
+import com.korlimann.korlisfoodcraft.util.handlers.GuiHandler;
+
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ContainerWorkbench;
-import net.minecraft.item.Item;
-import net.minecraft.stats.StatList;
-import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.IInteractionObject;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.network.internal.FMLNetworkHandler;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
 
-public class BlockBaseKitchenboard extends BlockWorkbench implements IHasModel {
+public class BlockBaseKitchenboard extends BlockTileEntity<TileEntityKitchenboard> {
 	
-	public String name;
-	
-	public BlockBaseKitchenboard(String name) {
-		this.name = name;
-		setUnlocalizedName(name);
-		setRegistryName(name);
-		setCreativeTab(Main.korlissushicraft);
-		setHardness(0F);
-		
-		//ModBlocks.BLOCKS.add(this);
-		//ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
-	}
-	
-	/**
-     * Called when the block is right clicked by a player.
-     */
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-    {
-        if (worldIn.isRemote)
-        {
-            return true;
-        }
-        else
-        {
-        	playerIn.openGui(Main.instance, Reference.GUI_KITCHENBOARD, worldIn, playerIn.getPosition().getX(), playerIn.getPosition().getY(), playerIn.getPosition().getZ());
-            playerIn.addStat(StatList.CRAFTING_TABLE_INTERACTION);
-            return true;
-        }
+	public BlockBaseKitchenboard() {
+        super(Material.ROCK, "kitchenboard_block");
+        String name = "kitchenboard_block";
+        this.setUnlocalizedName(name);
     }
-    
-	@Override
-	public void registerModels() {
-		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");		
-	}
-    
-    public static final AxisAlignedBB AABB = new AxisAlignedBB(0D,0,0.0625D,1D,0.125D,0.9375D);
-    
+
+
     @Override
-    public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.CUTOUT;
-    }
-    
-    @Override
-    public boolean isOpaqueCube(IBlockState state) 
-    {
+    @Deprecated
+    public boolean isFullCube(IBlockState state) {
         return false;
     }
     
     @Override
-    public boolean isFullCube(IBlockState state) 
-    {
-        return false;
+    public boolean isOpaqueCube(IBlockState state) {
+    	return false;
     }
     
     @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) 
-    {
-        return AABB;
+    public boolean isFullBlock(IBlockState state) {
+    	return false;
     }
     
-    public static class InterfaceCraftingTable implements IInteractionObject
-    {
-        private final World world;
-        private final BlockPos position;
-
-        public InterfaceCraftingTable(World worldIn, BlockPos pos)
-        {
-            this.world = worldIn;
-            this.position = pos;
-        }
-
-        /**
-         * Get the name of this object. For players this returns their username
-         */
-        public String getName()
-        {
-            return "kitchenboard";
-        }
-
-        /**
-         * Returns true if this thing is named
-         */
-        public boolean hasCustomName()
-        {
-            return true;
-        }
-
-        /**
-         * Get the formatted ChatComponent that will be used for the sender's username in chat
-         */
-        public ITextComponent getDisplayName()
-        {
-            return new TextComponentTranslation(Blocks.CRAFTING_TABLE.getUnlocalizedName() + ".name", new Object[0]);
-        }
-
-        public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn)
-        {
-            return new ContainerWorkbench(playerInventory, this.world, this.position);
-        }
-
-        public String getGuiID()
-        {
-            return "minecraft:crafting_table";
-        }
+    public static final AxisAlignedBB AABB = new AxisAlignedBB(0D, 0D, 0.0625D, 1D, 0.125D, 0.9375D);
+    
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+    	return AABB;
     }
+
+    @Override
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+            ItemStack heldItem = player.getHeldItem(hand);
+            TileEntityKitchenboard tile = getTileEntity(world, pos);
+            IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
+            if (!player.isSneaking()) {
+                if (heldItem.isEmpty()) {
+                    player.setHeldItem(hand, itemHandler.extractItem(0, 64, false));
+                } else {
+                    player.setHeldItem(hand, itemHandler.insertItem(0, heldItem, false));
+                }
+                tile.markDirty();
+            } else {
+                player.openGui(Main.instance, GuiHandler.KITCHENBOARD, world, pos.getX(), pos.getY(), pos.getZ());
+            }
+            return true;
+        }       
+
+    @Override
+    public void breakBlock(World world, BlockPos pos, IBlockState state) {
+        TileEntityKitchenboard tile = getTileEntity(world, pos);
+        IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
+        ItemStack stack = itemHandler.getStackInSlot(0);
+        ItemStack ped = new ItemStack(ModBlocks.KITCHENBOARD_BLOCK);
+        if (!stack.isEmpty()) {
+            EntityItem item = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), stack);
+            EntityItem pedestal = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), ped);
+            world.spawnEntity(item);
+            world.spawnEntity(pedestal);
+        }
+        super.breakBlock(world, pos, state);
+    }
+
+    @Override
+    public Class<TileEntityKitchenboard> getTileEntityClass() {
+        return TileEntityKitchenboard.class;
+    }
+
+    @Override
+    public boolean hasTileEntity(IBlockState state) {
+        return true;
+    }
+
+    @Nullable
+    @Override
+    public TileEntityKitchenboard createTileEntity(World world, IBlockState state) {
+        return new TileEntityKitchenboard();
+    }
+
 }

@@ -12,13 +12,10 @@ import net.minecraftforge.items.SlotItemHandler;
 
 public class ContainerKitchenboard extends Container {
 
-	public ContainerKitchenboard(InventoryPlayer playerInv, final TileEntityPedestal pedestal) {
-        IItemHandler inventory = pedestal.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
+	public ContainerKitchenboard(InventoryPlayer playerInv, final TileEntityKitchenboard kitchenboard) {
+        IItemHandler inventory = kitchenboard.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
         addSlotToContainer(new SlotItemHandler(inventory, 0, 80, 35) {
-            @Override
-            public void onSlotChanged() {
-                pedestal.markDirty();
-            }
+            
         });
 
         for (int i = 0; i < 3; i++) {

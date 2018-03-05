@@ -1,5 +1,7 @@
 package com.korlimann.korlisfoodcraft.util.handlers;
 
+import com.korlimann.korlisfoodcraft.blocks.kitchenboard.ContainerKitchenboard;
+import com.korlimann.korlisfoodcraft.blocks.kitchenboard.TileEntityKitchenboard;
 import com.korlimann.korlisfoodcraft.gui.GuiKitchenboard;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -26,7 +28,7 @@ public class GuiHandler implements IGuiHandler {
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		switch (ID) {
         case KITCHENBOARD:
-            return new GuiKitchenboard((Container) getServerGuiElement(ID, player, world, x, y, z), player.inventory);
+            return new GuiKitchenboard(player.inventory);
         default:
             return null;
     }

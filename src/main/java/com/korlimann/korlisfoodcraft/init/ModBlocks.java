@@ -26,7 +26,7 @@ public class ModBlocks {
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
 	//Crafting Tables
-	public static final Block KITCHENBOARD_BLOCK = new BlockBaseKitchenboard("kitchenboard_block");
+	public static final Block KITCHENBOARD_BLOCK = new BlockBaseKitchenboard();
 	
 	//Crops
 	public static final BlockBaseCropCorn CROP_CORN = new BlockBaseCropCorn();
