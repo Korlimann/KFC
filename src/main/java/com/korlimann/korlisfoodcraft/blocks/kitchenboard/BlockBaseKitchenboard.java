@@ -27,7 +27,7 @@ import net.minecraftforge.items.IItemHandler;
 public class BlockBaseKitchenboard extends Block implements IHasModel {
 	
 	public BlockBaseKitchenboard() {
-        super(Material.ROCK);
+        super(Material.WOOD);
         String name = "kitchenboard_block";
         this.setUnlocalizedName(name);
         this.setRegistryName(name);
@@ -60,7 +60,7 @@ public class BlockBaseKitchenboard extends Block implements IHasModel {
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
             ItemStack heldItem = player.getHeldItem(hand);
-            TileEntityKitchenboard tile = getTileEntity();
+            TileEntityKitchenboard tile = (TileEntityKitchenboard) createTileEntity(world, state);
             IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
             if (!player.isSneaking()) {
                 if (heldItem.isEmpty()) {
@@ -77,7 +77,7 @@ public class BlockBaseKitchenboard extends Block implements IHasModel {
 
     @Override
     public void breakBlock(World world, BlockPos pos, IBlockState state) {
-        TileEntityKitchenboard tile = getTileEntity();
+        TileEntityKitchenboard tile = (TileEntityKitchenboard) createTileEntity(world, state);
         IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
         ItemStack stack = itemHandler.getStackInSlot(0);
         ItemStack ped = new ItemStack(ModBlocks.KITCHENBOARD_BLOCK);
@@ -88,11 +88,6 @@ public class BlockBaseKitchenboard extends Block implements IHasModel {
             world.spawnEntity(pedestal);
         }
         super.breakBlock(world, pos, state);
-    }
-
-    @Override
-	protected TileEntityKitchenboard getTileEntity() {
-        return TileEntityKitchenboard.class;
     }
 
     @Override

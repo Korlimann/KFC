@@ -32,11 +32,12 @@ public class ObjectRegistry {
 	
 	public static void prepareBlocks(){
 		blocks.add(ModBlocks.CROP_CORN);
-		blocks.add(ModBlocks.KITCHENBOARD_BLOCK);
+		//blocks.add(ModBlocks.KITCHENBOARD_BLOCK);
 		blocks.add(ModBlocks.SUNFLOWER);
 		blocks.add(ModBlocks.BEER);
 		blocks.add(ModBlocks.SALT_ORE);
 		blocks.add(ModBlocks.SEAWEED_BLOCK);
+		blocks.add(ModBlocks.HERBGARDEN);
 	}
 	
 	public static void prepareItems() {
@@ -87,6 +88,17 @@ public class ObjectRegistry {
 		items.add(ModItems.RADLER);
 		items.add(ModItems.SAUSAGE);
 		items.add(ModItems.TOMATOSEEDS);
+		items.add(ModItems.RAW_FRIES);
+		items.add(ModItems.PEPPER);
+		items.add(ModItems.PARSLEY);
+		items.add(ModItems.OREGANO);
+		items.add(ModItems.MISCHSCHUESSEL);
+		items.add(ModItems.MALT);
+		items.add(ModItems.LEEK);
+		items.add(ModItems.HOPS);
+		items.add(ModItems.FLOUR);
+		items.add(ModItems.EISBERGSALAT);
+		items.add(ModItems.DOUGH);
 	}
 	
 	//This method will be called without us calling it. This is because 

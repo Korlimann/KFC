@@ -31,12 +31,12 @@ public class WorldGenFruitTree extends WorldGenTrees {
     
     private final Block fruit;
 
-	public WorldGenFruitTree(boolean notify, int minTreeHeightIn, IBlockState woodMeta, IBlockState p_i46446_4_, Block fruit)
+	public WorldGenFruitTree(boolean notify, int minTreeHeightIn, Block fruit)
     {
         super(notify);
         this.minTreeHeight = minTreeHeightIn;
-        this.metaWood = woodMeta;
-        this.metaLeaves = p_i46446_4_;
+        this.metaWood = DEFAULT_TRUNK;
+        this.metaLeaves = DEFAULT_LEAF;
         this.fruit = fruit;
     }
 	

@@ -1,44 +1,39 @@
-[10:40:45] [main/INFO]: Logging in with username & password
-[10:40:49] [main/INFO]: Setting user: Korlimann
-[10:40:53] [main/WARN]: Skipping bad option: lastServer:
-[10:40:53] [main/INFO]: LWJGL Version: 2.9.4
-[10:40:57] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
-[10:41:00] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[10:41:00] [Thread-5/INFO]: Initializing LWJGL OpenAL
-[10:41:00] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[10:41:00] [Thread-5/INFO]: OpenAL initialized.
-[10:41:01] [Sound Library Loader/INFO]: Sound engine started
-[10:41:07] [main/INFO]: Created: 512x512 textures-atlas
-[10:41:09] [main/WARN]: Skipping bad option: lastServer:
-[10:41:09] [main/INFO]: Narrator library for x64 successfully loaded
-[10:41:23] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
-[10:41:23] [Server thread/INFO]: Generating keypair
-[10:41:24] [Server thread/INFO]: Loaded 488 advancements
-[10:41:24] [Server thread/INFO]: Preparing start region for level 0
-[10:41:25] [Server thread/INFO]: Preparing spawn area: 39%
-[10:41:26] [Server thread/INFO]: Changing view distance to 6, from 10
-[10:41:28] [Server thread/INFO]: Korlimann[local:E:17733280] logged in with entity id 326 at (124.34841406061142, 60.92110758111353, 299.01666616460767)
-[10:41:28] [Server thread/INFO]: Korlimann joined the game
-[10:41:29] [Server thread/INFO]: Saving and pausing game...
-[10:41:29] [Server thread/INFO]: Saving chunks for level 'SeaweedPlaceTest1'/overworld
-[10:41:29] [Server thread/INFO]: Saving chunks for level 'SeaweedPlaceTest1'/the_nether
-[10:41:29] [Server thread/INFO]: Saving chunks for level 'SeaweedPlaceTest1'/the_end
-[10:41:29] [main/INFO]: Loaded 7 advancements
-[10:41:49] [Server thread/INFO]: [Korlimann: Set own game mode to Survival Mode]
-[10:41:49] [main/INFO]: [CHAT] Your game mode has been updated to Survival Mode
-[10:42:40] [Server thread/INFO]: Saving and pausing game...
-[10:42:40] [Server thread/INFO]: Saving chunks for level 'SeaweedPlaceTest1'/overworld
-[10:42:40] [Server thread/INFO]: Saving chunks for level 'SeaweedPlaceTest1'/the_nether
-[10:42:40] [Server thread/INFO]: Saving chunks for level 'SeaweedPlaceTest1'/the_end
-[10:42:41] [Server thread/INFO]: Stopping server
-[10:42:41] [Server thread/INFO]: Saving players
-[10:42:41] [Server thread/INFO]: Korlimann lost connection: Disconnected
-[10:42:41] [Server thread/INFO]: Korlimann left the game
-[10:42:41] [Server thread/INFO]: Stopping singleplayer server as player logged out
-[10:42:41] [Server thread/INFO]: Saving worlds
-[10:42:41] [Server thread/INFO]: Saving chunks for level 'SeaweedPlaceTest1'/overworld
-[10:42:41] [Server thread/INFO]: Saving chunks for level 'SeaweedPlaceTest1'/the_nether
-[10:42:41] [Server thread/INFO]: Saving chunks for level 'SeaweedPlaceTest1'/the_end
-[10:42:42] [main/INFO]: Stopping!
-[10:42:42] [main/INFO]: SoundSystem shutting down...
-[10:42:43] [main/WARN]: Author: Paul Lamb, www.paulscode.com
+[15:59:51] [main/INFO]: Logging in with username & password
+[15:59:57] [main/INFO]: Setting user: Felix__Argyle
+[16:00:02] [main/WARN]: Skipping bad option: lastServer:
+[16:00:02] [main/INFO]: LWJGL Version: 2.9.4
+[16:00:06] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
+[16:00:10] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[16:00:11] [Thread-5/INFO]: Initializing LWJGL OpenAL
+[16:00:11] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[16:00:11] [Thread-5/INFO]: OpenAL initialized.
+[16:00:11] [Sound Library Loader/INFO]: Sound engine started
+[16:00:19] [main/INFO]: Created: 512x512 textures-atlas
+[16:00:22] [main/WARN]: Skipping bad option: lastServer:
+[16:00:22] [main/INFO]: Narrator library for x64 successfully loaded
+[16:00:26] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[16:00:26] [Server thread/INFO]: Generating keypair
+[16:00:27] [Server thread/INFO]: Loaded 488 advancements
+[16:00:27] [Server thread/INFO]: Preparing start region for level 0
+[16:00:28] [Server thread/INFO]: Preparing spawn area: 30%
+[16:00:29] [Server thread/INFO]: Changing view distance to 6, from 10
+[16:00:31] [Server thread/INFO]: Felix__Argyle[local:E:b8afd1ed] logged in with entity id 275 at (-99.0511978747303, 64.0, -37.420272565363064)
+[16:00:31] [Server thread/INFO]: Felix__Argyle joined the game
+[16:00:32] [Server thread/INFO]: Saving and pausing game...
+[16:00:32] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/overworld
+[16:00:32] [main/INFO]: Loaded 2 advancements
+[16:00:32] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_nether
+[16:00:32] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_end
+[16:00:35] [Server thread/INFO]: Saving and pausing game...
+[16:00:35] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/overworld
+[16:00:36] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_nether
+[16:00:36] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_end
+[16:00:36] [main/INFO]: Stopping!
+[16:00:36] [Server thread/INFO]: Stopping server
+[16:00:36] [Server thread/INFO]: Saving players
+[16:00:36] [Server thread/INFO]: Saving worlds
+[16:00:36] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/overworld
+[16:00:36] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_nether
+[16:00:36] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_end
+[16:00:37] [main/INFO]: SoundSystem shutting down...
+[16:00:37] [main/WARN]: Author: Paul Lamb, www.paulscode.com
