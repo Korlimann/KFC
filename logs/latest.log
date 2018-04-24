@@ -1,39 +1,39 @@
-[15:59:51] [main/INFO]: Logging in with username & password
-[15:59:57] [main/INFO]: Setting user: Felix__Argyle
-[16:00:02] [main/WARN]: Skipping bad option: lastServer:
-[16:00:02] [main/INFO]: LWJGL Version: 2.9.4
-[16:00:06] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
-[16:00:10] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[16:00:11] [Thread-5/INFO]: Initializing LWJGL OpenAL
-[16:00:11] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[16:00:11] [Thread-5/INFO]: OpenAL initialized.
-[16:00:11] [Sound Library Loader/INFO]: Sound engine started
-[16:00:19] [main/INFO]: Created: 512x512 textures-atlas
-[16:00:22] [main/WARN]: Skipping bad option: lastServer:
-[16:00:22] [main/INFO]: Narrator library for x64 successfully loaded
-[16:00:26] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
-[16:00:26] [Server thread/INFO]: Generating keypair
-[16:00:27] [Server thread/INFO]: Loaded 488 advancements
-[16:00:27] [Server thread/INFO]: Preparing start region for level 0
-[16:00:28] [Server thread/INFO]: Preparing spawn area: 30%
-[16:00:29] [Server thread/INFO]: Changing view distance to 6, from 10
-[16:00:31] [Server thread/INFO]: Felix__Argyle[local:E:b8afd1ed] logged in with entity id 275 at (-99.0511978747303, 64.0, -37.420272565363064)
-[16:00:31] [Server thread/INFO]: Felix__Argyle joined the game
-[16:00:32] [Server thread/INFO]: Saving and pausing game...
-[16:00:32] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/overworld
-[16:00:32] [main/INFO]: Loaded 2 advancements
-[16:00:32] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_nether
-[16:00:32] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_end
-[16:00:35] [Server thread/INFO]: Saving and pausing game...
-[16:00:35] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/overworld
-[16:00:36] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_nether
-[16:00:36] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_end
-[16:00:36] [main/INFO]: Stopping!
-[16:00:36] [Server thread/INFO]: Stopping server
-[16:00:36] [Server thread/INFO]: Saving players
-[16:00:36] [Server thread/INFO]: Saving worlds
-[16:00:36] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/overworld
-[16:00:36] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_nether
-[16:00:36] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_end
-[16:00:37] [main/INFO]: SoundSystem shutting down...
-[16:00:37] [main/WARN]: Author: Paul Lamb, www.paulscode.com
+[10:15:48] [main/INFO]: Logging in with username & password
+[10:15:53] [main/INFO]: Setting user: Felix__Argyle
+[10:15:59] [main/WARN]: Skipping bad option: lastServer:
+[10:15:59] [main/INFO]: LWJGL Version: 2.9.4
+[10:16:03] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
+[10:16:07] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[10:16:07] [Thread-5/INFO]: Initializing LWJGL OpenAL
+[10:16:07] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[10:16:07] [Thread-5/INFO]: OpenAL initialized.
+[10:16:08] [Sound Library Loader/INFO]: Sound engine started
+[10:16:16] [main/INFO]: Created: 512x512 textures-atlas
+[10:16:18] [main/WARN]: Skipping bad option: lastServer:
+[10:16:18] [main/INFO]: Narrator library for x64 successfully loaded
+[10:16:22] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[10:16:22] [Server thread/INFO]: Generating keypair
+[10:16:23] [Server thread/INFO]: Loaded 488 advancements
+[10:16:23] [Server thread/INFO]: Preparing start region for level 0
+[10:16:24] [Server thread/INFO]: Preparing spawn area: 19%
+[10:16:25] [Server thread/INFO]: Changing view distance to 6, from 10
+[10:16:28] [Server thread/INFO]: Felix__Argyle[local:E:25401b2f] logged in with entity id 278 at (-88.91971137798944, 64.0, -44.41100722622887)
+[10:16:28] [Server thread/INFO]: Felix__Argyle joined the game
+[10:16:29] [Server thread/INFO]: Saving and pausing game...
+[10:16:29] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/overworld
+[10:16:29] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_nether
+[10:16:29] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_end
+[10:16:29] [main/INFO]: Loaded 2 advancements
+[10:17:11] [Server thread/INFO]: Saving and pausing game...
+[10:17:11] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/overworld
+[10:17:11] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_nether
+[10:17:11] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_end
+[10:17:12] [main/INFO]: Stopping!
+[10:17:13] [Server thread/INFO]: Stopping server
+[10:17:13] [Server thread/INFO]: Saving players
+[10:17:13] [Server thread/INFO]: Saving worlds
+[10:17:13] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/overworld
+[10:17:13] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_nether
+[10:17:13] [Server thread/INFO]: Saving chunks for level 'ok yis pls'/the_end
+[10:17:13] [main/INFO]: SoundSystem shutting down...
+[10:17:13] [main/WARN]: Author: Paul Lamb, www.paulscode.com

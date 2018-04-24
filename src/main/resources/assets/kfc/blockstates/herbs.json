@@ -5,7 +5,7 @@
     },
 	"variants": {
 		"normal": {
-            "model": "herbs"
+            "model": "kfc:herbs"
         }
 	}
 }
