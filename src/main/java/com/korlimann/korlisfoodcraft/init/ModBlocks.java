@@ -15,6 +15,7 @@ import com.korlimann.korlisfoodcraft.blocks.BlockHerbgarden;
 import com.korlimann.korlisfoodcraft.blocks.kitchenboard.BlockBaseKitchenboard;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;
 
 public class ModBlocks {
@@ -44,5 +45,5 @@ public class ModBlocks {
 	public static final BlockBaseSeaweed SEAWEED_BLOCK = new BlockBaseSeaweed("seaweed_block");
 	public static final Block SUNFLOWER = new BlockBaseSunflower("sunflower");
 	public static final Block AVOCADO_BLOCK = new BlockBaseFruit("avocado_block", Material.PLANTS, 0D, 0D, 0D, 0D, 0D, 0D, ModItems.AVOCADO, true, true);
-	public static final Block HERBGARDEN = new BlockHerbgarden("herbs");
+	public static final BlockBush HERBGARDEN = new BlockHerbgarden("herbs");
 }

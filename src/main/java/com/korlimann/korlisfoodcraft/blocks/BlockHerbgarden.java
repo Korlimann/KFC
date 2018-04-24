@@ -14,11 +14,15 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockHerbgarden extends BlockBush implements IHasModel {
 
+	public static final AxisAlignedBB AABB = new AxisAlignedBB(0D,0,0D,0D,0D,0D);
+	
 	public BlockHerbgarden(String name) {
 		setUnlocalizedName(name);
 		setRegistryName(name);
@@ -68,6 +72,28 @@ public class BlockHerbgarden extends BlockBush implements IHasModel {
 			}
 		}
 	}
+	
+	@Override
+	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
+		IBlockState state1 = worldIn.getBlockState(pos.down());
+		if(state1.getMaterial()!=Material.GRASS) return true;
+		else return true;
+	}
+	@Override
+	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
+		return canBlockStay(worldIn, pos, null);
+	}
+	
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+		return AABB;
+	}
+	
+	/*@Override
+	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+		IBlockState state1 = worldIn.getBlockState(pos.down());
+		if(state1.getMaterial()!=Material.GRASS) worldIn.
+	}*/
 
 	@Override
 	public void registerModels() {
