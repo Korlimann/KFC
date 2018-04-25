@@ -76,7 +76,7 @@ public class BlockHerbgarden extends BlockBush implements IHasModel {
 	@Override
 	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
 		IBlockState state1 = worldIn.getBlockState(pos.down());
-		if(state1.getMaterial()!=Material.GRASS) return true;
+		if(state1.getMaterial()!=Material.GRASS) return false;
 		else return true;
 	}
 	@Override
