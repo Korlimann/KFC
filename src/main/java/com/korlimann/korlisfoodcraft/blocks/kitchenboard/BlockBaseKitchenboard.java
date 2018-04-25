@@ -1,7 +1,5 @@
 package com.korlimann.korlisfoodcraft.blocks.kitchenboard;
 
-import javax.annotation.Nullable;
-
 import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.util.IHasModel;

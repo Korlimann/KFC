@@ -2,8 +2,6 @@ package com.korlimann.korlisfoodcraft.gen;
 
 import java.util.Random;
 
-import com.korlimann.korlisfoodcraft.blocks.BlockHerbgarden;
-
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

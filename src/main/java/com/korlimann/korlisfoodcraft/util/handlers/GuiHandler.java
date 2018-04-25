@@ -5,7 +5,6 @@ import com.korlimann.korlisfoodcraft.blocks.kitchenboard.TileEntityKitchenboard;
 import com.korlimann.korlisfoodcraft.gui.GuiKitchenboard;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.Container;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
