@@ -32,7 +32,7 @@ public class WorldGenHerbs extends WorldGenerator {
 	private BlockPos getGroundPosFromAbove(World worldIn, BlockPos pos)
 	{
 		
-		for(int i=255; i>=60; i--) {
+		for(int i=pos.getY(); i>=60; i--) {
 			BlockPos pos1 = new BlockPos(pos.getX(),i ,pos.getZ());
 			IBlockState state1 = worldIn.getBlockState(pos1);
 			if(!(state1.getMaterial() == Material.AIR))

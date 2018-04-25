@@ -42,7 +42,8 @@ public class KFCWorldGen implements IWorldGenerator
 			
 			runGeneratorOre(salt_ore, world, random, chunkX, chunkZ, 10, 0, 120);
 			runGeneratorOre(seaweed_block, world, random, chunkX, chunkZ, 50, 0, 256);
-			runGeneratorHerbs(herbgarden, world, random, chunkX, chunkZ, 500, 60, 75);
+			//Min Height does not affect this Generator
+			runGeneratorHerbs(herbgarden, world, random, chunkX, chunkZ, 10, 60, 120);
 			//runGenerator(fruit_tree_avocado, world, random, chunkX, chunkZ, 100, 0, 256);
 			
 			break;
@@ -76,7 +77,7 @@ public class KFCWorldGen implements IWorldGenerator
 	{
 
 		if(minHeight > maxHeight || minHeight < 60 || maxHeight > 75) throw new IllegalArgumentException("Herbs generated out of bounds");
-		int heightDiff = maxHeight - minHeight + 1;
+		
 		
 		for(int i = 0; i < chance; i++)
 		{
@@ -89,39 +90,4 @@ public class KFCWorldGen implements IWorldGenerator
 	}
 	
 	
-	private void runGeneratorHerb(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int chance, int minHeight, int maxHeight)
-    {
-        if (minHeight > maxHeight || minHeight < 0 || maxHeight > 256)
-            throw new IllegalArgumentException("Ore generated out of bounds");
-        for (int i = 0; i < chance; i++)
-        {
-            int x = chunkX + rand.nextInt(16);
-            int z = chunkZ + rand.nextInt(16);
-            int y = 128;
-            int direction = 1;
-            if (world.getBlockState(new BlockPos(x, y, z)).getBlock() == Blocks.AIR)
-                direction = -1;
-            for (int yChunk = 8; yChunk < 16 && yChunk > 0; yChunk += direction)
-            {
-                int direction2 = 1;
-                if (world.getBlockState(new BlockPos(x, yChunk + 4, z)).getBlock() == Blocks.AIR)
-                    direction2 = -1;
-                for (int yOffset = 8; yOffset < 16 && yOffset > 0; yOffset += direction2)
-                    if (world.getBlockState(new BlockPos(x, yChunk * 16 + yOffset, z)).getBlock() == Blocks.GRASS &&
-                            (yChunk * 16 + yOffset + 1 < 256 || world.getBlockState(new BlockPos(x, yChunk * 16 +
-                                    yOffset + 1, z))
-                                    .getBlock() == Blocks.AIR))
-                    {
-                        y = yChunk * 16 + yOffset;
-                        break;
-                    }
-                if (world.getBlockState(new BlockPos(x, y, z)).getBlock() == Blocks.GRASS &&
-                        (y + 1 < 255 || world.getBlockState(new BlockPos(x, y + 1, z))
-                                .getBlock() == Blocks.AIR))
-                    break;
-            }
-
-            gen.generate(world, rand, new BlockPos(x, y+1, z));
-        }
-    }
 }
