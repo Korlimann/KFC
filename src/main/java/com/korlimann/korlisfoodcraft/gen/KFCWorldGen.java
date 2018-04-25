@@ -74,14 +74,15 @@ public class KFCWorldGen implements IWorldGenerator
 	
 	private void runGeneratorHerbs(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int chance, int minHeight, int maxHeight)
 	{
+
 		if(minHeight > maxHeight || minHeight < 60 || maxHeight > 75) throw new IllegalArgumentException("Herbs generated out of bounds");
 		int heightDiff = maxHeight - minHeight + 1;
 		
 		for(int i = 0; i < chance; i++)
 		{
-			int x = chunkX * 16 + rand.nextInt(16);
+			int x = 2 + chunkX * 16 + rand.nextInt(8);
 			int y = maxHeight;
-			int z = chunkZ * 16 + rand.nextInt(16);
+			int z = 2 + chunkZ * 16 + rand.nextInt(8);
 			
 			gen.generate(world, rand, new BlockPos(x, y, z));
 		}
