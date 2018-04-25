@@ -29,7 +29,7 @@ public class WorldGenHerbs extends WorldGenerator {
 			IBlockState state2 = worldIn.getBlockState(pos);
 			index++;
 			if(state1.getMaterial() == Material.GRASS && state2.getMaterial() == Material.AIR) canPlace = true;
-			if(canPlace) pos1 = new BlockPos(pos.getX(), i, pos.getZ());
+			if(canPlace) {pos1 = new BlockPos(pos.getX(), i, pos.getZ()); break;}
 		}			
 		if(block.canPlaceBlockAt(worldIn, pos1)) {
 			pos1.add(rand.nextInt(4) - rand.nextInt(4), 0, rand.nextInt(4) - rand.nextInt(4));
