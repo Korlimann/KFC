@@ -39,7 +39,7 @@ public class KFCWorldGen implements IWorldGenerator
 		case 0:
 			
 			runGeneratorOre(salt_ore, world, random, chunkX, chunkZ, 10, 0, 120);
-			runGeneratorOre(seaweed_block, world, random, chunkX, chunkZ, 50, 0, 256);
+			runGeneratorSeaweed(seaweed_block, world, random, chunkX, chunkZ, 50, 0, 256);
 			//Min Height does not affect this Generator
 			runGeneratorHerbs(herbgarden, world, random, chunkX, chunkZ, 10, 60, 120);
 			//runGenerator(fruit_tree_avocado, world, random, chunkX, chunkZ, 100, 0, 256);
@@ -71,6 +71,20 @@ public class KFCWorldGen implements IWorldGenerator
 		}
 	}
 	
+	private void runGeneratorSeaweed(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int chance, int minHeight, int maxHeight)
+	{
+		if(minHeight > maxHeight || minHeight < 0 || maxHeight > 256) throw new IllegalArgumentException("Ore generated out of bounds");
+		int heightDiff = maxHeight - minHeight + 1;
+		
+		for(int i = 0; i < chance; i++)
+		{
+			int x = 2+ chunkX * 16 + rand.nextInt(8);
+			int y = minHeight + rand.nextInt(heightDiff);
+			int z = 2+ chunkZ * 16 + rand.nextInt(8);
+			
+			gen.generate(world, rand, new BlockPos(x, y, z));
+		}
+	}
 	private void runGeneratorHerbs(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int chance, int minHeight, int maxHeight)
 	{
 
