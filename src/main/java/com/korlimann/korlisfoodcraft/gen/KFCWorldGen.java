@@ -74,7 +74,7 @@ public class KFCWorldGen implements IWorldGenerator
 	private void runGeneratorHerbs(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int chance, int minHeight, int maxHeight)
 	{
 
-		if(minHeight > maxHeight || minHeight < 60 || maxHeight > 75) throw new IllegalArgumentException("Herbs generated out of bounds");
+		if(minHeight > maxHeight || minHeight < 60) throw new IllegalArgumentException("Herbs generated out of bounds");
 		
 		
 		for(int i = 0; i < chance; i++)
