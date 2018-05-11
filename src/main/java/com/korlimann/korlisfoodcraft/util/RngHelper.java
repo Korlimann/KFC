@@ -23,4 +23,15 @@ public class RngHelper {
 		}
 		return tmp;
 	}
+	
+	
+	public static int getRepeatedPercentageRNG(Random rand, int percentage, int runs)
+	{
+		int tmp =0;
+		for(int i=0;i<runs;i++)
+		{
+			tmp+= getPercentageRNG(rand, percentage);
+		}
+		return tmp;
+	}
 }

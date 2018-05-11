@@ -44,10 +44,10 @@ public class KFCWorldGen implements IWorldGenerator
 			//ChancePerChunk is always given in percent
 			
 			
-			runGeneratorOre(salt_ore, world, random, chunkX, chunkZ, 500,85, 0, 120);
-			runGeneratorSeaweed(seaweed_block, world, random, chunkX, chunkZ, 180, 75, 0, 256);
+			runGeneratorOre(salt_ore, world, random, chunkX, chunkZ, 95,5,85, 0, 120);
+			runGeneratorSeaweed(seaweed_block, world, random, chunkX, chunkZ, 95,2, 75, 0, 256);
 			//Min Height does not affect this Generator
-			runGeneratorHerbs(herbgarden, world, random, chunkX, chunkZ, 175, 65, 60, 120);
+			runGeneratorHerbs(herbgarden, world, random, chunkX, chunkZ, 99,4, 65, 60, 120);
 			//runGenerator(fruit_tree_avocado, world, random, chunkX, chunkZ, 100, 0, 256);
 			
 			break;
@@ -62,14 +62,14 @@ public class KFCWorldGen implements IWorldGenerator
 		}
 	}
 	
-	private void runGeneratorOre(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int chancePerChunk,int chunkChance, int minHeight, int maxHeight)
+	private void runGeneratorOre(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int patchPercentage,int patchRuns,int chunkChance, int minHeight, int maxHeight)
 	{
 		if(RngHelper.getPercentageRNG(rand, chunkChance)>=1)
 		{
 		if(minHeight > maxHeight || minHeight < 0 || maxHeight > 256) throw new IllegalArgumentException("Ore generated out of bounds");
 		int heightDiff = maxHeight - minHeight + 1;
 		
-		int bpc = RngHelper.getPercentageRNG(rand, chancePerChunk);
+		int bpc = RngHelper.getRepeatedPercentageRNG(rand, patchPercentage, patchRuns);
 		for(int i = 0; i < bpc; i++)
 		{
 			int x = chunkX * 16 + rand.nextInt(16);
@@ -81,7 +81,7 @@ public class KFCWorldGen implements IWorldGenerator
 		}
 	}
 	
-	private void runGeneratorSeaweed(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int chancePerChunk,int chunkChance, int minHeight, int maxHeight)
+	private void runGeneratorSeaweed(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int patchPercentage,int patchRuns,int chunkChance, int minHeight, int maxHeight)
 	{
 		
 		if(RngHelper.getPercentageRNG(rand, chunkChance)>=1)
@@ -90,7 +90,7 @@ public class KFCWorldGen implements IWorldGenerator
 		int heightDiff = maxHeight - minHeight + 1;
 		
 		
-		int bpc = RngHelper.getPercentageRNG(rand, chancePerChunk);
+		int bpc = RngHelper.getRepeatedPercentageRNG(rand, patchPercentage, patchRuns);
 		for(int i = 0; i < bpc; i++)
 		{
 			int x = 2+ chunkX * 16 + rand.nextInt(8);
@@ -101,13 +101,13 @@ public class KFCWorldGen implements IWorldGenerator
 		
 		}}
 	}
-	private void runGeneratorHerbs(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int  chancePerChunk,int chunkChance, int minHeight, int maxHeight)
+	private void runGeneratorHerbs(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int patchPercentage,int patchRuns,int chunkChance, int minHeight, int maxHeight)
 	{
 		if(RngHelper.getPercentageRNG(rand, chunkChance)>=1)
 		{
 		if(minHeight > maxHeight || minHeight < 60) throw new IllegalArgumentException("Herbs generated out of bounds");
 		
-		int bpc = RngHelper.getPercentageRNG(rand, chancePerChunk);
+		int bpc = RngHelper.getRepeatedPercentageRNG(rand, patchPercentage, patchRuns);
 		
 		for(int i = 0; i < bpc; i++)
 		{
