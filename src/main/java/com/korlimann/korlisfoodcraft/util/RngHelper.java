@@ -10,6 +10,7 @@ public class RngHelper {
 	}
 	
 	//returns blocks per chunk for the given percentage and the Worldgen rng
+	//anything above 100 has at least one block(above 200 has 2 Blocks etc..)
 	public static int getPercentageRNG(Random rand, int percentage)
 	{
 		int tmp =0;
@@ -24,7 +25,7 @@ public class RngHelper {
 		return tmp;
 	}
 	
-	
+	//runs the PercentageRNG the given number of times
 	public static int getRepeatedPercentageRNG(Random rand, int percentage, int runs)
 	{
 		int tmp =0;

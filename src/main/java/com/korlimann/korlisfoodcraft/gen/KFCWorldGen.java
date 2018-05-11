@@ -40,14 +40,14 @@ public class KFCWorldGen implements IWorldGenerator
 		case 0:
 			//chunkChance is the percentage how likely it is to spawn a patch in a Chunk
 			//any ChunkChance higher then including 100 is always true
-			//ChancePerChunk defines how many blocks are likely to spawn per Chunk
-			//ChancePerChunk is always given in percent
+			//PatchPercentage is the percentage the generator gets for blocks in a Chunk
+			//PatchRuns is the number of times the PercentageRNG runs to get the Blocks per Chunk
 			
 			
-			runGeneratorOre(salt_ore, world, random, chunkX, chunkZ, 95,5,85, 0, 120);
-			runGeneratorSeaweed(seaweed_block, world, random, chunkX, chunkZ, 95,2, 75, 0, 256);
+			runGeneratorOre(salt_ore, world, random, chunkX, chunkZ, 95,5, 85, 0, 120);
+			runGeneratorSeaweed(seaweed_block, world, random, chunkX, chunkZ, 95, 2, 75, 0, 256);
 			//Min Height does not affect this Generator
-			runGeneratorHerbs(herbgarden, world, random, chunkX, chunkZ, 99,4, 65, 60, 120);
+			runGeneratorHerbs(herbgarden, world, random, chunkX, chunkZ, 99, 4, 65, 60, 120);
 			//runGenerator(fruit_tree_avocado, world, random, chunkX, chunkZ, 100, 0, 256);
 			
 			break;
