@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
+import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
@@ -14,11 +15,15 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -115,13 +120,15 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
     @Override
     public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
     {
-        
-        drops.add(new ItemStack(fruit));
+        if(((Integer)state.getValue(AGE)).intValue()==2)
+        {
+        	drops.add(new ItemStack(fruit));
+        }
     }
 
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(Items.DYE, 1, EnumDyeColor.BROWN.getDyeDamage());
+        return new ItemStack(fruit);
     }
     
     /**
@@ -161,12 +168,23 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
         return AABB;
     }
 	
+	@Override
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
+			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		if(((Integer)state.getValue(AGE)).intValue()==2) {
+			worldIn.spawnEntity(new EntityItem(worldIn,pos.getX(),pos.getY()+1,pos.getZ(),new ItemStack(fruit)));
+			return true;
+		}
+		return false;
+		
+	}
+	
 	//Only Call When a Value for this already exists in BlockBaseFruit.EnumType
 	//Automatically Creates Sapling that creates a FruitTree
 	//Only Call once for each Fruit
 	public BlockFruitSapling createFruitTreeAndSapling()
 	{
-		BlockFruitSapling ret = new BlockFruitSapling(this.getUnlocalizedName()+"Sapling",this);
+		BlockFruitSapling ret = new BlockFruitSapling(this.getTypeName()+"_sapling",this);
 		
 		return ret;
 	}

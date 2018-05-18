@@ -165,12 +165,11 @@ public class WorldGenFruitTree extends WorldGenTrees {
                     }
                     fruitPlaces.removeAll(toRem);
                     toRem.clear();
-                    Random random = new Random();
                     for(int index = 0; index < 5; index++) {
                     	if(!(fruitPlaces.size()<3))
                     	{
-                    		int place = random.nextInt(fruitPlaces.size());
-                    		placeFruit(worldIn, random.nextInt(3),fruitPlaces.get(place));
+                    		int place = rand.nextInt(fruitPlaces.size());
+                    		placeFruit(worldIn, rand.nextInt(3),fruitPlaces.get(place));
                     		fruitPlaces.remove(fruitPlaces.get(place));    
                     	}
                     }
