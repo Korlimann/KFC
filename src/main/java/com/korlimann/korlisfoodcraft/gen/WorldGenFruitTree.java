@@ -43,16 +43,24 @@ public class WorldGenFruitTree extends WorldGenTrees {
         this.metaLeaves = DEFAULT_LEAF;
         this.fruit = fruit;
     }
-	
+	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position)
     {
         int i = rand.nextInt(3) + this.minTreeHeight;
         boolean flag = true;
 
+        //DEBUG
+        //int checkY =0;
+        
+        
         if (position.getY() >= 1 && position.getY() + i + 1 <= worldIn.getHeight())
         {
             for (int j = position.getY(); j <= position.getY() + 1 + i; ++j)
             {
+            	//DEBUG
+            	//checkY++;
+            	
+            	
                 int k = 1;
 
                 if (j == position.getY())
@@ -85,13 +93,18 @@ public class WorldGenFruitTree extends WorldGenTrees {
                     }
                 }
             }
-
+            //DEBUG
+            //System.out.println("CheckY: " + checkY);
             if (!flag)
             {
                 return false;
             }
             else
             {
+            	//DEBUG
+            	//System.out.println("Check x");
+            	
+            	
                 IBlockState state = worldIn.getBlockState(position.down());
 
                 if (state.getBlock().canSustainPlant(state, worldIn, position.down(), net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING) && position.getY() < worldIn.getHeight() - i - 1)
@@ -138,6 +151,10 @@ public class WorldGenFruitTree extends WorldGenTrees {
                             this.setBlockAndNotifyAdequately(worldIn, position.up(j3), this.metaWood);                            
                         }
                     }
+                    
+                    //DEBUG
+                    System.out.println("pass NoFruit");
+                    
                     List<BlockPos> toRem = new ArrayList<BlockPos>();
                     for(BlockPos blockpos:fruitPlaces) {
                     	
@@ -149,7 +166,7 @@ public class WorldGenFruitTree extends WorldGenTrees {
                     fruitPlaces.removeAll(toRem);
                     toRem.clear();
                     Random random = new Random();
-                    for(int index = 0; index < 5; i++) {
+                    for(int index = 0; index < 5; index++) {
                     	if(!(fruitPlaces.size()<3))
                     	{
                     		int place = random.nextInt(fruitPlaces.size());
