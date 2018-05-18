@@ -112,7 +112,7 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
     @Override
     public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
     {
-        super.getDrops(drops, world, pos, state, fortune);
+        
         drops.add(new ItemStack(fruit));
     }
 

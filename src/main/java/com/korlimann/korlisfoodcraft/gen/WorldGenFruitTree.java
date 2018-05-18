@@ -1,7 +1,11 @@
 package com.korlimann.korlisfoodcraft.gen;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
+
+import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruit;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCocoa;
@@ -134,12 +138,16 @@ public class WorldGenFruitTree extends WorldGenTrees {
                             this.setBlockAndNotifyAdequately(worldIn, position.up(j3), this.metaWood);                            
                         }
                     }
+                    List<BlockPos> toRem = new ArrayList<BlockPos>();
                     for(BlockPos blockpos:fruitPlaces) {
+                    	
                     	IBlockState canPlaceFruit = worldIn.getBlockState(blockpos);                                        
                         if(!(canPlaceFruit.getMaterial() == Material.AIR)) {
-                        	fruitPlaces.remove(blockpos);
+                        	toRem.add(blockpos);
                         }
                     }
+                    fruitPlaces.removeAll(toRem);
+                    toRem.clear();
                     Random random = new Random();
                     for(int index = 0; index < 5; i++) {
                     	if(!(fruitPlaces.size()<3))
@@ -161,6 +169,6 @@ public class WorldGenFruitTree extends WorldGenTrees {
         }
 	 
 	public void placeFruit(World worldIn, int p_181652_2_, BlockPos pos) {
-		this.setBlockAndNotifyAdequately(worldIn, pos, fruit.getDefaultState().withProperty(BlockCocoa.AGE, Integer.valueOf(p_181652_2_)));
+		this.setBlockAndNotifyAdequately(worldIn, pos, fruit.getDefaultState().withProperty(BlockBaseFruit.AGE, Integer.valueOf(p_181652_2_)));
 	}
 }
