@@ -32,12 +32,15 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 	public Item fruit;
 	public boolean canGrow;
 	public boolean canUseBonemeal;
+	private String type;
+	
 	
 	public BlockBaseFruit(String name, Material materialIn, double x1, double y1, double z1, double x2, double y2, double z2, Item fruit, boolean grow, boolean bonemeal) {
 		super(materialIn);
 		this.fruit = fruit;
 		this.canGrow = grow;
 		this.canUseBonemeal = bonemeal;
+		this.type=name;
 		AABB = new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
         this.setTickRandomly(true);
@@ -159,13 +162,18 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
     }
 	
 	//Only Call When a Value for this already exists in BlockBaseFruit.EnumType
-	//Automaticly Creates Sapling that creates a FruitTree
+	//Automatically Creates Sapling that creates a FruitTree
 	//Only Call once for each Fruit
 	public BlockFruitSapling createFruitTreeAndSapling()
 	{
 		BlockFruitSapling ret = new BlockFruitSapling(this.getUnlocalizedName()+"Sapling",this);
 		
 		return ret;
+	}
+	
+	public String getTypeName()
+	{
+		return type;
 	}
 	
 	public static enum EnumType implements IStringSerializable
@@ -197,8 +205,8 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 			if(!(fruit instanceof BlockBaseFruit))
 				fruit = ModBlocks.AVOCADO_BLOCK;
             this.meta = metaIn;
-            this.name = fruit.getUnlocalizedName();
-            this.unlocalizedName = fruit.getUnlocalizedName();;
+            this.name = ((BlockBaseFruit)fruit).getTypeName();
+            this.unlocalizedName = fruit.getUnlocalizedName();
             this.mapColor = mapColorIn;
             
             this.fruit = (BlockBaseFruit)fruit;

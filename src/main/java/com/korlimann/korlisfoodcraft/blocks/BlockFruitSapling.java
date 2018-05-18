@@ -18,7 +18,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BlockFruitSapling extends BlockSapling implements IHasModel {
 
-	public static final PropertyEnum<BlockBaseFruit.EnumType> TYPE = PropertyEnum.<BlockBaseFruit.EnumType>create("fruitType", BlockBaseFruit.EnumType.class);
+	public static final PropertyEnum<BlockBaseFruit.EnumType> TYPE = PropertyEnum.<BlockBaseFruit.EnumType>create("fruittype", BlockBaseFruit.EnumType.class);
 	
 	
 	public BlockFruitSapling(String name, BlockBaseFruit fruit) {

@@ -153,7 +153,7 @@ public class WorldGenFruitTree extends WorldGenTrees {
                     }
                     
                     //DEBUG
-                    System.out.println("pass NoFruit");
+                    //System.out.println("pass NoFruit");
                     
                     List<BlockPos> toRem = new ArrayList<BlockPos>();
                     for(BlockPos blockpos:fruitPlaces) {
