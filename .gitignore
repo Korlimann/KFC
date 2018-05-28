@@ -30,3 +30,5 @@
     minecraft
 /bin/
 /logs/
+*.log
+logs
