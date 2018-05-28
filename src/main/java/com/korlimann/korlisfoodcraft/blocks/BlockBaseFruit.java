@@ -178,6 +178,7 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if(((Integer)state.getValue(AGE)).intValue()==2) {
 			playerIn.addItemStackToInventory(new ItemStack(fruit));
+			worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(0)), 2);
 			return true;
 		}
 		return false;

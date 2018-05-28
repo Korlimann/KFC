@@ -6,6 +6,9 @@ import java.util.List;
 
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCake;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropCorn;
+import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropHops;
+import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropMalt;
+import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropOnion;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropRice;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruit;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSaltOre;
@@ -34,6 +37,9 @@ public class ModBlocks {
 	//Crops
 	public static final BlockBaseCropCorn CROP_CORN = new BlockBaseCropCorn();
 	public static final BlockBaseCropRice CROP_RICE = new BlockBaseCropRice();
+	public static final BlockBaseCropHops CROP_HOPS = new BlockBaseCropHops();
+	public static final BlockBaseCropMalt CROP_MALT = new BlockBaseCropMalt();
+	public static final BlockBaseCropOnion CROP_ONION = new BlockBaseCropOnion();
 	
 	
 	//"Cakes"

@@ -6,6 +6,7 @@ import java.util.List;
 import com.korlimann.korlisfoodcraft.items.ItemBase;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFood;
 import com.korlimann.korlisfoodcraft.items.ItemBaseSeed;
+import com.korlimann.korlisfoodcraft.items.ItemBaseSeedFood;
 import com.korlimann.korlisfoodcraft.items.ItemBlockBaseSpecial;
 
 import net.minecraft.init.Blocks;
@@ -25,8 +26,8 @@ public class ModItems {
 	public static final Item AVOCADO = new ItemBaseFood("avocado", 3, 0.3f, false); //Wächst an Bäumen - Einzeln im CT = Seeds für Avocadobaum
 	public static final Item GURKE = new ItemBase("gurke"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	public static final Item SEAWEED = new ItemBlockBaseSpecial(ModBlocks.SEAWEED_BLOCK, "seaweed"); //Droppt von (neuen?) Unterwasserpflanzen
-	public static final Item CORN_SEED = new ItemBaseSeed(ModBlocks.CROP_CORN, Blocks.FARMLAND, "corn_seed"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
-	public static final Item CORN = new ItemBaseFood("corn", 2, 0.3f, false);
+	//public static final Item CORN_SEED = new ItemBaseSeed(ModBlocks.CROP_CORN, Blocks.FARMLAND, "corn_seed"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
+	public static final Item CORN = new ItemBaseSeedFood("corn", ModBlocks.CROP_CORN, Blocks.FARMLAND, 2, 0.0f);
 	public static final Item OLIVE = new ItemBase("olive"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	public static final Item TOMATO = new ItemBaseFood("tomato", 2, 0.3f, false); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	public static final Item CHAMPIGNONS = new ItemBase("champignons"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
@@ -84,16 +85,17 @@ public class ModItems {
 	public static final Item POMMES = new ItemBaseFood("pommes", 2, 0.6f, false);
 	public static final Item RADLER = new ItemBase("radler");
 	public static final Item SAUSAGE = new ItemBaseFood("sausage", 2, 0.6f, false);
-	public static final Item TOMATOSEEDS = new ItemBase("tomatoseeds");
+	//public static final Item TOMATOSEEDS = new ItemBase("tomatoseeds");
+	public static final Item ONION = new ItemBaseSeedFood("onion", ModBlocks.CROP_ONION, Blocks.FARMLAND, 2, 0.0f);
 	
 	public static final Item RAW_FRIES = new ItemBaseFood("raw_fries", 2, 0.6f, false);
 	public static final Item PEPPER = new ItemBaseFood("pepper", 2, 0.6f, false);
 	public static final Item PARSLEY = new ItemBaseFood("parsley", 2, 0.6f, false);
 	public static final Item OREGANO = new ItemBaseFood("oregano", 2, 0.6f, false);
 	public static final Item MISCHSCHUESSEL = new ItemBase("mischschuessel");
-	public static final Item MALT = new ItemBaseFood("malt", 2, 0.6f, false);
+	public static final Item MALT = new ItemBaseSeedFood("malt", ModBlocks.CROP_MALT, Blocks.FARMLAND, 2, 0.0f);
 	public static final Item LEEK = new ItemBaseFood("leek", 2, 0.6f, false);
-	public static final Item HOPS = new ItemBaseFood("hops", 2, 0.6f, false);
+	public static final Item HOPS = new ItemBaseSeedFood("hops", ModBlocks.CROP_HOPS, Blocks.FARMLAND, 2, 0.0f);
 	public static final Item FLOUR = new ItemBaseFood("flour", 2, 0.6f, false);
 	public static final Item EISBERGSALAT = new ItemBaseFood("eisbergsalat", 2, 0.6f, false);
 	public static final Item DOUGH = new ItemBase("dough");

@@ -64,6 +64,7 @@ item.flour.name=Flour
 item.eisbergsalat.name=Eisbergsalat
 item.dough.name=Dough
 item.oregano.name=Oregano
+item.onion.name=Onion
 itemGroup.korlissushicraft=Korli's FoodCraft
 tile.kitchenboard_block.name= Kitchen Board
 tile.sunflower.name=Sunflower
