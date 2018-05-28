@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+           "item": "kfc:rice"
+        },
+        {
+           "item": "minecraft:fish",
+           "data": 1
+        }
+    ],
+    "result": {
+        "item": "kfc:lachssushi",
+        "count": 1
+    }
+}

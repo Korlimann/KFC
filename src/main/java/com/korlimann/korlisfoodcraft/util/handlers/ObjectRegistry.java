@@ -46,7 +46,7 @@ public class ObjectRegistry {
 	}
 	
 	public static void prepareItems() {
-		//items.add(ModItems.REIS);
+		items.add(ModItems.RICE);
 		items.add(ModItems.AVOCADO);
 		//items.add(ModItems.GURKE);
 		items.add(ModItems.SEAWEED);
