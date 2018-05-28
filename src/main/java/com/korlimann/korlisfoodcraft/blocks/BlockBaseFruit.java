@@ -79,6 +79,11 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
         return false;
     }
 	
+	@Override
+	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
+		// TODO Auto-generated method stub
+		return NULL_AABB;
+	}
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
         if (!this.canBlockStay(worldIn, pos, state))
@@ -172,7 +177,7 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if(((Integer)state.getValue(AGE)).intValue()==2) {
-			worldIn.spawnEntity(new EntityItem(worldIn,pos.getX(),pos.getY()+1,pos.getZ(),new ItemStack(fruit)));
+			playerIn.addItemStackToInventory(new ItemStack(fruit));
 			return true;
 		}
 		return false;

@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 
 public class BlockHerbgarden extends BlockBush implements IHasModel {
 
-
+	public static final AxisAlignedBB AABB = new AxisAlignedBB(0.0625D,0,0.0625D,0.9375D,0.9375D,0.9375D);
 	
 	public BlockHerbgarden(String name) {
 		setUnlocalizedName(name);
@@ -124,6 +124,11 @@ public class BlockHerbgarden extends BlockBush implements IHasModel {
 	@Override
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
 		return canBlockStay(worldIn, pos, null);
+	}
+	
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+		return AABB;
 	}
 	
 

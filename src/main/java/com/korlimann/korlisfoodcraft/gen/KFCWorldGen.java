@@ -30,7 +30,7 @@ public class KFCWorldGen implements IWorldGenerator
 		salt_ore = new WorldGenMinable(ModBlocks.SALT_ORE.getDefaultState(), 15);
 		seaweed_block = new WorldGenSeaweed(ModBlocks.SEAWEED_BLOCK,10);
 		herbgarden = new WorldGenHerbs(ModBlocks.HERBGARDEN);
-		fruit_tree_avocado = new WorldGenFruitTree(true, 6, ModBlocks.AVOCADO_BLOCK);
+		fruit_tree_avocado = new WorldGenFruitTree(true, 5, ModBlocks.AVOCADO_BLOCK);
 	}
 
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) 

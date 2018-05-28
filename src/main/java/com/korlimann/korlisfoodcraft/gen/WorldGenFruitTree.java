@@ -46,7 +46,7 @@ public class WorldGenFruitTree extends WorldGenTrees {
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position)
     {
-        int i = rand.nextInt(3) + this.minTreeHeight;
+        int i = rand.nextInt(2) + this.minTreeHeight;
         boolean flag = true;
 
         //DEBUG

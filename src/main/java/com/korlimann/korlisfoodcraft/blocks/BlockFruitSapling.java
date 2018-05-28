@@ -77,7 +77,7 @@ public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable
 	    {
 	        if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
 
-	        WorldGenerator worldgenerator = new WorldGenFruitTree(true, 3, ((BlockBaseFruit.EnumType)state.getValue(TYPE)).getFruit());
+	        WorldGenerator worldgenerator = new WorldGenFruitTree(true, 5, ((BlockBaseFruit.EnumType)state.getValue(TYPE)).getFruit());
 
 	        int i = 0;
 	        int j = 0;
