@@ -50,11 +50,11 @@ public class BlockHerbgarden extends BlockBush implements IHasModel {
 				if(r1 == 3) drops.add(new ItemStack(ModItems.HOPS));
 				if(r1 == 4) drops.add(new ItemStack(ModItems.LEEK));
 				if(r1 == 5) drops.add(new ItemStack(ModItems.MALT));
-				if(r1 == 6) drops.add(new ItemStack(ModItems.OLIVE));
-				if(r1 == 7) drops.add(new ItemStack(ModItems.OREGANO));
-				if(r1 == 8) drops.add(new ItemStack(ModItems.PARSLEY));
-				if(r1 == 9) drops.add(new ItemStack(ModItems.PEPPER));
-				if(r1 == 10) drops.add(new ItemStack(ModItems.TOMATO));
+				if(r1 == 6) drops.add(new ItemStack(ModItems.OREGANO));
+				if(r1 == 7) drops.add(new ItemStack(ModItems.PARSLEY));
+				if(r1 == 8) drops.add(new ItemStack(ModItems.PEPPER));
+				if(r1 == 9) drops.add(new ItemStack(ModItems.TOMATO));
+				if(r1 == 10) drops.add(new ItemStack(ModItems.RICE));
 			}
 		}
 		else if(rand < 4) {
@@ -65,11 +65,11 @@ public class BlockHerbgarden extends BlockBush implements IHasModel {
 				if(r2 == 3) drops.add(new ItemStack(ModItems.HOPS));
 				if(r2 == 4) drops.add(new ItemStack(ModItems.LEEK));
 				if(r2 == 5) drops.add(new ItemStack(ModItems.MALT));
-				if(r2 == 6) drops.add(new ItemStack(ModItems.OLIVE));
-				if(r2 == 7) drops.add(new ItemStack(ModItems.OREGANO));
-				if(r2 == 8) drops.add(new ItemStack(ModItems.PARSLEY));
-				if(r2 == 9) drops.add(new ItemStack(ModItems.PEPPER));
-				if(r2 == 10) drops.add(new ItemStack(ModItems.TOMATO));
+				if(r2 == 6) drops.add(new ItemStack(ModItems.OREGANO));
+				if(r2 == 7) drops.add(new ItemStack(ModItems.PARSLEY));
+				if(r2 == 8) drops.add(new ItemStack(ModItems.PEPPER));
+				if(r2 == 9) drops.add(new ItemStack(ModItems.TOMATO));
+				if(r2 == 10) drops.add(new ItemStack(ModItems.RICE));
 			}
 		}
 	}

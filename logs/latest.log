@@ -1,55 +1,108 @@
-[10:33:20] [main/INFO]: Logging in with username & password
-[10:33:26] [main/INFO]: Setting user: Felix__Argyle
-[10:33:32] [main/WARN]: Skipping bad option: lastServer:
-[10:33:32] [main/INFO]: LWJGL Version: 2.9.4
-[10:33:36] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
-[10:33:44] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[10:33:45] [Thread-5/INFO]: Initializing LWJGL OpenAL
-[10:33:45] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[10:33:45] [Thread-5/INFO]: OpenAL initialized.
-[10:33:45] [Sound Library Loader/INFO]: Sound engine started
-[10:33:53] [main/INFO]: Created: 512x512 textures-atlas
-[10:33:55] [main/WARN]: Skipping bad option: lastServer:
-[10:33:55] [main/INFO]: Narrator library for x64 successfully loaded
-[10:34:31] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
-[10:34:31] [Server thread/INFO]: Generating keypair
-[10:34:32] [Server thread/INFO]: Loaded 488 advancements
-[10:34:35] [Server thread/INFO]: Preparing start region for level 0
-[10:34:36] [Server thread/INFO]: Preparing spawn area: 8%
-[10:34:37] [Server thread/INFO]: Preparing spawn area: 19%
-[10:34:38] [Server thread/INFO]: Preparing spawn area: 29%
-[10:34:39] [Server thread/INFO]: Preparing spawn area: 37%
-[10:34:40] [Server thread/INFO]: Preparing spawn area: 49%
-[10:34:41] [Server thread/INFO]: Preparing spawn area: 65%
-[10:34:42] [Server thread/INFO]: Preparing spawn area: 85%
-[10:34:43] [Server thread/INFO]: Changing view distance to 6, from 10
-[10:34:45] [Server thread/INFO]: Felix__Argyle[local:E:ddc13e87] logged in with entity id 1947 at (163.5, 65.0, -222.5)
-[10:34:45] [Server thread/INFO]: Felix__Argyle joined the game
-[10:34:46] [Server thread/INFO]: Saving and pausing game...
-[10:34:46] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/overworld
-[10:34:46] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_nether
-[10:34:46] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_end
-[10:34:46] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2575ms behind, skipping 51 tick(s)
-[10:35:59] [main/INFO]: [CHAT] /time, /title
-[10:36:02] [main/INFO]: [CHAT] /gamemode, /gamerule
-[10:36:03] [main/INFO]: [CHAT] /gamemode, /gamerule
-[10:36:15] [main/INFO]: [CHAT] No game rule called 'tick' is available
-[10:36:16] [Server thread/INFO]: Saving and pausing game...
-[10:36:16] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/overworld
-[10:36:16] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_nether
-[10:36:16] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_end
-[10:36:50] [Server thread/INFO]: [Felix__Argyle: Game rule randomTickSpeed has been updated to 3000]
-[10:36:50] [main/INFO]: [CHAT] Game rule randomTickSpeed has been updated to 3000
-[10:36:54] [Server thread/INFO]: Saving and pausing game...
-[10:36:54] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/overworld
-[10:36:55] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_nether
-[10:36:55] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_end
-[10:36:55] [main/INFO]: Stopping!
-[10:36:55] [Server thread/INFO]: Stopping server
-[10:36:55] [Server thread/INFO]: Saving players
-[10:36:55] [Server thread/INFO]: Saving worlds
-[10:36:55] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/overworld
-[10:36:55] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_nether
-[10:36:55] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_end
-[10:36:56] [main/INFO]: SoundSystem shutting down...
-[10:36:56] [main/WARN]: Author: Paul Lamb, www.paulscode.com
+[12:09:04] [main/INFO]: Logging in with username & password
+[12:09:09] [main/INFO]: Setting user: Felix__Argyle
+[12:09:15] [main/WARN]: Skipping bad option: lastServer:
+[12:09:15] [main/INFO]: LWJGL Version: 2.9.4
+[12:09:19] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
+[12:09:23] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[12:09:23] [Thread-5/INFO]: Initializing LWJGL OpenAL
+[12:09:23] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[12:09:23] [Thread-5/INFO]: OpenAL initialized.
+[12:09:23] [Sound Library Loader/INFO]: Sound engine started
+[12:09:31] [main/INFO]: Created: 512x512 textures-atlas
+[12:09:34] [main/WARN]: Skipping bad option: lastServer:
+[12:09:34] [main/INFO]: Narrator library for x64 successfully loaded
+[12:09:41] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[12:09:41] [Server thread/INFO]: Generating keypair
+[12:09:42] [Server thread/INFO]: Loaded 488 advancements
+[12:09:42] [Server thread/INFO]: Preparing start region for level 0
+[12:09:43] [Server thread/INFO]: Preparing spawn area: 24%
+[12:09:44] [Server thread/INFO]: Changing view distance to 6, from 10
+[12:09:45] [Server thread/INFO]: Felix__Argyle[local:E:75caa37c] logged in with entity id 213 at (121.07493448680691, 65.0, -241.02714739273185)
+[12:09:45] [Server thread/INFO]: Felix__Argyle joined the game
+[12:09:47] [Server thread/INFO]: Saving and pausing game...
+[12:09:47] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/overworld
+[12:09:47] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_nether
+[12:09:47] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_end
+[12:10:28] [main/INFO]: Loaded 10 advancements
+[12:10:57] [Server thread/INFO]: Saving and pausing game...
+[12:10:57] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/overworld
+[12:10:57] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_nether
+[12:10:57] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_end
+[12:10:58] [Server thread/INFO]: Stopping server
+[12:10:58] [Server thread/INFO]: Saving players
+[12:10:58] [Server thread/INFO]: Felix__Argyle lost connection: Disconnected
+[12:10:58] [Server thread/INFO]: Felix__Argyle left the game
+[12:10:58] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[12:10:58] [Server thread/INFO]: Saving worlds
+[12:10:58] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/overworld
+[12:10:58] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_nether
+[12:10:58] [Server thread/INFO]: Saving chunks for level 'ibimsschlau'/the_end
+[12:11:07] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[12:11:07] [Server thread/INFO]: Generating keypair
+[12:11:08] [Server thread/INFO]: Loaded 488 advancements
+[12:11:08] [Server thread/INFO]: Preparing start region for level 0
+[12:11:09] [Server thread/INFO]: Preparing spawn area: 6%
+[12:11:10] [Server thread/INFO]: Preparing spawn area: 13%
+[12:11:11] [Server thread/INFO]: Preparing spawn area: 21%
+[12:11:12] [Server thread/INFO]: Preparing spawn area: 29%
+[12:11:13] [Server thread/INFO]: Preparing spawn area: 38%
+[12:11:14] [Server thread/INFO]: Preparing spawn area: 46%
+[12:11:15] [Server thread/INFO]: Preparing spawn area: 55%
+[12:11:16] [Server thread/INFO]: Preparing spawn area: 66%
+[12:11:17] [Server thread/INFO]: Preparing spawn area: 77%
+[12:11:18] [Server thread/INFO]: Preparing spawn area: 88%
+[12:11:19] [Server thread/INFO]: Preparing spawn area: 99%
+[12:11:19] [Server thread/INFO]: Changing view distance to 6, from 10
+[12:11:20] [Server thread/INFO]: Felix__Argyle[local:E:71a812e2] logged in with entity id 1101 at (180.5, 88.0, 210.5)
+[12:11:20] [Server thread/INFO]: Felix__Argyle joined the game
+[12:11:23] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3040ms behind, skipping 60 tick(s)
+[12:12:06] [main/INFO]: Loaded 12 advancements
+[12:12:20] [Server thread/INFO]: Saving and pausing game...
+[12:12:20] [Server thread/INFO]: Saving chunks for level 'Showcase'/overworld
+[12:12:20] [Server thread/INFO]: Saving chunks for level 'Showcase'/the_nether
+[12:12:21] [Server thread/INFO]: Saving chunks for level 'Showcase'/the_end
+[12:12:21] [Server thread/INFO]: Stopping server
+[12:12:21] [Server thread/INFO]: Saving players
+[12:12:21] [Server thread/INFO]: Felix__Argyle lost connection: Disconnected
+[12:12:21] [Server thread/INFO]: Felix__Argyle left the game
+[12:12:21] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[12:12:21] [Server thread/INFO]: Saving worlds
+[12:12:21] [Server thread/INFO]: Saving chunks for level 'Showcase'/overworld
+[12:12:21] [Server thread/INFO]: Saving chunks for level 'Showcase'/the_nether
+[12:12:21] [Server thread/INFO]: Saving chunks for level 'Showcase'/the_end
+[12:13:01] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[12:13:01] [Server thread/INFO]: Generating keypair
+[12:13:02] [Server thread/INFO]: Loaded 488 advancements
+[12:13:02] [Server thread/INFO]: Preparing start region for level 0
+[12:13:03] [Server thread/INFO]: Changing view distance to 6, from 10
+[12:13:03] [Server thread/INFO]: Felix__Argyle[local:E:3b50f63d] logged in with entity id 7372 at (-103.5, 4.0, 974.5)
+[12:13:03] [Server thread/INFO]: Felix__Argyle joined the game
+[12:13:04] [Server thread/INFO]: Saving and pausing game...
+[12:13:04] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
+[12:13:04] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
+[12:13:04] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
+[12:14:12] [main/INFO]: Loaded 12 advancements
+[12:16:54] [Server thread/INFO]: Saving and pausing game...
+[12:16:54] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
+[12:16:54] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
+[12:16:54] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
+[12:18:45] [main/INFO]: Loaded 21 advancements
+[12:18:45] [main/INFO]: Loaded 40 advancements
+[12:19:38] [main/INFO]: Loaded 41 advancements
+[12:20:19] [Server thread/INFO]: Felix__Argyle has made the advancement [Monster Hunter]
+[12:20:19] [main/INFO]: [CHAT] Felix__Argyle has made the advancement [Monster Hunter]
+[12:20:19] [main/INFO]: Loaded 51 advancements
+[12:20:29] [main/INFO]: Loaded 53 advancements
+[12:20:36] [Server thread/INFO]: Saving and pausing game...
+[12:20:36] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
+[12:20:36] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
+[12:20:36] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
+[12:20:40] [Server thread/INFO]: Changing difficulty to PEACEFUL, from NORMAL
+[12:26:02] [Server thread/INFO]: [Felix__Argyle: Set the time to 1000]
+[12:26:02] [main/INFO]: [CHAT] Set the time to 1000
+[12:26:07] [Server thread/INFO]: [Felix__Argyle: Game rule doDaylightCycle has been updated to false]
+[12:26:07] [main/INFO]: [CHAT] Game rule doDaylightCycle has been updated to false
+[12:30:43] [Server thread/INFO]: Saving and pausing game...
+[12:30:43] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
+[12:30:43] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
+[12:30:43] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
