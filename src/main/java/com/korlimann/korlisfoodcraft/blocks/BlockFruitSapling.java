@@ -25,15 +25,16 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable {
 
-	public static final PropertyEnum<BlockBaseFruit.EnumType> TYPE = PropertyEnum.<BlockBaseFruit.EnumType>create("fruittype", BlockBaseFruit.EnumType.class);
+	
 	 public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
 	    protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
-	
+	public BlockBaseFruit fruit;
 	public BlockFruitSapling(String name, BlockBaseFruit fruit) {
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(Main.korlissushicraft);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, BlockBaseFruit.EnumType.getByName(fruit.getTypeName())).withProperty(STAGE, Integer.valueOf(0)));
+		this.fruit=fruit;
+		this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 	}
 	
 	@Override
@@ -45,7 +46,7 @@ public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable
 	@Override
 	protected BlockStateContainer createBlockState() {
 		// TODO Auto-generated method stub
-		return new BlockStateContainer(this, new IProperty[] {TYPE, STAGE});
+		return new BlockStateContainer(this, new IProperty[] {STAGE});
 	}
 	
 	@Override
@@ -63,7 +64,7 @@ public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
 		// TODO Auto-generated method stub
-		return this.getDefaultState().withProperty(TYPE, BlockBaseFruit.EnumType.byMetadata(meta &1)).withProperty(STAGE, Integer.valueOf(meta & 8) >> 3);
+		return this.getDefaultState().withProperty(STAGE, Integer.valueOf(meta & 8) >> 3);
 	}
 	
 	@Override
@@ -77,7 +78,7 @@ public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable
 	    {
 	        if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
 
-	        WorldGenerator worldgenerator = new WorldGenFruitTree(true, 5, ((BlockBaseFruit.EnumType)state.getValue(TYPE)).getFruit());
+	        WorldGenerator worldgenerator = new WorldGenFruitTree(true, 5, fruit);
 
 	        int i = 0;
 	        int j = 0;
@@ -157,7 +158,6 @@ public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable
 	public int getMetaFromState(IBlockState state) {
 		// TODO Auto-generated method stub
 		int i = 0;
-        i = i | ((BlockBaseFruit.EnumType)state.getValue(TYPE)).getMetadata();
         i = i | ((Integer)state.getValue(STAGE)).intValue() << 3;
         return i;
 	}
