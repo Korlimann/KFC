@@ -12462,3 +12462,59 @@
 [12:29:20] [Server thread/DEBUG] [FML]: Gathering id map for writing to world save Showcase2.0
 [12:30:05] [Server thread/DEBUG] [FML]: Gathering id map for writing to world save Showcase2.0
 [12:30:43] [Server thread/DEBUG] [FML]: Gathering id map for writing to world save Showcase2.0
+[13:08:07] [Server thread/TRACE] [minecraft]: Sending event FMLServerStoppingEvent to mod minecraft
+[13:08:07] [Server thread/TRACE] [minecraft]: Sent event FMLServerStoppingEvent to mod minecraft
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ServerStopping - Minecraft took 0.001s
+[13:08:07] [Server thread/TRACE] [mcp]: Sending event FMLServerStoppingEvent to mod mcp
+[13:08:07] [Server thread/TRACE] [mcp]: Sent event FMLServerStoppingEvent to mod mcp
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ServerStopping - Minecraft Coder Pack took 0.000s
+[13:08:07] [Server thread/TRACE] [FML]: Sending event FMLServerStoppingEvent to mod FML
+[13:08:07] [Server thread/TRACE] [FML]: Sent event FMLServerStoppingEvent to mod FML
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ServerStopping - Forge Mod Loader took 0.000s
+[13:08:07] [Server thread/TRACE] [forge]: Sending event FMLServerStoppingEvent to mod forge
+[13:08:07] [Server thread/TRACE] [forge]: Sent event FMLServerStoppingEvent to mod forge
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ServerStopping - Minecraft Forge took 0.000s
+[13:08:07] [Server thread/TRACE] [kfc]: Sending event FMLServerStoppingEvent to mod kfc
+[13:08:07] [Server thread/TRACE] [kfc]: Sent event FMLServerStoppingEvent to mod kfc
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ServerStopping - Korli's FoodCraft took 0.000s
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Finished: ServerStopping took 0.002s
+[13:08:07] [Server thread/DEBUG] [FML]: Gathering id map for writing to world save Showcase2.0
+[13:08:07] [Server thread/INFO] [FML]: Unloading dimension 0
+[13:08:07] [Server thread/INFO] [FML]: Unloading dimension -1
+[13:08:07] [Server thread/INFO] [FML]: Unloading dimension 1
+[13:08:07] [Server thread/DEBUG] [FML]: Reverting to frozen data state.
+[13:08:07] [Server thread/TRACE] [minecraft]: Sending event FMLModIdMappingEvent to mod minecraft
+[13:08:07] [Server thread/TRACE] [minecraft]: Sent event FMLModIdMappingEvent to mod minecraft
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ModIdMapping - Minecraft took 0.000s
+[13:08:07] [Server thread/TRACE] [mcp]: Sending event FMLModIdMappingEvent to mod mcp
+[13:08:07] [Server thread/TRACE] [mcp]: Sent event FMLModIdMappingEvent to mod mcp
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ModIdMapping - Minecraft Coder Pack took 0.000s
+[13:08:07] [Server thread/TRACE] [FML]: Sending event FMLModIdMappingEvent to mod FML
+[13:08:07] [Server thread/TRACE] [FML]: Sent event FMLModIdMappingEvent to mod FML
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ModIdMapping - Forge Mod Loader took 0.000s
+[13:08:07] [Server thread/TRACE] [forge]: Sending event FMLModIdMappingEvent to mod forge
+[13:08:07] [Server thread/TRACE] [forge]: Sent event FMLModIdMappingEvent to mod forge
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ModIdMapping - Minecraft Forge took 0.061s
+[13:08:07] [Server thread/TRACE] [kfc]: Sending event FMLModIdMappingEvent to mod kfc
+[13:08:07] [Server thread/TRACE] [kfc]: Sent event FMLModIdMappingEvent to mod kfc
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ModIdMapping - Korli's FoodCraft took 0.000s
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Finished: ModIdMapping took 0.062s
+[13:08:07] [Server thread/INFO] [FML]: Applying holder lookups
+[13:08:07] [Server thread/INFO] [FML]: Holder lookups applied
+[13:08:07] [Server thread/DEBUG] [FML]: Frozen state restored.
+[13:08:07] [Server thread/TRACE] [minecraft]: Sending event FMLServerStoppedEvent to mod minecraft
+[13:08:07] [Server thread/TRACE] [minecraft]: Sent event FMLServerStoppedEvent to mod minecraft
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ServerStopped - Minecraft took 0.000s
+[13:08:07] [Server thread/TRACE] [mcp]: Sending event FMLServerStoppedEvent to mod mcp
+[13:08:07] [Server thread/TRACE] [mcp]: Sent event FMLServerStoppedEvent to mod mcp
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ServerStopped - Minecraft Coder Pack took 0.000s
+[13:08:07] [Server thread/TRACE] [FML]: Sending event FMLServerStoppedEvent to mod FML
+[13:08:07] [Server thread/TRACE] [FML]: Sent event FMLServerStoppedEvent to mod FML
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ServerStopped - Forge Mod Loader took 0.000s
+[13:08:07] [Server thread/TRACE] [forge]: Sending event FMLServerStoppedEvent to mod forge
+[13:08:07] [Server thread/TRACE] [forge]: Sent event FMLServerStoppedEvent to mod forge
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ServerStopped - Minecraft Forge took 0.000s
+[13:08:07] [Server thread/TRACE] [kfc]: Sending event FMLServerStoppedEvent to mod kfc
+[13:08:07] [Server thread/TRACE] [kfc]: Sent event FMLServerStoppedEvent to mod kfc
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Step: ServerStopped - Korli's FoodCraft took 0.001s
+[13:08:07] [Server thread/DEBUG] [FML]: Bar Finished: ServerStopped took 0.002s
