@@ -106,3 +106,15 @@
 [12:30:43] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
 [12:30:43] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
 [12:30:43] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
+[13:08:07] [Server thread/INFO]: Stopping server
+[13:08:07] [Server thread/INFO]: Saving players
+[13:08:07] [Server thread/INFO]: Felix__Argyle lost connection: Disconnected
+[13:08:07] [Server thread/INFO]: Felix__Argyle left the game
+[13:08:07] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[13:08:07] [Server thread/INFO]: Saving worlds
+[13:08:07] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
+[13:08:07] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
+[13:08:07] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
+[13:08:08] [main/INFO]: Stopping!
+[13:08:08] [main/INFO]: SoundSystem shutting down...
+[13:08:09] [main/WARN]: Author: Paul Lamb, www.paulscode.com
