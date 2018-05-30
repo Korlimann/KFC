@@ -54,6 +54,10 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 		setCreativeTab(Main.korlissushicraft);
 	}
 
+	public BlockBaseFruit(String name, Material materialIn, Item fruit)
+	{
+		this(name,materialIn,0.25D, 0.25D, 0.25D, 0.75D, 1D, 0.75D, fruit, true, true);
+	}
 	@Override
 	public void registerModels() {
 		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");		

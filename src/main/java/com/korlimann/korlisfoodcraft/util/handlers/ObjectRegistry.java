@@ -43,6 +43,8 @@ public class ObjectRegistry {
 		blocks.add(ModBlocks.HERBGARDEN);
 		blocks.add(ModBlocks.AVOCADO_BLOCK);
 		blocks.add(ModBlocks.AVOCADO_SAPLING);
+		blocks.add(ModBlocks.OLIVE_BLOCK);
+		blocks.add(ModBlocks.OLIVE_SAPLING);
 	}
 	
 	public static void prepareItems() {

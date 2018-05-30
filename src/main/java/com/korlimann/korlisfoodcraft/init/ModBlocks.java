@@ -51,7 +51,14 @@ public class ModBlocks {
 	//Flowers/Plants
 	public static final BlockBaseSeaweed SEAWEED_BLOCK = new BlockBaseSeaweed("seaweed_block");
 	public static final Block SUNFLOWER = new BlockBaseSunflower("sunflower");
-	public static final BlockBaseFruit AVOCADO_BLOCK = new BlockBaseFruit("avocado_block", Material.PLANTS, 0.25D, 0.25D, 0.25D, 0.75D, 1D, 0.75D, ModItems.AVOCADO, true, true);
-	public static final BlockFruitSapling AVOCADO_SAPLING = ModBlocks.AVOCADO_BLOCK.createFruitTreeAndSapling();
+	
+
 	public static final BlockBush HERBGARDEN = new BlockHerbgarden("herbs");
+	
+	//Fruits
+	public static final BlockBaseFruit AVOCADO_BLOCK = new BlockBaseFruit("avocado_block", Material.PLANTS,ModItems.AVOCADO);
+	public static final BlockBaseFruit OLIVE_BLOCK = new BlockBaseFruit("olive_block", Material.PLANTS,ModItems.OLIVE);
+	//Fruit Saplings
+	public static final BlockFruitSapling AVOCADO_SAPLING = ModBlocks.AVOCADO_BLOCK.createFruitTreeAndSapling();
+	public static final BlockFruitSapling OLIVE_SAPLING = ModBlocks.OLIVE_BLOCK.createFruitTreeAndSapling();
 }
