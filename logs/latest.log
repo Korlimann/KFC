@@ -1,41 +1,64 @@
-[13:21:08] [main/INFO]: Logging in with username & password
-[13:21:17] [main/INFO]: Setting user: Felix__Argyle
-[13:21:24] [main/WARN]: Skipping bad option: lastServer:
-[13:21:24] [main/INFO]: LWJGL Version: 2.9.4
-[13:21:29] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
-[13:21:33] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[13:21:34] [Thread-5/INFO]: Initializing LWJGL OpenAL
-[13:21:34] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[13:21:34] [Thread-5/INFO]: OpenAL initialized.
-[13:21:34] [Sound Library Loader/INFO]: Sound engine started
-[13:21:42] [main/INFO]: Created: 512x512 textures-atlas
-[13:21:45] [main/WARN]: Skipping bad option: lastServer:
-[13:21:45] [main/INFO]: Narrator library for x64 successfully loaded
-[13:22:09] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
-[13:22:09] [Server thread/INFO]: Generating keypair
-[13:22:10] [Server thread/INFO]: Loaded 488 advancements
-[13:22:10] [Server thread/INFO]: Preparing start region for level 0
-[13:22:12] [Server thread/INFO]: Changing view distance to 6, from 10
-[13:22:13] [Server thread/INFO]: Felix__Argyle[local:E:39289ba3] logged in with entity id 150 at (-109.84206834794377, 4.0, 976.577102313132)
-[13:22:13] [Server thread/INFO]: Felix__Argyle joined the game
-[13:22:17] [Server thread/INFO]: Saving and pausing game...
-[13:22:17] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
-[13:22:17] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
-[13:22:17] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
-[13:22:17] [main/INFO]: Loaded 53 advancements
-[13:22:18] [Server thread/INFO]: Saving and pausing game...
-[13:22:18] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
-[13:22:18] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
-[13:22:18] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
-[13:32:58] [Server thread/INFO]: Stopping server
-[13:32:58] [Server thread/INFO]: Saving players
-[13:32:58] [Server thread/INFO]: Felix__Argyle lost connection: Disconnected
-[13:32:58] [Server thread/INFO]: Felix__Argyle left the game
-[13:32:58] [Server thread/INFO]: Stopping singleplayer server as player logged out
-[13:32:58] [Server thread/INFO]: Saving worlds
-[13:32:58] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
-[13:32:58] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
-[13:32:58] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
-[13:32:59] [main/INFO]: Stopping!
-[13:32:59] [main/INFO]: SoundSystem shutting down...
-[13:32:59] [main/WARN]: Author: Paul Lamb, www.paulscode.com
+[14:50:56] [main/INFO]: Logging in with username & password
+[14:51:02] [main/INFO]: Setting user: Felix__Argyle
+[14:51:08] [main/WARN]: Skipping bad option: lastServer:
+[14:51:08] [main/INFO]: LWJGL Version: 2.9.4
+[14:51:13] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
+[14:51:17] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[14:51:17] [Thread-5/INFO]: Initializing LWJGL OpenAL
+[14:51:17] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[14:51:17] [Thread-5/INFO]: OpenAL initialized.
+[14:51:18] [Sound Library Loader/INFO]: Sound engine started
+[14:51:26] [main/INFO]: Created: 512x512 textures-atlas
+[14:51:28] [main/WARN]: Skipping bad option: lastServer:
+[14:51:29] [main/INFO]: Narrator library for x64 successfully loaded
+[14:51:33] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[14:51:33] [Server thread/INFO]: Generating keypair
+[14:51:34] [Server thread/INFO]: Loaded 488 advancements
+[14:51:34] [Server thread/INFO]: Preparing start region for level 0
+[14:51:35] [Server thread/INFO]: Changing view distance to 6, from 10
+[14:51:37] [Server thread/INFO]: Felix__Argyle[local:E:429f1bff] logged in with entity id 142 at (-111.63398872451201, 4.0, 976.7401075953377)
+[14:51:37] [Server thread/INFO]: Felix__Argyle joined the game
+[14:51:39] [Server thread/INFO]: Saving and pausing game...
+[14:51:39] [main/INFO]: Loaded 53 advancements
+[14:51:39] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
+[14:51:39] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
+[14:51:39] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
+[14:52:24] [Server thread/INFO]: [Felix__Argyle: Set own game mode to Survival Mode]
+[14:52:24] [main/INFO]: [CHAT] Your game mode has been updated to Survival Mode
+[14:52:27] [main/INFO]: [CHAT] minecraft:haste, minecraft:health_boost, minecraft:hunger
+[14:52:27] [main/INFO]: [CHAT] minecraft:haste, minecraft:health_boost, minecraft:hunger
+[14:52:33] [Server thread/INFO]: [Felix__Argyle: Given Hunger (ID 17) * 10 to Felix__Argyle for 100 seconds]
+[14:52:33] [main/INFO]: [CHAT] Given Hunger (ID 17) * 10 to Felix__Argyle for 100 seconds
+[14:52:38] [Server thread/INFO]: [Felix__Argyle: Given Hunger (ID 17) * 100 to Felix__Argyle for 10 seconds]
+[14:52:38] [main/INFO]: [CHAT] Given Hunger (ID 17) * 100 to Felix__Argyle for 10 seconds
+[14:52:51] [Server thread/INFO]: [Felix__Argyle: Given Hunger (ID 17) * 100 to Felix__Argyle for 10 seconds]
+[14:52:51] [main/INFO]: [CHAT] Given Hunger (ID 17) * 100 to Felix__Argyle for 10 seconds
+[14:53:04] [Server thread/INFO]: [Felix__Argyle: Set own game mode to Creative Mode]
+[14:53:04] [main/INFO]: [CHAT] Your game mode has been updated to Creative Mode
+[14:53:06] [Server thread/INFO]: [Felix__Argyle: Set own game mode to Survival Mode]
+[14:53:06] [main/INFO]: [CHAT] Your game mode has been updated to Survival Mode
+[14:53:10] [Server thread/INFO]: [Felix__Argyle: Given Hunger (ID 17) * 100 to Felix__Argyle for 10 seconds]
+[14:53:10] [main/INFO]: [CHAT] Given Hunger (ID 17) * 100 to Felix__Argyle for 10 seconds
+[14:53:16] [Server thread/INFO]: Saving and pausing game...
+[14:53:16] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
+[14:53:16] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
+[14:53:16] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
+[14:53:20] [Server thread/INFO]: Changing difficulty to HARD, from PEACEFUL
+[14:53:53] [Server thread/INFO]: [Felix__Argyle: Set own game mode to Creative Mode]
+[14:53:53] [main/INFO]: [CHAT] Your game mode has been updated to Creative Mode
+[14:54:00] [Server thread/INFO]: Saving and pausing game...
+[14:54:00] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
+[14:54:00] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
+[14:54:00] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
+[14:54:01] [Server thread/INFO]: Stopping server
+[14:54:01] [Server thread/INFO]: Saving players
+[14:54:01] [Server thread/INFO]: Felix__Argyle lost connection: Disconnected
+[14:54:01] [Server thread/INFO]: Felix__Argyle left the game
+[14:54:01] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[14:54:01] [Server thread/INFO]: Saving worlds
+[14:54:01] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/overworld
+[14:54:01] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_nether
+[14:54:01] [Server thread/INFO]: Saving chunks for level 'Showcase2.0'/the_end
+[14:54:02] [main/INFO]: Stopping!
+[14:54:02] [main/INFO]: SoundSystem shutting down...
+[14:54:02] [main/WARN]: Author: Paul Lamb, www.paulscode.com

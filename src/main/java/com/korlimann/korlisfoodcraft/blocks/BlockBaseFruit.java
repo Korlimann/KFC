@@ -38,9 +38,10 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 	public boolean canGrow;
 	public boolean canUseBonemeal;
 	private String type;
+	private boolean CreativeTab;
 	
 	
-	public BlockBaseFruit(String name, Material materialIn, double x1, double y1, double z1, double x2, double y2, double z2, Item fruit, boolean grow, boolean bonemeal) {
+	public BlockBaseFruit(String name, Material materialIn, double x1, double y1, double z1, double x2, double y2, double z2, Item fruit, boolean grow, boolean bonemeal, boolean CreativeTab) {
 		super(materialIn);
 		this.fruit = fruit;
 		this.canGrow = grow;
@@ -51,12 +52,12 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
         this.setTickRandomly(true);
         setUnlocalizedName(name);
 		setRegistryName(name);
-		setCreativeTab(Main.korlissushicraft);
+		this.CreativeTab = CreativeTab;
 	}
 
 	public BlockBaseFruit(String name, Material materialIn, Item fruit)
 	{
-		this(name,materialIn,0.25D, 0.25D, 0.25D, 0.75D, 1D, 0.75D, fruit, true, true);
+		this(name,materialIn,0.25D, 0.25D, 0.25D, 0.75D, 1D, 0.75D, fruit, true, true,true);
 	}
 	@Override
 	public void registerModels() {
@@ -194,7 +195,7 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 	//Only Call once for each Fruit
 	public BlockFruitSapling createFruitTreeAndSapling()
 	{
-		BlockFruitSapling ret = new BlockFruitSapling(this.getTypeName()+"_sapling",this);
+		BlockFruitSapling ret = new BlockFruitSapling(this.getTypeName()+"_sapling",this,true);
 		
 		return ret;
 	}

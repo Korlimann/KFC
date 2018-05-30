@@ -43,9 +43,14 @@ public class ModBlocks {
 	
 	
 	//"Cakes"
-	public static final Block BEER = new BlockBaseCake("beer", false, null);
+	static int[] pt1 = {10};
+	static int[] ptD1 = {60};
+	static int[] ptS1 = {2};
+	public static final Block BEER = new BlockBaseCake("beer", false, pt1, ptD1, ptS1,true);
 	static int[] pt = {9, 17};
-	public static final Block BEER_AND_LEMONADE = new BlockBaseCake("radler", true, pt); 
+	static int[] ptD = {100, 200};
+	static int[] ptS = {1, 2};
+	public static final Block BEER_AND_LEMONADE = new BlockBaseCake("radler", true, pt, ptD, ptS,true); 
 	
 	//Ores
 	public static final Block SALT_ORE = new BlockBaseSaltOre("salt_ore");

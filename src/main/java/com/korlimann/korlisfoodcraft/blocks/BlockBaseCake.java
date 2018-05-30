@@ -32,16 +32,21 @@ public class BlockBaseCake extends BlockCake implements IHasModel {
 	 * */
 	
 	public int[] potionEffects;
+	public int[] potionEffectsDuration;
+	public int[] potionEffectsStrength;
 	public boolean potionEffect;
 	
 	public static final PropertyInteger BITES = PropertyInteger.create("bites", 0, 6);
 	
-	public BlockBaseCake(String name, boolean potionEffect, int[] potionEffects) {
+	public BlockBaseCake(String name, boolean potionEffect, int[] potionEffects, int[] potionEffectsDuration, int[] potionEffectsStrength, boolean CreativeTab) {
 		this.potionEffect = potionEffect;
 		this.potionEffects = potionEffects;
+		this.potionEffectsDuration = potionEffectsDuration;
+		this.potionEffectsStrength = potionEffectsStrength;
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setCreativeTab(Main.korlissushicraft);
+		if(CreativeTab)
+			setCreativeTab(Main.korlissushicraft);
 		
 		
         this.setDefaultState(this.blockState.getBaseState().withProperty(BITES, Integer.valueOf(0)));
@@ -104,7 +109,7 @@ public class BlockBaseCake extends BlockCake implements IHasModel {
             player.getFoodStats().addStats(1, 0.1F);
             if(potionEffect) {
             	for(int i=0; i<potionEffects.length; i++) {
-            		player.addPotionEffect(new PotionEffect(Potion.getPotionById(potionEffects[i]), 100, 1));
+            		player.addPotionEffect(new PotionEffect(Potion.getPotionById(potionEffects[i]), potionEffectsDuration[i], potionEffectsStrength[i]));
             	}
             }
             

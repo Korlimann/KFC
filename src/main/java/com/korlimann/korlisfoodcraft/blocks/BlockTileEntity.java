@@ -11,8 +11,8 @@ import net.minecraft.world.World;
 
 public abstract class BlockTileEntity<TE extends TileEntity> extends BlockBase {
 
-	public BlockTileEntity(Material material, String name) {
-		super(name, material);
+	public BlockTileEntity(Material material, String name, boolean CreativeTab) {
+		super(name, material, CreativeTab);
 	}
 	
 	public abstract Class<TE> getTileEntityClass();

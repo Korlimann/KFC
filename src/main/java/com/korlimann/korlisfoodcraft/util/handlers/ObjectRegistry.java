@@ -36,6 +36,7 @@ public class ObjectRegistry {
 		blocks.add(ModBlocks.CROP_MALT);
 		blocks.add(ModBlocks.CROP_ONION);		
 		blocks.add(ModBlocks.BEER);
+		blocks.add(ModBlocks.BEER_AND_LEMONADE);
 		blocks.add(ModBlocks.SALT_ORE);
 		blocks.add(ModBlocks.SEAWEED_BLOCK);
 		blocks.add(ModBlocks.HERBGARDEN);

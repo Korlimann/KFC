@@ -41,7 +41,6 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
 		super(seaweed);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setCreativeTab(Main.korlissushicraft);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
         this.setTickRandomly(true);
 	}

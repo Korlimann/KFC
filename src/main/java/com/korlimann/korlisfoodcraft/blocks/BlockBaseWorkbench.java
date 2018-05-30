@@ -29,7 +29,7 @@ public class BlockBaseWorkbench extends BlockBase implements IHasModel {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 
 	public BlockBaseWorkbench(String name) {
-		super(name, Material.WOOD);
+		super(name, Material.WOOD,true);
 		setSoundType(SoundType.WOOD);
 	}
 	

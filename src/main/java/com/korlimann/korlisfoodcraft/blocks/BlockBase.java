@@ -13,10 +13,11 @@ public class BlockBase extends Block implements IHasModel {
 	 * This class is for basic blocks without any function. (e.g. decoration blocks, blocks for crafting, etc.)
 	 * */
 	
-	public BlockBase(String name, Material material) {
+	public BlockBase(String name, Material material, boolean CreativeTab) {
 		super(material);
 		setUnlocalizedName(name);
 		setRegistryName(name);
+		if(CreativeTab)
 		setCreativeTab(Main.korlissushicraft);
 		
 		//ModBlocks.BLOCKS.add(this);
