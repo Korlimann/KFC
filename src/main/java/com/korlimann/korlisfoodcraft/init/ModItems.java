@@ -26,8 +26,15 @@ public class ModItems {
 	public static final Item CHAMPIGNONS = new ItemBase("champignons"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	public static final Item CORN = new ItemBaseSeedFood("corn", ModBlocks.CROP_CORN, Blocks.FARMLAND, 2, 0.0f);
 	public static final Item CUCUMBER = new ItemBase("gurke"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
+	public static final Item HOPS = new ItemBaseSeedFood("hops", ModBlocks.CROP_HOPS, Blocks.FARMLAND, 2, 0.0f);
+	public static final Item ICEBERG_SALAD = new ItemBaseFood("eisbergsalat", 2, 0.6f, false);
+	public static final Item LEEK = new ItemBaseFood("leek", 2, 0.6f, false);
+	public static final Item MALT = new ItemBaseSeedFood("malt", ModBlocks.CROP_MALT, Blocks.FARMLAND, 2, 0.0f);
 	public static final Item OLIVE = new ItemBase("olive"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	public static final Item ONION = new ItemBaseSeedFood("onion", ModBlocks.CROP_ONION, Blocks.FARMLAND, 2, 0.0f);
+	public static final Item OREGANO = new ItemBaseFood("oregano", 2, 0.6f, false);
+	public static final Item PARSLEY = new ItemBaseFood("parsley", 2, 0.6f, false);
+	public static final Item PEPPER = new ItemBaseFood("pepper", 2, 0.6f, false);
 	public static final Item RICE = new ItemBaseSeedFood("rice", ModBlocks.CROP_RICE, Blocks.FARMLAND, 2, 0.0f); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	public static final Item SEAWEED = new ItemBlockBaseSpecial(ModBlocks.SEAWEED_BLOCK, "seaweed"); //Droppt von Seegras
 	public static final Item TOMATO = new ItemBaseFood("tomato", 2, 0.3f, false); //Gefunden in der Wildnis/Villagerdörfer/Kisten
@@ -53,7 +60,6 @@ public class ModItems {
 	//Bearbeitetes/Gekochtes Essen
 	public static final Item AVOCADOMAKI = new ItemBaseFood("avocadomaki", 2, 0.6f, false); //Reis, Seetang, Avocado / Maki, Avocado
 	public static final Item AVOCADOSUSHI = new ItemBaseFood("avocadosushi", 2, 0.6f, false); //Reis, Avocado
-	public static final Item BEER = new ItemBase("beer");
 	public static final Item BURGER = new ItemBaseFood("burger", 2, 0.6f, false);
 	public static final Item BUTTER = new ItemBaseFood("butter", 2, 0.6f, false);
 	public static final Item CACAO = new ItemBaseFood("cacao", 2, 0.6f, false);
@@ -61,24 +67,19 @@ public class ModItems {
 	public static final Item COFFEE = new ItemBaseFood("coffee", 2, 0.6f, false);
 	public static final Item CUCUMBERMAKI = new ItemBaseFood("gurkenmaki", 2, 0.6f, false); //Reis, Seetang, geschnittene Gurke / Maki, geschnittene Gurke
 	public static final Item FRIES = new ItemBaseFood("pommes", 2, 0.6f, false);
-	public static final Item HOPS = new ItemBaseSeedFood("hops", ModBlocks.CROP_HOPS, Blocks.FARMLAND, 2, 0.0f);
-	public static final Item ICEBERG_SALAD = new ItemBaseFood("eisbergsalat", 2, 0.6f, false);
 	public static final Item JAEGERMEISTER = new ItemBaseFood("jaegermeister", 2, 0.6f, false);
 	public static final Item KEBAB = new ItemBaseFood("doener", 2, 0.6f, false);
-	public static final Item LEEK = new ItemBaseFood("leek", 2, 0.6f, false);
-	public static final Item MAKI = new ItemBaseFood("maki", 2, 0.6f, false); //Reis, Seetang
-	public static final Item MALT = new ItemBaseSeedFood("malt", ModBlocks.CROP_MALT, Blocks.FARMLAND, 2, 0.0f);
 	public static final Item ONIGIRI = new ItemBaseFood("onigiri", 2, 0.6f, false);
-	public static final Item OREGANO = new ItemBaseFood("oregano", 2, 0.6f, false);
-	public static final Item PARSLEY = new ItemBaseFood("parsley", 2, 0.6f, false);
-	public static final Item PEPPER = new ItemBaseFood("pepper", 2, 0.6f, false);
 	public static final Item PIZZA = new ItemBaseFood("pizza", 2, 0.6f, false);
+	public static final Item ROAST_PORK = new ItemBaseFood("roast_pork", 2, 0.6f, false);
 	public static final Item SALMONMAKI = new ItemBaseFood("lachsmaki", 2, 0.6f, false); //Reis, Seetang, Filetierter Lachs / Maki, Filetierter Lachs
 	public static final Item SALMONSUSHI = new ItemBaseFood("lachssushi", 2, 0.6f, false); //Reis, Filetierter Lachs	
 	public static final Item SAUSAGE = new ItemBaseFood("sausage", 2, 0.6f, false);
 	public static final Item TOMATOSAUCE = new ItemBaseFood("tomatensauce", 2, 0.6f, false); //Hergestellt: Mörser
+	//public static final Item MAKI = new ItemBaseFood("maki", 2, 0.6f, false); //Reis, Seetang
 	//public static final Item MOZZARELLA = new ItemBaseFood("mozzarella", 2, 0.6f, false); //Wird mit Büffelmilch hergestellt, auf einem Brett
 	//public static final Item LAB = new ItemBase("lab"); //Wird von Kuhkälbern gedroppt	
+	//public static final Item BEER = new ItemBase("beer");
 		
 	//Küchengeräte
 	public static final Item COOKINGPOT = new ItemBase("cookingpot");

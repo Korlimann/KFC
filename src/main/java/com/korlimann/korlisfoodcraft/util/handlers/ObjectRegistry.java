@@ -92,6 +92,7 @@ public class ObjectRegistry {
 		items.add(ModItems.FLOUR);
 		items.add(ModItems.ICEBERG_SALAD);
 		items.add(ModItems.DOUGH);
+		items.add(ModItems.ROAST_PORK);
 		//items.add(ModItems.GURKE);
 		//items.add(ModItems.CORN_SEED);
 		//items.add(ModItems.CHAMPIGNONS);

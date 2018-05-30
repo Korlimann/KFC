@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+	    {
+	       "item": "kfc:cheese"
+	    },
+	    {
+	       "item": "kfc:dough"
+	    },
+	    {
+	       "item": "kfc:tomato"
+	    },
+	    {
+	    	"item": "kfc:sausage"
+	    }
+    ],
+    "result": {
+        "item": "kfc:pizza",
+        "count": 1
+    }
+}

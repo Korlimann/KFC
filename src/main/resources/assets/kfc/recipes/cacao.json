@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+	    {
+	       "item": "minecraft:milk_bucket"
+	    },
+	    {
+	       "item": "minecraft:dye",
+	       "data": 3
+	    },
+	    {
+	    	"item": "kfc:cup"
+	    }
+	],
+    "result": {
+        "item": "kfc:cacao",
+        "count": 1
+    }
+}

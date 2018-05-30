@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+	    {
+	       "item": "minecraft:potato"
+	    },
+	    {
+	       "item": "minecraft:potato"
+	    },
+	    {
+	       "item": "minecraft:potato"
+	    },
+	    {
+	       "item": "kfc:oliveoil"
+	    }
+    ],
+    "result": {
+        "item": "kfc:raw_fries",
+        "count": 1
+    }
+}

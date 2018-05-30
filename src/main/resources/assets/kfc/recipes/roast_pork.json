@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+	    {
+	    	"item": "kfc:butter"
+	    },
+	    {
+	    	"item": "minecraft:cooked_porkchop"
+	    },
+	    {
+	    	"item": "kfc:onion"
+	    },
+	    {
+	    	"item": "kfc:salt"
+	    }
+	],
+    "result": {
+        "item": "kfc:roast_pork",
+        "count": 1
+    }
+}
