@@ -8,6 +8,7 @@ import com.korlimann.korlisfoodcraft.blocks.kitchenboard.TileEntityKitchenboard;
 import com.korlimann.korlisfoodcraft.gen.KFCWorldGen;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.init.ModItems;
+import com.korlimann.korlisfoodcraft.util.ConsoleLogger;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
@@ -148,11 +149,13 @@ public class ObjectRegistry {
 				((IHasModel)block).registerModels();
 			}
 		}
+		ConsoleLogger.info("Block Models loaded");
 		for(Item item : items) {
 			if(item instanceof IHasModel) {
 				((IHasModel)item).registerModels();
 			}
 		}
+		ConsoleLogger.info("Item Models loaded");
 	}
 	
 	public static void Common() {
