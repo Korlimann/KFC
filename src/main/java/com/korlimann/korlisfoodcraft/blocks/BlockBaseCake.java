@@ -31,9 +31,14 @@ public class BlockBaseCake extends BlockCake implements IHasModel {
 	 * This class creates our Bier.
 	 * */
 	
+	public int[] potionEffects;
+	public boolean potionEffect;
+	
 	public static final PropertyInteger BITES = PropertyInteger.create("bites", 0, 6);
 	
-	public BlockBaseCake(String name) {
+	public BlockBaseCake(String name, boolean potionEffect, int[] potionEffects) {
+		this.potionEffect = potionEffect;
+		this.potionEffects = potionEffects;
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(Main.korlissushicraft);
@@ -97,7 +102,12 @@ public class BlockBaseCake extends BlockCake implements IHasModel {
         {
             player.addStat(StatList.CAKE_SLICES_EATEN);
             player.getFoodStats().addStats(1, 0.1F);
-            player.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 100, 1));
+            if(potionEffect) {
+            	for(int i=0; i<potionEffects.length; i++) {
+            		player.addPotionEffect(new PotionEffect(Potion.getPotionById(potionEffects[i]), 100, 1));
+            	}
+            }
+            
             int i = ((Integer)state.getValue(BITES)).intValue();
 
             if (i < 6)
@@ -107,7 +117,7 @@ public class BlockBaseCake extends BlockCake implements IHasModel {
             else
             {
                 worldIn.setBlockToAir(pos);
-                player.addItemStackToInventory(new ItemStack(ModItems.GOASMOAS));
+                player.addItemStackToInventory(new ItemStack(ModItems.GOSMAS));
             }
 
             return true;
@@ -153,7 +163,7 @@ public class BlockBaseCake extends BlockCake implements IHasModel {
      */
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return ModItems.GOASMOAS;
+        return ModItems.GOSMAS;
     }
 
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)

@@ -18,7 +18,7 @@ public class KorlisSushiCraft extends CreativeTabs {
 
 	@Override
 	public ItemStack getTabIconItem() {
-		return new ItemStack(ModItems.LACHSSUSHI);
+		return new ItemStack(ModItems.SALMONSUSHI);
 	}
 
 }

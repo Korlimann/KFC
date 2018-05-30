@@ -46,7 +46,7 @@ public class BlockHerbgarden extends BlockBush implements IHasModel {
 			for(int i = 0; i<4; i++) {
 				r1 = r.nextInt(10)+1; 
 				if(r1 == 1) drops.add(new ItemStack(ModItems.CORN));
-				if(r1 == 2) drops.add(new ItemStack(ModItems.EISBERGSALAT));
+				if(r1 == 2) drops.add(new ItemStack(ModItems.ICEBERG_SALAD));
 				if(r1 == 3) drops.add(new ItemStack(ModItems.HOPS));
 				if(r1 == 4) drops.add(new ItemStack(ModItems.LEEK));
 				if(r1 == 5) drops.add(new ItemStack(ModItems.MALT));
@@ -61,7 +61,7 @@ public class BlockHerbgarden extends BlockBush implements IHasModel {
 			for(int i = 0; i<3; i++) {
 				r2 = r.nextInt(10)+1;
 				if(r2 == 1) drops.add(new ItemStack(ModItems.CORN));
-				if(r2 == 2) drops.add(new ItemStack(ModItems.EISBERGSALAT));
+				if(r2 == 2) drops.add(new ItemStack(ModItems.ICEBERG_SALAD));
 				if(r2 == 3) drops.add(new ItemStack(ModItems.HOPS));
 				if(r2 == 4) drops.add(new ItemStack(ModItems.LEEK));
 				if(r2 == 5) drops.add(new ItemStack(ModItems.MALT));

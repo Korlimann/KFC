@@ -20,7 +20,7 @@ public class BlockBaseSaltOre extends BlockOre implements IHasModel {
 	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return ModItems.SALZ;
+		return ModItems.SALT;
 	}
 	
 	@Override

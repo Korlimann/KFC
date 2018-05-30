@@ -43,14 +43,16 @@ public class ModBlocks {
 	
 	
 	//"Cakes"
-	public static final Block BEER = new BlockBaseCake("beer");
+	public static final Block BEER = new BlockBaseCake("beer", false, null);
+	static int[] pt = {9, 17};
+	public static final Block BEER_AND_LEMONADE = new BlockBaseCake("radler", true, pt); 
 	
 	//Ores
 	public static final Block SALT_ORE = new BlockBaseSaltOre("salt_ore");
 	
 	//Flowers/Plants
 	public static final BlockBaseSeaweed SEAWEED_BLOCK = new BlockBaseSeaweed("seaweed_block");
-	public static final Block SUNFLOWER = new BlockBaseSunflower("sunflower");
+	//public static final Block SUNFLOWER = new BlockBaseSunflower("sunflower");
 	
 
 	public static final BlockBush HERBGARDEN = new BlockHerbgarden("herbs");
