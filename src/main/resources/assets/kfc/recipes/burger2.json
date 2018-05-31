@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+			{
+		    	"item": "kfc:eisbergsalat"
+		    },
+		    {
+		    	"item": "kfc:cheese"
+		    },
+		    {
+		    	"item": "kfc:tomato"
+		    },
+			{
+		    	"item": "minecraft:bread"
+		    },
+		    {
+		    	"item": "minecraft:cooked_porkchop"
+		    }
+	],
+    "result": {
+        "item": "kfc:burger",
+        "count": 1
+        
+    }
+}
