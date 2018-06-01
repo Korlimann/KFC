@@ -63,3 +63,6 @@ com.mojang.realmsclient.exception.RealmsServiceException: Could not connect to R
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_162]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_162]
 	at java.lang.Thread.run(Unknown Source) [?:1.8.0_162]
+[15:25:28] [main/INFO]: Stopping!
+[15:25:28] [main/INFO]: SoundSystem shutting down...
+[15:25:29] [main/WARN]: Author: Paul Lamb, www.paulscode.com

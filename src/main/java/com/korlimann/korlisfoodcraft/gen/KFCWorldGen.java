@@ -23,6 +23,7 @@ public class KFCWorldGen implements IWorldGenerator
 	private WorldGenerator salt_ore;
 	private WorldGenerator seaweed_block;
 	private WorldGenerator fruit_tree_avocado;
+	private WorldGenerator fruit_tree_olive;
 	private WorldGenerator herbgarden;
 	
 	public KFCWorldGen() 
@@ -31,6 +32,7 @@ public class KFCWorldGen implements IWorldGenerator
 		seaweed_block = new WorldGenSeaweed(ModBlocks.SEAWEED_BLOCK,10);
 		herbgarden = new WorldGenHerbs(ModBlocks.HERBGARDEN);
 		fruit_tree_avocado = new WorldGenFruitTree(true, 5, ModBlocks.AVOCADO_BLOCK);
+		fruit_tree_olive = new WorldGenFruitTree(true, 5, ModBlocks.OLIVE_BLOCK);
 	}
 
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) 
@@ -48,7 +50,8 @@ public class KFCWorldGen implements IWorldGenerator
 			runGeneratorSeaweed(seaweed_block, world, random, chunkX, chunkZ, 95, 2, 75, 0, 256);
 			//Min Height does not affect this Generator
 			runGeneratorHerbs(herbgarden, world, random, chunkX, chunkZ, 99, 4, 65, 60, 120);
-			runGeneratorSeaweed(fruit_tree_avocado, world, random, chunkX, chunkZ, 54, 4,95,60, 256);
+			runGeneratorFruitTree(fruit_tree_avocado, world, random, chunkX, chunkZ, 54, 4,95,60, 256);
+			runGeneratorFruitTree(fruit_tree_avocado, world, random, chunkX, chunkZ, 54, 4,95,60, 256);
 			
 			break;
 			
@@ -82,6 +85,26 @@ public class KFCWorldGen implements IWorldGenerator
 	}
 	
 	private void runGeneratorSeaweed(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int patchPercentage,int patchRuns,int chunkChance, int minHeight, int maxHeight)
+	{
+		
+		if(RngHelper.getPercentageRNG(rand, chunkChance)>=1)
+		{
+		if(minHeight > maxHeight || minHeight < 0 || maxHeight > 256) throw new IllegalArgumentException("Ore generated out of bounds");
+		int heightDiff = maxHeight - minHeight + 1;
+		
+		
+		int bpc = RngHelper.getRepeatedPercentageRNG(rand, patchPercentage, patchRuns);
+		for(int i = 0; i < bpc; i++)
+		{
+			int x = 2+ chunkX * 16 + rand.nextInt(8);
+			int y = minHeight + rand.nextInt(heightDiff);
+			int z = 2+ chunkZ * 16 + rand.nextInt(8);
+			
+			gen.generate(world, rand, new BlockPos(x, y, z));
+		
+		}}
+	}
+	private void runGeneratorFruitTree(WorldGenerator gen, World world, Random rand, int chunkX, int chunkZ, int patchPercentage,int patchRuns,int chunkChance, int minHeight, int maxHeight)
 	{
 		
 		if(RngHelper.getPercentageRNG(rand, chunkChance)>=1)
