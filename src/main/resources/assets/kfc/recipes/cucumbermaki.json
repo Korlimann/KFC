@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+	    {
+	       "item": "kfc:rice"
+	    },
+	    {
+	       "item": "kfc:nori"
+	    },
+	    {
+	       "item": "kfc:cucumber"
+	    }
+    ],
+    "result": {
+        "item": "kfc:cucumbermaki",
+        "count": 1
+    }
+}

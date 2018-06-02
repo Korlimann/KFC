@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+		    {
+		    	"item": "kfc:flour"
+		    },
+		    {
+		    	"item": "kfc:salt"
+		    },
+		    {
+		    	"item": "minecraft:sugar"
+		    },
+			{
+		    	"item": "minecraft:milk_bucket"
+		    }
+	],
+    "result": {
+        "item": "kfc:dough",
+        "count": 2
+        
+    }
+}
