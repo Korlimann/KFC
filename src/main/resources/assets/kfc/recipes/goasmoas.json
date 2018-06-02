@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+	    {
+	       "item": "kfc:hops"
+	    },
+	    {
+	       "item": "kfc:malt"
+	    },
+	    {
+	    	"item": "minecraft:water_bucket"
+	    },
+	    {
+	    	"item": "kfc:goasmoas"
+	    }
+	],
+    "result": {
+        "item": "kfc:beer",
+        "count": 1
+    }
+}
