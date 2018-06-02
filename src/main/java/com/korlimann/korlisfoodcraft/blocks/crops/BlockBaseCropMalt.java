@@ -1,4 +1,4 @@
-package com.korlimann.korlisfoodcraft.blocks;
+package com.korlimann.korlisfoodcraft.blocks.crops;
 
 import com.korlimann.korlisfoodcraft.init.ModItems;
 import net.minecraft.block.BlockCrops;

@@ -38,39 +38,24 @@ public class BlockHerbgarden extends BlockBush implements IHasModel {
 		Random r = world instanceof World ? ((World)world).rand : RANDOM;
 		int rand = r.nextInt(4)+1;
 		int r1 = 0;
-		int r2 = 0;
+		int dropsCount = 3;
 		
+		if(rand == 4) dropsCount = 4;
 		
-		
-		if(rand == 4) {
-			for(int i = 0; i<4; i++) {
-				r1 = r.nextInt(10)+1; 
-				if(r1 == 1) drops.add(new ItemStack(ModItems.CORN));
-				if(r1 == 2) drops.add(new ItemStack(ModItems.ICEBERG_SALAD));
-				if(r1 == 3) drops.add(new ItemStack(ModItems.HOPS));
-				if(r1 == 4) drops.add(new ItemStack(ModItems.LEEK));
-				if(r1 == 5) drops.add(new ItemStack(ModItems.MALT));
-				if(r1 == 6) drops.add(new ItemStack(ModItems.OREGANO));
-				if(r1 == 7) drops.add(new ItemStack(ModItems.PARSLEY));
-				if(r1 == 8) drops.add(new ItemStack(ModItems.PEPPER));
-				if(r1 == 9) drops.add(new ItemStack(ModItems.TOMATO));
-				if(r1 == 10) drops.add(new ItemStack(ModItems.RICE));
-			}
-		}
-		else if(rand < 4) {
-			for(int i = 0; i<3; i++) {
-				r2 = r.nextInt(10)+1;
-				if(r2 == 1) drops.add(new ItemStack(ModItems.CORN));
-				if(r2 == 2) drops.add(new ItemStack(ModItems.ICEBERG_SALAD));
-				if(r2 == 3) drops.add(new ItemStack(ModItems.HOPS));
-				if(r2 == 4) drops.add(new ItemStack(ModItems.LEEK));
-				if(r2 == 5) drops.add(new ItemStack(ModItems.MALT));
-				if(r2 == 6) drops.add(new ItemStack(ModItems.OREGANO));
-				if(r2 == 7) drops.add(new ItemStack(ModItems.PARSLEY));
-				if(r2 == 8) drops.add(new ItemStack(ModItems.PEPPER));
-				if(r2 == 9) drops.add(new ItemStack(ModItems.TOMATO));
-				if(r2 == 10) drops.add(new ItemStack(ModItems.RICE));
-			}
+		for(int i = 0; i<dropsCount; i++) {
+			r1 = r.nextInt(12)+1; 
+			if(r1 == 1) drops.add(new ItemStack(ModItems.CORN));
+			if(r1 == 2) drops.add(new ItemStack(ModItems.ICEBERG_SALAD));
+			if(r1 == 3) drops.add(new ItemStack(ModItems.HOPS));
+			if(r1 == 4) drops.add(new ItemStack(ModItems.LEEK));
+			if(r1 == 5) drops.add(new ItemStack(ModItems.MALT));
+			if(r1 == 6) drops.add(new ItemStack(ModItems.OREGANO));
+			if(r1 == 7) drops.add(new ItemStack(ModItems.PARSLEY));
+			if(r1 == 8) drops.add(new ItemStack(ModItems.PEPPER));
+			if(r1 == 9) drops.add(new ItemStack(ModItems.TOMATO));
+			if(r1 == 10) drops.add(new ItemStack(ModItems.RICE));
+			if(r1 == 11) drops.add(new ItemStack(ModItems.GARLIC));
+			if(r1 == 12) drops.add(new ItemStack(ModItems.CUCUMBER));
 		}
 	}
 	

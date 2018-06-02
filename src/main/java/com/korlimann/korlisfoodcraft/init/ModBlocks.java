@@ -5,17 +5,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCake;
-import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropCorn;
-import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropHops;
-import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropMalt;
-import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropOnion;
-import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropRice;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruit;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSaltOre;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSeaweed;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSunflower;
 import com.korlimann.korlisfoodcraft.blocks.BlockFruitSapling;
 import com.korlimann.korlisfoodcraft.blocks.BlockHerbgarden;
+import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropCorn;
+import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropCucumber;
+import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropGarlic;
+import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropHops;
+import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropMalt;
+import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropOnion;
+import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropRice;
 import com.korlimann.korlisfoodcraft.blocks.kitchenboard.BlockBaseKitchenboard;
 
 import net.minecraft.block.Block;
@@ -40,6 +42,8 @@ public class ModBlocks {
 	public static final BlockBaseCropHops CROP_HOPS = new BlockBaseCropHops();
 	public static final BlockBaseCropMalt CROP_MALT = new BlockBaseCropMalt();
 	public static final BlockBaseCropOnion CROP_ONION = new BlockBaseCropOnion();
+	public static final BlockBaseCropCucumber CROP_CUCUMBER = new BlockBaseCropCucumber();
+	public static final BlockBaseCropGarlic CROP_GARLIC = new BlockBaseCropGarlic();
 	
 	
 	//"Cakes"

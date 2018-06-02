@@ -35,7 +35,10 @@ public class ObjectRegistry {
 		blocks.add(ModBlocks.CROP_CORN);
 		blocks.add(ModBlocks.CROP_HOPS);
 		blocks.add(ModBlocks.CROP_MALT);
-		blocks.add(ModBlocks.CROP_ONION);		
+		blocks.add(ModBlocks.CROP_ONION);	
+		blocks.add(ModBlocks.CROP_RICE);
+		blocks.add(ModBlocks.CROP_CUCUMBER);
+		blocks.add(ModBlocks.CROP_GARLIC);
 		blocks.add(ModBlocks.BEER);
 		blocks.add(ModBlocks.BEER_AND_LEMONADE);
 		blocks.add(ModBlocks.SALT_ORE);
@@ -93,6 +96,9 @@ public class ObjectRegistry {
 		items.add(ModItems.ICEBERG_SALAD);
 		items.add(ModItems.DOUGH);
 		items.add(ModItems.ROAST_PORK);
+		items.add(ModItems.ONION);
+		items.add(ModItems.GARLIC);
+		items.add(ModItems.CUCUMBER);
 		//items.add(ModItems.GURKE);
 		//items.add(ModItems.CORN_SEED);
 		//items.add(ModItems.CHAMPIGNONS);

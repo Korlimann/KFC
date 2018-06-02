@@ -1,6 +1,6 @@
 {
     "parent": "block/cross",
     "textures": {
-        "cross": "kfc:blocks/avocado_sapling"
+        "cross": "kfc:blocks/olive_sapling"
     }
 }

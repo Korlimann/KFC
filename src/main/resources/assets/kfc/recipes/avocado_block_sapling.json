@@ -2,18 +2,15 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
 	    {
-	       "item": "kfc:rice"
+	       "item": "kfc:avocado"
 	    },
 	    {
-	       "item": "kfc:nori"
-	    },
-	    {
-	       "item": "kfc:avocado",
-	       "data": 1
+	       "item": "minecraft:sapling",
+	       "data": 32767
 	    }
     ],
     "result": {
-        "item": "kfc:avocadomaki",
+        "item": "kfc:avocado_block_sapling",
         "count": 1
     }
 }

@@ -1,7 +1,6 @@
 {
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
-	    [
 		    {
 		    	"item": "kfc:eisbergsalat"
 		    },
@@ -17,42 +16,6 @@
 		    {
 		    	"item": "minecraft:cooked_chicken"
 		    }
-		],
-		[
-			{
-		    	"item": "kfc:eisbergsalat"
-		    },
-		    {
-		    	"item": "kfc:cheese"
-		    },
-		    {
-		    	"item": "kfc:tomato"
-		    },
-			{
-		    	"item": "minecraft:bread"
-		    },
-		    {
-		    	"item": "minecraft:cooked_porkchop"
-		    }
-		],
-		[
-			{
-		    	"item": "kfc:eisbergsalat"
-		    },
-		    {
-		    	"item": "kfc:cheese"
-		    },
-		    {
-		    	"item": "kfc:tomato"
-		    },
-			{
-		    	"item": "minecraft:bread"
-		    },
-		    {
-		    	"item": "minecraft:cooked_beef"
-		    }
-		    
-		]
 	],
     "result": {
         "item": "kfc:burger",

@@ -25,7 +25,8 @@ public class ModItems {
 	public static final Item AVOCADO = new ItemBaseFood("avocado", 3, 0.3f, false); //Wächst an Bäumen - Einzeln im CT = Seeds für Avocadobaum
 	public static final Item CHAMPIGNONS = new ItemBase("champignons"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	public static final Item CORN = new ItemBaseSeedFood("corn", ModBlocks.CROP_CORN, Blocks.FARMLAND, 2, 0.0f);
-	public static final Item CUCUMBER = new ItemBase("gurke"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
+	public static final Item CUCUMBER = new ItemBaseSeedFood("cucumber", ModBlocks.CROP_CUCUMBER, Blocks.FARMLAND, 2, 0.0f); //Gefunden in der Wildnis/Villagerdörfer/Kisten
+	public static final Item GARLIC = new ItemBaseSeedFood("garlic", ModBlocks.CROP_GARLIC, Blocks.FARMLAND, 2, 0.0f);
 	public static final Item HOPS = new ItemBaseSeedFood("hops", ModBlocks.CROP_HOPS, Blocks.FARMLAND, 2, 0.0f);
 	public static final Item ICEBERG_SALAD = new ItemBaseFood("eisbergsalat", 2, 0.6f, false);
 	public static final Item LEEK = new ItemBaseFood("leek", 2, 0.6f, false);
@@ -65,7 +66,7 @@ public class ModItems {
 	public static final Item CACAO = new ItemBaseFood("cacao", 2, 0.6f, false);
 	public static final Item CHEESE = new ItemBaseFood("cheese", 2, 0.6f, false); //Wird mit Milch und Lab hergestellt
 	public static final Item COFFEE = new ItemBaseFood("coffee", 2, 0.6f, false);
-	public static final Item CUCUMBERMAKI = new ItemBaseFood("gurkenmaki", 2, 0.6f, false); //Reis, Seetang, geschnittene Gurke / Maki, geschnittene Gurke
+	public static final Item CUCUMBERMAKI = new ItemBaseFood("cucumbermaki", 2, 0.6f, false); //Reis, Seetang, geschnittene Gurke / Maki, geschnittene Gurke
 	public static final Item FRIES = new ItemBaseFood("pommes", 2, 0.6f, false);
 	public static final Item JAEGERMEISTER = new ItemBaseFood("jaegermeister", 2, 0.6f, false);
 	public static final Item KEBAB = new ItemBaseFood("doener", 2, 0.6f, false);

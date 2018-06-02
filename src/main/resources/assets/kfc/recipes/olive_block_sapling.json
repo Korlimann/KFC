@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
 	    {
-	       "item": "kfc:avocado"
+	       "item": "kfc:olive"
 	    },
 	    {
 	       "item": "minecraft:sapling",
@@ -10,7 +10,7 @@
 	    }
     ],
     "result": {
-        "item": "kfc:avocado_block_sapling",
+        "item": "kfc:olive_block_sapling",
         "count": 1
     }
 }
