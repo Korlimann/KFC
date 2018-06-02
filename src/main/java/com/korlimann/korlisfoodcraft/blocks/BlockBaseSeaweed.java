@@ -103,7 +103,7 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
         //Checks if the block is seaweed
         if (worldIn.getBlockState(pos.down()).getBlock() == ModBlocks.SEAWEED_BLOCK || this.checkForDrop(worldIn, pos, state))
         {
-            if (state2.getMaterial() == Material.WATER)
+            if (this.canPlaceBlockAt(worldIn, pos.up()))
             {
                 int i;
 
