@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.korlimann.korlisfoodcraft.items.ItemBase;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFood;
+import com.korlimann.korlisfoodcraft.items.ItemBaseFoodPotion;
 import com.korlimann.korlisfoodcraft.items.ItemBaseSeed;
 import com.korlimann.korlisfoodcraft.items.ItemBaseSeedFood;
 import com.korlimann.korlisfoodcraft.items.ItemBlockBaseSpecial;
@@ -18,6 +19,9 @@ public class ModItems {
 	 * In this class, all our items get initalized before they then get registered by our ObjectRegistry class. Hereby, the
 	 * name every item at least has, is the one that you will need to set all your textures/models-files to.
 	 * */
+	static int[] pt1 = {10, 1, 3, 5, 8, 11, 21, 22, 23, 26};
+	static int[] ptD1 = {6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000};
+	static int[] ptS1 = {2, 1, 2, 3, 1, 3, 3, 4, 2, 5};
 	
 	public static final List<Item> ITEMS = new ArrayList<Item>();
 	//CT = Craftingtable
@@ -68,7 +72,7 @@ public class ModItems {
 	public static final Item COFFEE = new ItemBaseFood("coffee", 2, 0.6f, false);
 	public static final Item CUCUMBERMAKI = new ItemBaseFood("cucumbermaki", 2, 0.6f, false); //Reis, Seetang, geschnittene Gurke / Maki, geschnittene Gurke
 	public static final Item FRIES = new ItemBaseFood("pommes", 2, 0.6f, false);
-	public static final Item JAEGERMEISTER = new ItemBaseFood("jaegermeister", 2, 0.6f, false);
+	public static final Item JAEGERMEISTER = new ItemBaseFoodPotion("jaegermeister", 2, 0.6f, false, true, pt1, ptD1, ptS1);
 	public static final Item KEBAB = new ItemBaseFood("doener", 2, 0.6f, false);
 	public static final Item ONIGIRI = new ItemBaseFood("onigiri", 2, 0.6f, false);
 	public static final Item PIZZA = new ItemBaseFood("pizza", 2, 0.6f, false);

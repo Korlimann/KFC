@@ -1,38 +1,38 @@
 {
 	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
 	"textures": {
-		"0": "models/avocado_skin",
-		"1": "models/avocado_stick",
-		"particle": "models/avocado_skin"
+		"0": "kfc:blocks/avocado_skin_4",
+		"1": "kfc:blocks/avocado_stick",
+		"particle": "kfc:blocks/avocado_skin"
 	},
 	"elements": [
 		{
-			"from": [7.5, 12, 7.5],
-			"to": [8.5, 16, 8.5],
+			"from": [7.5, 15, 7.5],
+			"to": [8.5, 17, 8.5],
 			"faces": {
-				"north": {"uv": [7, 10, 8, 14], "texture": "#1"},
-				"east": {"uv": [8, 12, 9, 16], "texture": "#1"},
-				"south": {"uv": [9, 10, 10, 14], "texture": "#1"},
-				"west": {"uv": [6, 12, 7, 16], "texture": "#1"},
+				"north": {"uv": [7, 12, 8, 14], "texture": "#1"},
+				"east": {"uv": [8, 14, 9, 16], "texture": "#1"},
+				"south": {"uv": [9, 12, 10, 14], "texture": "#1"},
+				"west": {"uv": [6, 14, 7, 16], "texture": "#1"},
 				"up": {"uv": [7, 14, 8, 15], "texture": "#1"},
 				"down": {"uv": [7, 15, 8, 16], "texture": "#1"}
 			}
 		},
 		{
-			"from": [6, 6, 6],
-			"to": [10, 10, 10],
+			"from": [6, 9, 6],
+			"to": [10, 13, 10],
 			"faces": {
 				"north": {"uv": [9, 4, 13, 8], "texture": "#0"},
 				"east": {"uv": [3, 4, 7, 8], "texture": "#0"},
-				"south": {"uv": [6, 13, 8, 14], "texture": "#0"},
+				"south": {"uv": [5, 4, 9, 8], "texture": "#0"},
 				"west": {"uv": [6, 6, 10, 10], "texture": "#0"},
 				"up": {"uv": [6, 6, 10, 10], "texture": "#0"},
 				"down": {"uv": [10, 8, 14, 12], "texture": "#0"}
 			}
 		},
 		{
-			"from": [6.5, 5, 6.5],
-			"to": [9.5, 6, 9.5],
+			"from": [6.5, 8, 6.5],
+			"to": [9.5, 9, 9.5],
 			"faces": {
 				"north": {"uv": [8, 8, 11, 9], "texture": "#0"},
 				"east": {"uv": [1, 12, 4, 13], "texture": "#0"},
@@ -43,8 +43,8 @@
 			}
 		},
 		{
-			"from": [6.5, 10, 6.5],
-			"to": [9.5, 11, 9.5],
+			"from": [6.5, 13, 6.5],
+			"to": [9.5, 14, 9.5],
 			"faces": {
 				"north": {"uv": [7, 8, 10, 9], "texture": "#0"},
 				"east": {"uv": [3, 4, 6, 5], "texture": "#0"},
@@ -55,8 +55,8 @@
 			}
 		},
 		{
-			"from": [7, 11, 7],
-			"to": [9, 12, 9],
+			"from": [7, 14, 7],
+			"to": [9, 15, 9],
 			"faces": {
 				"north": {"uv": [11, 14, 13, 15], "texture": "#0"},
 				"east": {"uv": [10, 13, 12, 14], "texture": "#0"},

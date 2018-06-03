@@ -7,12 +7,12 @@
         "age": {
             "0": {
                 "textures": {
-                    "cross": "kfc:blocks/rice/0"
+                    "cross": "kfc:blocks/rice/yoshi0"
                 }
             },
             "1": {
                 "textures": {
-                    "cross": "kfc:blocks/rice/1"
+                    "cross": "kfc:blocks/rice/yoshi1"
                 }
             },
             "2": {
@@ -42,7 +42,7 @@
             },
             "7": {
                 "textures": {
-                    "cross": "kfc:blocks/rice/7"
+                    "cross": "kfc:blocks/rice/yoshi7"
                 }
             }
         }
