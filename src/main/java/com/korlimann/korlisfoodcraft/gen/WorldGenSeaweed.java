@@ -32,7 +32,7 @@ public class WorldGenSeaweed extends WorldGenerator{
     public boolean generate(World worldIn, Random rand, BlockPos pos)
     {
     	IBlockState state2 = worldIn.getBlockState(pos.up());
-        if("beach".equalsIgnoreCase(worldIn.getBiome(pos).getBiomeName())||"ocean".equalsIgnoreCase(worldIn.getBiome(pos).getBiomeName()))
+        //if("beach".equalsIgnoreCase(worldIn.getBiome(pos).getBiomeName())||"ocean".equalsIgnoreCase(worldIn.getBiome(pos).getBiomeName()))
         for (int i = 0; i < patchSize; ++i)
         {
             BlockPos blockpos = pos.add(rand.nextInt(4) - rand.nextInt(4), 0, rand.nextInt(4) - rand.nextInt(4));

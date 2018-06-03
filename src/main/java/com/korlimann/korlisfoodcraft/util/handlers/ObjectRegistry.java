@@ -99,6 +99,7 @@ public class ObjectRegistry {
 		items.add(ModItems.ONION);
 		items.add(ModItems.GARLIC);
 		items.add(ModItems.CUCUMBER);
+		items.add(ModItems.SCHNITZEL);
 		//items.add(ModItems.GURKE);
 		//items.add(ModItems.CORN_SEED);
 		//items.add(ModItems.CHAMPIGNONS);

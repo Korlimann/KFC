@@ -77,6 +77,7 @@ public class ModItems {
 	public static final Item ONIGIRI = new ItemBaseFood("onigiri", 2, 0.6f, false);
 	public static final Item PIZZA = new ItemBaseFood("pizza", 2, 0.6f, false);
 	public static final Item ROAST_PORK = new ItemBaseFood("roast_pork", 2, 0.6f, false);
+	public static final Item SCHNITZEL = new ItemBaseFood("schnitzel", 2, 0.6f, false);
 	public static final Item SALMONMAKI = new ItemBaseFood("lachsmaki", 2, 0.6f, false); //Reis, Seetang, Filetierter Lachs / Maki, Filetierter Lachs
 	public static final Item SALMONSUSHI = new ItemBaseFood("lachssushi", 2, 0.6f, false); //Reis, Filetierter Lachs	
 	public static final Item SAUSAGE = new ItemBaseFood("sausage", 2, 0.6f, false);
