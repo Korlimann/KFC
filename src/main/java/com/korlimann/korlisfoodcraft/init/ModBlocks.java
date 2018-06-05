@@ -8,7 +8,6 @@ import com.korlimann.korlisfoodcraft.blocks.BlockBaseCake;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruit;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSaltOre;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSeaweed;
-import com.korlimann.korlisfoodcraft.blocks.BlockBaseSunflower;
 import com.korlimann.korlisfoodcraft.blocks.BlockFruitSapling;
 import com.korlimann.korlisfoodcraft.blocks.BlockHerbgarden;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropCorn;
@@ -18,7 +17,6 @@ import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropHops;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropMalt;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropOnion;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropRice;
-import com.korlimann.korlisfoodcraft.blocks.kitchenboard.BlockBaseKitchenboard;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
@@ -35,7 +33,6 @@ public class ModBlocks {
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
 	//Crafting Tables
-	public static final Block KITCHENBOARD_BLOCK = new BlockBaseKitchenboard();
 	
 	//Crops
 	public static final BlockBaseCropCorn CROP_CORN = new BlockBaseCropCorn();
