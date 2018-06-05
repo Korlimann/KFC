@@ -17,6 +17,7 @@ import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropHops;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropMalt;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropOnion;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropRice;
+import com.korlimann.korlisfoodcraft.crafting.kitchenboard.KitchenBoard;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
@@ -33,6 +34,7 @@ public class ModBlocks {
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
 	//Crafting Tables
+	public static final Block KITCHENBOARD = new KitchenBoard();
 	
 	//Crops
 	public static final BlockBaseCropCorn CROP_CORN = new BlockBaseCropCorn();
