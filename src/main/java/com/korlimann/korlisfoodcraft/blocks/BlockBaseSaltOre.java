@@ -16,6 +16,8 @@ public class BlockBaseSaltOre extends BlockOre implements IHasModel {
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(Main.korlissushicraft);
+		setHarvestLevel("pickaxe", 1);
+		setHardness(5);
 	}
 	
 	@Override
