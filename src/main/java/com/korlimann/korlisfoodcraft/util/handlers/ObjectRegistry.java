@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.korlimann.korlisfoodcraft.Main;
-import com.korlimann.korlisfoodcraft.blocks.kitchenboard.TileEntityKitchenboard;
 import com.korlimann.korlisfoodcraft.gen.KFCWorldGen;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.init.ModItems;
@@ -48,6 +47,10 @@ public class ObjectRegistry {
 		blocks.add(ModBlocks.AVOCADO_SAPLING);
 		blocks.add(ModBlocks.OLIVE_BLOCK);
 		blocks.add(ModBlocks.OLIVE_SAPLING);
+		blocks.add(ModBlocks.ORANGE_BLOCK);
+		blocks.add(ModBlocks.ORANGE_SAPLING);
+		blocks.add(ModBlocks.APPLE_BLOCK);
+		blocks.add(ModBlocks.APPLE_SAPLING);
 		//blocks.add(ModBlocks.KITCHENBOARD_BLOCK);
 		//blocks.add(ModBlocks.SUNFLOWER);
 	}
@@ -100,6 +103,7 @@ public class ObjectRegistry {
 		items.add(ModItems.GARLIC);
 		items.add(ModItems.CUCUMBER);
 		items.add(ModItems.SCHNITZEL);
+		items.add(ModItems.ORANGE);
 		//items.add(ModItems.GURKE);
 		//items.add(ModItems.CORN_SEED);
 		//items.add(ModItems.CHAMPIGNONS);
@@ -168,7 +172,5 @@ public class ObjectRegistry {
 	
 	public static void Common() {
 		GameRegistry.registerWorldGenerator(new KFCWorldGen(), 0);
-		GameRegistry.registerTileEntity(TileEntityKitchenboard.class, "tileentitykitchenboard");
-		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 	}
 }

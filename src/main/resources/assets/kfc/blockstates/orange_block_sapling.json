@@ -1,0 +1,14 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cross"
+    },
+	"variants": {
+		"stage=0": [
+            { "model": "kfc:orange_block_sapling" }
+        ],
+        "stage=1": [
+            { "model": "kfc:orange_block_sapling" }
+        ]
+	}
+}

@@ -1,16 +1,16 @@
 {
     "variants": {
         "age=0": [
-            { "model": "kfc:avocado_block_1" }
+            { "model": "kfc:avocado/avocado_1" }
         ],
         "age=1": [
-            { "model": "kfc:avocado_block_2" }
+            { "model": "kfc:avocado/avocado_2" }
         ],
         "age=2": [
-            { "model": "kfc:avocado_block_3" }
+            { "model": "kfc:avocado/avocado_3" }
         ],
         "age=3": [
-            { "model": "kfc:avocado_block_4" }
+            { "model": "kfc:avocado/avocado_4" }
         ]
     }
 }

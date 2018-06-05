@@ -1,11 +1,9 @@
 {
     "type": "minecraft:smelting",
-    "ingredients": [
-	    {
-	       "item": "kfc:raw_fries"
-	    }
-    ],
-    "result": "kfc:fries",
-    "experience": 0.2,
+    "ingredient": {
+        "item": "kfc:raw_fries"
+    },
+    "result": "kfc:pommes",
+    "experience": 0.4,
     "cookingtime": 20
 }

@@ -1,25 +1,25 @@
 {
     "variants": {
         "bites=0": [
-            { "model": "kfc:beer_full" }
+            { "model": "kfc:beer/beer_full" }
         ],
         "bites=1": [
-            { "model": "kfc:beer_1" }
+            { "model": "kfc:beer/beer_1" }
         ],
         "bites=2": [
-            { "model": "kfc:beer_2" }
+            { "model": "kfc:beer/beer_2" }
         ],
         "bites=3": [
-            { "model": "kfc:beer_3" }
+            { "model": "kfc:beer/beer_3" }
         ],
         "bites=4": [
-            { "model": "kfc:beer_4" }
+            { "model": "kfc:beer/beer_4" }
         ],
         "bites=5": [
-            { "model": "kfc:beer_5" }
+            { "model": "kfc:beer/beer_5" }
         ],
         "bites=6": [
-            { "model": "kfc:beer_6" }
+            { "model": "kfc:beer/beer_6" }
         ]
     }
 }
