@@ -19,18 +19,14 @@ public class ItemBaseFoodPotion extends ItemFood implements IHasModel {
 	 * */
 	
 	public int[] potionEffects;
-	public int[] potionEffectsDuration;
-	public int[] potionEffectsStrength;
 	public boolean potionEffect;
 	public int amount;
 	public float saturation;
 	
-	public ItemBaseFoodPotion(String name, int amount, float saturation, boolean isWolfFood, boolean potionEffect, int[] potionEffects, int[] potionEffectsDuration, int[] potionEffectsStrength) {
+	public ItemBaseFoodPotion(String name, int amount, float saturation, boolean isWolfFood, boolean potionEffect, int[] potionEffects) {
 		super(amount, saturation, isWolfFood);
 		this.potionEffect = potionEffect;
 		this.potionEffects = potionEffects;
-		this.potionEffectsDuration = potionEffectsDuration;
-		this.potionEffectsStrength = potionEffectsStrength;
 		this.amount = amount;
 		this.saturation = saturation;
 		setUnlocalizedName(name);
@@ -54,8 +50,9 @@ public class ItemBaseFoodPotion extends ItemFood implements IHasModel {
         {
             player.getFoodStats().addStats(amount, saturation);
             if(potionEffect) {
-            	for(int i=0; i<potionEffects.length; i++) {
-            		player.addPotionEffect(new PotionEffect(Potion.getPotionById(potionEffects[i]), potionEffectsDuration[i], potionEffectsStrength[i]));
+            	if(potionEffects.length %3==0)
+            	for(int i=0; i<potionEffects.length; i+=3) {
+            		player.addPotionEffect(new PotionEffect(Potion.getPotionById(potionEffects[i]), potionEffects[i+1], potionEffects[i+2]));
             	}
             }
         }
