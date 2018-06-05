@@ -32,17 +32,13 @@ public class BlockBaseCake extends BlockCake implements IHasModel {
 	 * */
 	
 	public int[] potionEffects;
-	public int[] potionEffectsDuration;
-	public int[] potionEffectsStrength;
 	public boolean potionEffect;
 	
 	public static final PropertyInteger BITES = PropertyInteger.create("bites", 0, 6);
-	
-	public BlockBaseCake(String name, boolean potionEffect, int[] potionEffects, int[] potionEffectsDuration, int[] potionEffectsStrength, boolean CreativeTab) {
+	// Potion effects is an array that always follows pattern: effectId, duration, strength
+	public BlockBaseCake(String name, boolean potionEffect, int[] potionEffects, boolean CreativeTab) {
 		this.potionEffect = potionEffect;
 		this.potionEffects = potionEffects;
-		this.potionEffectsDuration = potionEffectsDuration;
-		this.potionEffectsStrength = potionEffectsStrength;
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		if(CreativeTab)
@@ -107,9 +103,9 @@ public class BlockBaseCake extends BlockCake implements IHasModel {
         {
             player.addStat(StatList.CAKE_SLICES_EATEN);
             player.getFoodStats().addStats(1, 0.1F);
-            if(potionEffect) {
-            	for(int i=0; i<potionEffects.length; i++) {
-            		player.addPotionEffect(new PotionEffect(Potion.getPotionById(potionEffects[i]), potionEffectsDuration[i], potionEffectsStrength[i]));
+            if(potionEffect && potionEffects.length%3 ==0) {
+            	for(int i=0; i<potionEffects.length; i+=3) {
+            		player.addPotionEffect(new PotionEffect(Potion.getPotionById(potionEffects[i]), potionEffects[i+1], potionEffects[i+2]));
             	}
             }
             
