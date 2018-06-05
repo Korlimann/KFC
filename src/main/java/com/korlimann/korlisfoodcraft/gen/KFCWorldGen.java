@@ -2,14 +2,18 @@ package com.korlimann.korlisfoodcraft.gen;
 
 import java.util.Random;
 
+import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruitLeaves;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.util.RngHelper;
 
+import net.minecraft.block.BlockPlanks;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
@@ -32,7 +36,7 @@ public class KFCWorldGen implements IWorldGenerator
 		seaweed_block = new WorldGenSeaweed(ModBlocks.SEAWEED_BLOCK,10);
 		herbgarden = new WorldGenHerbs(ModBlocks.HERBGARDEN);
 		fruit_tree_avocado = new WorldGenFruitTree(true, 5, ModBlocks.AVOCADO_BLOCK);
-		fruit_tree_olive = new WorldGenFruitTree(true, 5, ModBlocks.OLIVE_BLOCK);
+		fruit_tree_olive =new WorldGenTrees(true, 5, Blocks.LOG.getDefaultState().withProperty(BlockPlanks.VARIANT, BlockPlanks.EnumType.OAK), ModBlocks.OLIVE_LEAVES.getDefaultState().withProperty(BlockBaseFruitLeaves.AGE, 0), false);
 	}
 
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) 

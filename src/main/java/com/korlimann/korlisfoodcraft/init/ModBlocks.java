@@ -11,6 +11,7 @@ import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropMalt;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropOnion;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCropRice;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruit;
+import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruitLeaves;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSaltOre;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSeaweed;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSunflower;
@@ -64,8 +65,8 @@ public class ModBlocks {
 	
 	//Fruits
 	public static final BlockBaseFruit AVOCADO_BLOCK = new BlockBaseFruit("avocado_block", Material.PLANTS,ModItems.AVOCADO);
-	public static final BlockBaseFruit OLIVE_BLOCK = new BlockBaseFruit("olive_block", Material.PLANTS,ModItems.OLIVE);
+	public static final BlockBaseFruitLeaves OLIVE_LEAVES = new BlockBaseFruitLeaves("olive_leaves", Material.PLANTS, ModItems.OLIVE);
 	//Fruit Saplings
 	public static final BlockFruitSapling AVOCADO_SAPLING = ModBlocks.AVOCADO_BLOCK.createFruitTreeAndSapling();
-	public static final BlockFruitSapling OLIVE_SAPLING = ModBlocks.OLIVE_BLOCK.createFruitTreeAndSapling();
+	public static final BlockFruitSapling OLIVE_SAPLING = OLIVE_LEAVES.createFruitTreeAndSapling();
 }

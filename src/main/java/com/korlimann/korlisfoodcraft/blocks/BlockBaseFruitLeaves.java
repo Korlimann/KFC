@@ -1,5 +1,10 @@
 package com.korlimann.korlisfoodcraft.blocks;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Random;
 
 import com.korlimann.korlisfoodcraft.Main;
@@ -8,6 +13,8 @@ import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -30,7 +37,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockBaseFruitLeaves extends Block implements IGrowable, IHasModel {
+public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHasModel {
 
 	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 1);
 	public static AxisAlignedBB AABB;
@@ -42,7 +49,7 @@ public class BlockBaseFruitLeaves extends Block implements IGrowable, IHasModel 
 	
 	
 	public BlockBaseFruitLeaves(String name, Material materialIn, double x1, double y1, double z1, double x2, double y2, double z2, Item fruit, boolean grow, boolean bonemeal, boolean CreativeTab) {
-		super(materialIn);
+		
 		this.fruit = fruit;
 		this.canGrow = grow;
 		this.canUseBonemeal = bonemeal;
@@ -203,6 +210,20 @@ public class BlockBaseFruitLeaves extends Block implements IGrowable, IHasModel 
 	public String getTypeName()
 	{
 		return type;
+	}
+
+	@Override
+	public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
+		// TODO Auto-generated method stub
+		List<ItemStack> l = new ArrayList<ItemStack> ();
+		l.add(item);
+		return l;
+	}
+
+	@Override
+	public EnumType getWoodType(int meta) {
+		// TODO Auto-generated method stub
+		return EnumType.OAK;
 	}
 	
 	

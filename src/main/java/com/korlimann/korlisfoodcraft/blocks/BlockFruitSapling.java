@@ -45,7 +45,7 @@ public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable
 		setRegistryName(name);
 		if(CreativeTab)
 			setCreativeTab(Main.korlissushicraft);
-		this.fruit=fruit;
+		this.leaves = fruitLeaves;
 		this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 	}
 	@Override
@@ -89,11 +89,12 @@ public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable
 	    {
 	        if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
 
+	        WorldGenerator worldgenerator;
 	        if(fruit==null)
 	        {
-	        	WorldGenerator wGenFruitless = new WorldGenTrees(true, 5,Blocks.PLANKS.getDefaultState().withProperty(BlockPlanks.VARIANT, BlockPlanks.EnumType.OAK) , p_i46446_4_, growVines)
-	        }
-	        WorldGenerator worldgenerator = new WorldGenFruitTree(true, 5, fruit);
+	        	worldgenerator = new WorldGenTrees(true, 5, Blocks.LOG.getDefaultState().withProperty(BlockPlanks.VARIANT, BlockPlanks.EnumType.OAK), leaves.getDefaultState().withProperty(BlockBaseFruitLeaves.AGE, rand.nextInt(1)), false);
+	        }else
+	        worldgenerator = new WorldGenFruitTree(true, 5, fruit);
 
 	        int i = 0;
 	        int j = 0;
