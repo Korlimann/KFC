@@ -1,65 +1,24 @@
-[15:18:17] [main/INFO]: Logging in with username & password
-[15:18:24] [main/INFO]: Setting user: Felix__Argyle
-[15:18:31] [main/WARN]: Skipping bad option: lastServer:
-[15:18:31] [main/INFO]: LWJGL Version: 2.9.4
-[15:18:35] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
-[15:18:40] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[15:18:40] [Thread-5/INFO]: Initializing LWJGL OpenAL
-[15:18:40] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[15:18:40] [Thread-5/INFO]: OpenAL initialized.
-[15:18:41] [Sound Library Loader/INFO]: Sound engine started
-[15:18:49] [main/INFO]: Created: 512x512 textures-atlas
-[15:18:51] [main/WARN]: Skipping bad option: lastServer:
-[15:18:52] [main/INFO]: Narrator library for x64 successfully loaded
-[15:23:07] [pool-3-thread-2/ERROR]: Couldn't get pending invite count
-com.mojang.realmsclient.exception.RealmsServiceException: Could not connect to Realms: connect timed out
-	at com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:436) ~[RealmsClient.class:1.10.19]
-	at com.mojang.realmsclient.client.RealmsClient.pendingInvitesCount(RealmsClient.java:306) ~[RealmsClient.class:1.10.19]
-	at com.mojang.realmsclient.gui.RealmsDataFetcher$PendingInviteUpdateTask.updatePendingInvites(RealmsDataFetcher.java:264) [RealmsDataFetcher$PendingInviteUpdateTask.class:1.10.19]
-	at com.mojang.realmsclient.gui.RealmsDataFetcher$PendingInviteUpdateTask.run(RealmsDataFetcher.java:255) [RealmsDataFetcher$PendingInviteUpdateTask.class:1.10.19]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.FutureTask.runAndReset(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_162]
-	at java.lang.Thread.run(Unknown Source) [?:1.8.0_162]
-[15:23:17] [pool-3-thread-2/ERROR]: Couldn't get pending invite count
-com.mojang.realmsclient.exception.RealmsServiceException: Could not connect to Realms: connect timed out
-	at com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:436) ~[RealmsClient.class:1.10.19]
-	at com.mojang.realmsclient.client.RealmsClient.pendingInvitesCount(RealmsClient.java:306) ~[RealmsClient.class:1.10.19]
-	at com.mojang.realmsclient.gui.RealmsDataFetcher$PendingInviteUpdateTask.updatePendingInvites(RealmsDataFetcher.java:264) [RealmsDataFetcher$PendingInviteUpdateTask.class:1.10.19]
-	at com.mojang.realmsclient.gui.RealmsDataFetcher$PendingInviteUpdateTask.run(RealmsDataFetcher.java:255) [RealmsDataFetcher$PendingInviteUpdateTask.class:1.10.19]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.FutureTask.runAndReset(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_162]
-	at java.lang.Thread.run(Unknown Source) [?:1.8.0_162]
-[15:23:27] [pool-3-thread-2/ERROR]: Couldn't get pending invite count
-com.mojang.realmsclient.exception.RealmsServiceException: Could not connect to Realms: connect timed out
-	at com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:436) ~[RealmsClient.class:1.10.19]
-	at com.mojang.realmsclient.client.RealmsClient.pendingInvitesCount(RealmsClient.java:306) ~[RealmsClient.class:1.10.19]
-	at com.mojang.realmsclient.gui.RealmsDataFetcher$PendingInviteUpdateTask.updatePendingInvites(RealmsDataFetcher.java:264) [RealmsDataFetcher$PendingInviteUpdateTask.class:1.10.19]
-	at com.mojang.realmsclient.gui.RealmsDataFetcher$PendingInviteUpdateTask.run(RealmsDataFetcher.java:255) [RealmsDataFetcher$PendingInviteUpdateTask.class:1.10.19]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.FutureTask.runAndReset(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_162]
-	at java.lang.Thread.run(Unknown Source) [?:1.8.0_162]
-[15:23:37] [pool-3-thread-2/ERROR]: Couldn't get pending invite count
-com.mojang.realmsclient.exception.RealmsServiceException: Could not connect to Realms: connect timed out
-	at com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:436) ~[RealmsClient.class:1.10.19]
-	at com.mojang.realmsclient.client.RealmsClient.pendingInvitesCount(RealmsClient.java:306) ~[RealmsClient.class:1.10.19]
-	at com.mojang.realmsclient.gui.RealmsDataFetcher$PendingInviteUpdateTask.updatePendingInvites(RealmsDataFetcher.java:264) [RealmsDataFetcher$PendingInviteUpdateTask.class:1.10.19]
-	at com.mojang.realmsclient.gui.RealmsDataFetcher$PendingInviteUpdateTask.run(RealmsDataFetcher.java:255) [RealmsDataFetcher$PendingInviteUpdateTask.class:1.10.19]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.FutureTask.runAndReset(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_162]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_162]
-	at java.lang.Thread.run(Unknown Source) [?:1.8.0_162]
+[13:31:03] [main/INFO]: Setting user: Player561
+[13:31:09] [main/WARN]: Skipping bad option: lastServer:
+[13:31:09] [main/INFO]: LWJGL Version: 2.9.4
+[13:31:13] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
+[13:31:17] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[13:31:17] [Thread-5/INFO]: Initializing LWJGL OpenAL
+[13:31:17] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[13:31:17] [Thread-5/INFO]: OpenAL initialized.
+[13:31:17] [Sound Library Loader/INFO]: Sound engine started
+[13:31:29] [main/INFO]: Created: 1024x512 textures-atlas
+[13:31:31] [main/WARN]: Skipping bad option: lastServer:
+[13:31:31] [main/INFO]: Narrator library for x64 successfully loaded
+[13:31:32] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[13:34:15] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[13:34:15] [Server thread/INFO]: Generating keypair
+[13:34:16] [Server thread/INFO]: Loaded 488 advancements
+[13:34:16] [Server thread/INFO]: Preparing start region for level 0
+[13:34:17] [Server thread/INFO]: Changing view distance to 6, from 10
+[13:34:19] [Server thread/INFO]: Player561[local:E:d36da52b] logged in with entity id 84 at (-1043.5, 4.0, -445.5)
+[13:34:19] [Server thread/INFO]: Player561 joined the game
+[13:34:19] [Server thread/INFO]: Saving and pausing game...
+[13:34:20] [Server thread/INFO]: Saving chunks for level 'FRUCHTBAUME'/overworld
+[13:34:20] [Server thread/INFO]: Saving chunks for level 'FRUCHTBAUME'/the_nether
+[13:34:20] [Server thread/INFO]: Saving chunks for level 'FRUCHTBAUME'/the_end
