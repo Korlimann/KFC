@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.korlimann.korlisfoodcraft.Main;
-import com.korlimann.korlisfoodcraft.blocks.kitchenboard.TileEntityKitchenboard;
 import com.korlimann.korlisfoodcraft.gen.KFCWorldGen;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.init.ModItems;
@@ -168,7 +167,5 @@ public class ObjectRegistry {
 	
 	public static void Common() {
 		GameRegistry.registerWorldGenerator(new KFCWorldGen(), 0);
-		GameRegistry.registerTileEntity(TileEntityKitchenboard.class, "tileentitykitchenboard");
-		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 	}
 }
