@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
 	"textures": {
-		"0": "kfc:blocks/avocado_skin_3",
-		"1": "kfc:blocks/avocado_stick",
-		"particle": "kfc:blocks/avocado_skin"
+		"0": "kfc:blocks/avocado/avocado_3",
+		"1": "kfc:blocks/fruits/fruit_stick",
+		"particle": "kfc:blocks/avocado/avocado_3"
 	},
 	"elements": [
 		{

@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
 	"textures": {
-		"0": "models/orange_leaves",
-		"1": "models/orange_green",
-		"particle": "models/orange_leaves"
+		"0": "kfc:blocks/fruits/fruit_leaves",
+		"1": "kfc:blocks/orange/orange_3",
+		"particle": "kfc:blocks/fruits/fruit_leaves"
 	},
 	"elements": [
 		{

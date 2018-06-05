@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
 	"textures": {
-		"0": "models/fruit_leaves",
-		"1": "models/apple_4",
-		"2": "models/fruit_stick",
-		"particle": "models/fruit_leaves"
+		"0": "kfc:blocks/fruits/fruit_leaves",
+		"1": "kfc:blocks/apple/apple_4",
+		"2": "kfc:blocks/fruits/fruit_stick",
+		"particle": "kfc:blocks/fruits/fruit_leaves"
 	},
 	"elements": [
 		{

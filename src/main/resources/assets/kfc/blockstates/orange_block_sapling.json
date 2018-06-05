@@ -5,10 +5,10 @@
     },
 	"variants": {
 		"stage=0": [
-            { "model": "kfc:olive_block_sapling" }
+            { "model": "kfc:orange_block_sapling" }
         ],
         "stage=1": [
-            { "model": "kfc:olive_block_sapling" }
+            { "model": "kfc:orange_block_sapling" }
         ]
 	}
 }
