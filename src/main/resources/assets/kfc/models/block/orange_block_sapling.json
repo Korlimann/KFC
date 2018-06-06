@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "kfc:blocks/apple_sapling"
+    }
+}

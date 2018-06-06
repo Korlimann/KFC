@@ -7,42 +7,42 @@
         "age": {
             "0": {
                 "textures": {
-                    "cross": "kfc:blocks/corn/0"
+                    "cross": "kfc:blocks/garlic/0"
                 }
             },
             "1": {
                 "textures": {
-                    "cross": "kfc:blocks/corn/1"
+                    "cross": "kfc:blocks/garlic/1"
                 }
             },
             "2": {
                 "textures": {
-                    "cross": "kfc:blocks/corn/2"
+                    "cross": "kfc:blocks/garlic/2"
                 }
             },
             "3": {
                 "textures": {
-                    "cross": "kfc:blocks/corn/3"
+                    "cross": "kfc:blocks/garlic/3"
                 }
             },
             "4": {
                 "textures": {
-                    "cross": "kfc:blocks/corn/4"
+                    "cross": "kfc:blocks/garlic/4"
                 }
             },
             "5": {
                 "textures": {
-                    "cross": "kfc:blocks/corn/5"
+                    "cross": "kfc:blocks/garlic/5"
                 }
             },
             "6": {
                 "textures": {
-                    "cross": "kfc:blocks/corn/6"
+                    "cross": "kfc:blocks/garlic/6"
                 }
             },
             "7": {
                 "textures": {
-                    "cross": "kfc:blocks/corn/7"
+                    "cross": "kfc:blocks/garlic/7"
                 }
             }
         }
