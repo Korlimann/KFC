@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.korlimann.korlisfoodcraft.items.ItemBase;
+import com.korlimann.korlisfoodcraft.items.ItemBaseFishingRod;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFood;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFoodPotion;
 import com.korlimann.korlisfoodcraft.items.ItemBaseSeed;
@@ -96,4 +97,7 @@ public class ModItems {
 	public static final Item PAN = new ItemBase("pan");
 	public static final Item PASTRY_ROLLER = new ItemBase("nudelholz");
 	//public static final Item BRETTMITMESSER = new ItemBase("brettmitmesser"); //Hergestellt: Werkbank: Brett + Messer
+	
+	//Dools
+	public static final Item DETAILED_FISHINGROD = new ItemBaseFishingRod("detailed_fishingrod", 128);
 }

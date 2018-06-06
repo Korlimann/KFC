@@ -52,6 +52,7 @@ item.roast_pork.name=Roast Pork
 item.garlic.name=Garlic
 item.schnitzel.name=Schnitzel
 item.orange.name=Orange
+item.detailed_fishingrod.name=Special Fishing Rod
 itemGroup.korlissushicraft=Korli's FoodCraft
 tile.beer.name=Beer
 tile.radler.name=Beer and lemonade
