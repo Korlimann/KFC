@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCake;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruit;
+import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruitLeaves;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSaltOre;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSeaweed;
 import com.korlimann.korlisfoodcraft.blocks.BlockFruitSapling;
@@ -63,13 +64,16 @@ public class ModBlocks {
 	public static final BlockBush HERBGARDEN = new BlockHerbgarden("herbs");
 	
 	//Fruits
-	public static final BlockBaseFruit AVOCADO_BLOCK = new BlockBaseFruit("avocado_block", Material.PLANTS, ModItems.AVOCADO);
-	public static final BlockBaseFruit OLIVE_BLOCK = new BlockBaseFruit("olive_block", Material.PLANTS, ModItems.OLIVE);
+
+	public static final BlockBaseFruit AVOCADO_BLOCK = new BlockBaseFruit("avocado_block", Material.PLANTS,ModItems.AVOCADO);
+	public static final BlockBaseFruitLeaves OLIVE_LEAVES = new BlockBaseFruitLeaves("olive_leaves","olive", Material.PLANTS, ModItems.OLIVE);
 	public static final BlockBaseFruit ORANGE_BLOCK = new BlockBaseFruit("orange_block", Material.PLANTS, ModItems.ORANGE);
 	public static final BlockBaseFruit APPLE_BLOCK = new BlockBaseFruit("apple_block", Material.PLANTS, Items.APPLE);
+
 	//Fruit Saplings
 	public static final BlockFruitSapling AVOCADO_SAPLING = ModBlocks.AVOCADO_BLOCK.createFruitTreeAndSapling();
-	public static final BlockFruitSapling OLIVE_SAPLING = ModBlocks.OLIVE_BLOCK.createFruitTreeAndSapling();
+	public static final BlockFruitSapling OLIVE_SAPLING = OLIVE_LEAVES.createFruitTreeAndSapling();
 	public static final BlockFruitSapling ORANGE_SAPLING = ModBlocks.ORANGE_BLOCK.createFruitTreeAndSapling();
 	public static final BlockFruitSapling APPLE_SAPLING = ModBlocks.APPLE_BLOCK.createFruitTreeAndSapling();
+
 }
