@@ -36,7 +36,7 @@ public class KFCWorldGen implements IWorldGenerator
 		seaweed_block = new WorldGenSeaweed(ModBlocks.SEAWEED_BLOCK,10);
 		herbgarden = new WorldGenHerbs(ModBlocks.HERBGARDEN);
 		fruit_tree_avocado = new WorldGenFruitTree(true, 5, ModBlocks.AVOCADO_BLOCK);
-		fruit_tree_olive = new WorldGenTrees(true, 5,Blocks.PLANKS.getDefaultState().withProperty(BlockPlanks.VARIANT, BlockPlanks.EnumType.OAK) , ModBlocks.OLIVE_BLOCK.getDefaultState().withProperty(BlockBaseFruitLeaves.AGE, Integer.valueOf(0)), false);
+		fruit_tree_olive =new WorldGenTrees(true, 5, Blocks.LOG.getDefaultState().withProperty(BlockPlanks.VARIANT, BlockPlanks.EnumType.OAK), ModBlocks.OLIVE_LEAVES.getDefaultState().withProperty(BlockBaseFruitLeaves.AGE, 0), false);
 	}
 
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) 
