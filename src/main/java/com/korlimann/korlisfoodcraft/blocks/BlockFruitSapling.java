@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.gen.WorldGenFruitTree;
+import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
@@ -89,11 +90,16 @@ public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable
 	    {
 	        if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
 
+	        WorldGenerator worldgenerator;
 	        if(fruit==null)
 	        {
-	        	WorldGenerator wGenFruitless = new WorldGenTrees(true, 5,Blocks.PLANKS.getDefaultState().withProperty(BlockPlanks.VARIANT, BlockPlanks.EnumType.OAK) , p_i46446_4_, growVines)
+	        	worldgenerator = new WorldGenTrees(true, 5,Blocks.PLANKS.getDefaultState().withProperty(BlockPlanks.VARIANT, BlockPlanks.EnumType.OAK) , ModBlocks.OLIVE_BLOCK.getDefaultState().withProperty(BlockBaseFruitLeaves.AGE, Integer.valueOf(0)), false);
 	        }
-	        WorldGenerator worldgenerator = new WorldGenFruitTree(true, 5, fruit);
+	        else
+	        {
+	        	worldgenerator = new WorldGenFruitTree(true, 5, fruit);
+	        }
+	        
 
 	        int i = 0;
 	        int j = 0;
