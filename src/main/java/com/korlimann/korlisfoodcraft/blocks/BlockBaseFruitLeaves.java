@@ -39,7 +39,7 @@ import net.minecraft.world.World;
 
 public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHasModel {
 
-	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 1);
+	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 2);
 	public static AxisAlignedBB AABB;
 	public Item fruit;
 	public boolean canGrow;
@@ -48,23 +48,23 @@ public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHas
 	private boolean CreativeTab;
 	
 	
-	public BlockBaseFruitLeaves(String name, Material materialIn, double x1, double y1, double z1, double x2, double y2, double z2, Item fruit, boolean grow, boolean bonemeal, boolean CreativeTab) {
+	public BlockBaseFruitLeaves(String name,String treeName, Material materialIn, double x1, double y1, double z1, double x2, double y2, double z2, Item fruit, boolean grow, boolean bonemeal, boolean CreativeTab) {
 		
 		this.fruit = fruit;
 		this.canGrow = grow;
 		this.canUseBonemeal = bonemeal;
-		this.type=name;
+		this.type=treeName;
 		AABB = new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(true)).withProperty(BlockLeaves.DECAYABLE, Boolean.valueOf(true)));
         this.setTickRandomly(true);
         setUnlocalizedName(name);
 		setRegistryName(name);
 		this.CreativeTab = CreativeTab;
 	}
 
-	public BlockBaseFruitLeaves(String name, Material materialIn, Item fruit)
+	public BlockBaseFruitLeaves(String name,String treeName, Material materialIn, Item fruit)
 	{
-		this(name,materialIn,0.25D, 0.25D, 0.25D, 0.75D, 1D, 0.75D, fruit, true, true,true);
+		this(name,treeName,materialIn,0.25D, 0.25D, 0.25D, 0.75D, 1D, 0.75D, fruit, true, true,true);
 	}
 	@Override
 	public void registerModels() {
@@ -94,7 +94,7 @@ public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHas
 	@Override
 	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
 		// TODO Auto-generated method stub
-		return NULL_AABB;
+		return Block.FULL_BLOCK_AABB;
 	}
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
@@ -106,7 +106,7 @@ public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHas
         {
             int i = ((Integer)state.getValue(AGE)).intValue();
 
-            if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(5) == 0))
+            if (i < 2 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(5) == 0))
             {
                 worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(i + 1)), 2);
                 net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state, worldIn.getBlockState(pos));
@@ -116,8 +116,7 @@ public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHas
 
     public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
     {
-        IBlockState iblockstate = worldIn.getBlockState(pos.up());
-        return iblockstate.getBlock() == Blocks.LEAVES;
+        return true;
     }
     
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
@@ -168,7 +167,7 @@ public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHas
 
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, new IProperty[] {AGE});
+        return new BlockStateContainer(this, new IProperty[] {AGE, BlockLeaves.CHECK_DECAY, BlockLeaves.DECAYABLE});
     }
 
     /**
@@ -182,13 +181,13 @@ public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHas
 	@Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) 
     {
-        return AABB;
+        return Block.FULL_BLOCK_AABB;
     }
 	
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		if(((Integer)state.getValue(AGE)).intValue()==3) {
+		if(((Integer)state.getValue(AGE)).intValue()==2) {
 			playerIn.addItemStackToInventory(new ItemStack(fruit));
 			worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(0)), 2);
 			return true;

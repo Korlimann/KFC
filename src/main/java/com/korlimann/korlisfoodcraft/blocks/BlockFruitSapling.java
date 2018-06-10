@@ -9,6 +9,7 @@ import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockOldLog;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.IGrowable;
@@ -93,7 +94,7 @@ public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable
 	        WorldGenerator worldgenerator;
 	        if(fruit==null)
 	        {
-	        	worldgenerator = new WorldGenTrees(true, 5, Blocks.LOG.getDefaultState().withProperty(BlockPlanks.VARIANT, BlockPlanks.EnumType.OAK), leaves.getDefaultState().withProperty(BlockBaseFruitLeaves.AGE, rand.nextInt(1)), false);
+	        	worldgenerator = new WorldGenTrees(true, 5, Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK), leaves.getDefaultState().withProperty(BlockBaseFruitLeaves.AGE, rand.nextInt(1)), false);
 	        }else
 	        worldgenerator = new WorldGenFruitTree(true, 5, fruit);
 
