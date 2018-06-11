@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "kfc:items/mischschuessel"
+		"layer0": "kfc:items/fries"
 	}
 }

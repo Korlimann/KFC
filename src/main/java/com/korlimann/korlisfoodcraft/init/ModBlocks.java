@@ -51,7 +51,7 @@ public class ModBlocks {
 	static int[] pt1 = {10, 60, 2};
 	public static final Block BEER = new BlockBaseCake("beer", false, pt1,true);
 	static int[] pt = {9,100,1, 17, 200, 2};
-	public static final Block BEER_AND_LEMONADE = new BlockBaseCake("radler", true, pt,true); 
+	public static final Block BEER_AND_LEMONADE = new BlockBaseCake("beer_and_lemonade", true, pt,true); 
 	
 	//Ores
 	public static final Block SALT_ORE = new BlockBaseSaltOre("salt_ore");

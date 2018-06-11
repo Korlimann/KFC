@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "kfc:items/goasmoas"
+		"layer0": "kfc:items/beer_jug"
 	}
 }
