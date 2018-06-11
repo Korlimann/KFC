@@ -1,6 +1,6 @@
 {
    "parent": "item/generated",
    "textures": {
-       "layer0": "kfc:items/orange_sapling"
+       "layer0": "kfc:items/apple_sapling"
    }
 }

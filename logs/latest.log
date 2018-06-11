@@ -1,24 +1,39 @@
-[13:31:03] [main/INFO]: Setting user: Player561
-[13:31:09] [main/WARN]: Skipping bad option: lastServer:
-[13:31:09] [main/INFO]: LWJGL Version: 2.9.4
-[13:31:13] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
-[13:31:17] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[13:31:17] [Thread-5/INFO]: Initializing LWJGL OpenAL
-[13:31:17] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[13:31:17] [Thread-5/INFO]: OpenAL initialized.
-[13:31:17] [Sound Library Loader/INFO]: Sound engine started
-[13:31:29] [main/INFO]: Created: 1024x512 textures-atlas
-[13:31:31] [main/WARN]: Skipping bad option: lastServer:
-[13:31:31] [main/INFO]: Narrator library for x64 successfully loaded
-[13:31:32] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[13:34:15] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
-[13:34:15] [Server thread/INFO]: Generating keypair
-[13:34:16] [Server thread/INFO]: Loaded 488 advancements
-[13:34:16] [Server thread/INFO]: Preparing start region for level 0
-[13:34:17] [Server thread/INFO]: Changing view distance to 6, from 10
-[13:34:19] [Server thread/INFO]: Player561[local:E:d36da52b] logged in with entity id 84 at (-1043.5, 4.0, -445.5)
-[13:34:19] [Server thread/INFO]: Player561 joined the game
-[13:34:19] [Server thread/INFO]: Saving and pausing game...
-[13:34:20] [Server thread/INFO]: Saving chunks for level 'FRUCHTBAUME'/overworld
-[13:34:20] [Server thread/INFO]: Saving chunks for level 'FRUCHTBAUME'/the_nether
-[13:34:20] [Server thread/INFO]: Saving chunks for level 'FRUCHTBAUME'/the_end
+[11:27:31] [main/INFO]: Setting user: Player380
+[11:27:37] [main/WARN]: Skipping bad option: lastServer:
+[11:27:37] [main/INFO]: LWJGL Version: 2.9.4
+[11:27:41] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Korli's FoodCraft
+[11:27:45] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[11:27:45] [Thread-5/INFO]: Initializing LWJGL OpenAL
+[11:27:45] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[11:27:45] [Thread-5/INFO]: OpenAL initialized.
+[11:27:45] [Sound Library Loader/INFO]: Sound engine started
+[11:27:53] [main/INFO]: Created: 1024x512 textures-atlas
+[11:27:56] [main/WARN]: Skipping bad option: lastServer:
+[11:27:56] [main/INFO]: Narrator library for x64 successfully loaded
+[11:27:57] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[11:28:19] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[11:28:19] [Server thread/INFO]: Generating keypair
+[11:28:21] [Server thread/INFO]: Loaded 488 advancements
+[11:28:21] [Server thread/INFO]: Preparing start region for level 0
+[11:28:22] [Server thread/INFO]: Preparing spawn area: 40%
+[11:28:22] [Server thread/INFO]: Changing view distance to 6, from 10
+[11:28:24] [Server thread/INFO]: Player380[local:E:8f05bdbd] logged in with entity id 307 at (197.18868896379877, 63.0, 409.7408211089969)
+[11:28:24] [Server thread/INFO]: Player380 joined the game
+[11:28:25] [Server thread/INFO]: Saving and pausing game...
+[11:28:25] [Server thread/INFO]: Saving chunks for level 'Showcase'/overworld
+[11:28:26] [Server thread/INFO]: Saving chunks for level 'Showcase'/the_nether
+[11:28:26] [Server thread/INFO]: Saving chunks for level 'Showcase'/the_end
+[11:28:26] [main/INFO]: Loaded 11 advancements
+[11:28:37] [Server thread/INFO]: Saving and pausing game...
+[11:28:37] [Server thread/INFO]: Saving chunks for level 'Showcase'/overworld
+[11:28:37] [Server thread/INFO]: Saving chunks for level 'Showcase'/the_nether
+[11:28:37] [Server thread/INFO]: Saving chunks for level 'Showcase'/the_end
+[11:30:01] [main/INFO]: Stopping!
+[11:30:01] [Server thread/INFO]: Stopping server
+[11:30:01] [Server thread/INFO]: Saving players
+[11:30:01] [Server thread/INFO]: Saving worlds
+[11:30:01] [Server thread/INFO]: Saving chunks for level 'Showcase'/overworld
+[11:30:01] [Server thread/INFO]: Saving chunks for level 'Showcase'/the_nether
+[11:30:01] [Server thread/INFO]: Saving chunks for level 'Showcase'/the_end
+[11:30:01] [main/INFO]: SoundSystem shutting down...
+[11:30:02] [main/WARN]: Author: Paul Lamb, www.paulscode.com
