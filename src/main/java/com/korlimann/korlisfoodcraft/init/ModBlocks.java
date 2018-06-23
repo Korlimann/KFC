@@ -11,6 +11,7 @@ import com.korlimann.korlisfoodcraft.blocks.BlockBaseSaltOre;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSeaweed;
 import com.korlimann.korlisfoodcraft.blocks.BlockFruitSapling;
 import com.korlimann.korlisfoodcraft.blocks.BlockHerbgarden;
+import com.korlimann.korlisfoodcraft.blocks.machines.ice_machine.BlockIceMachine;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropCorn;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropCucumber;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropGarlic;
@@ -75,5 +76,7 @@ public class ModBlocks {
 	public static final BlockFruitSapling OLIVE_SAPLING = OLIVE_LEAVES.createFruitTreeAndSapling();
 	public static final BlockFruitSapling ORANGE_SAPLING = ModBlocks.ORANGE_BLOCK.createFruitTreeAndSapling();
 	public static final BlockFruitSapling APPLE_SAPLING = ModBlocks.APPLE_BLOCK.createFruitTreeAndSapling();
-
+	
+	//Special Workbenches, Furnaces, etc.
+	public static final Block ICE_MACHINE = new BlockIceMachine("ice_machine");
 }
