@@ -4,17 +4,13 @@ import java.util.Random;
 
 import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.gen.WorldGenFruitTree;
-import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockOldLog;
 import net.minecraft.block.BlockPlanks;
-import net.minecraft.block.BlockSapling;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;

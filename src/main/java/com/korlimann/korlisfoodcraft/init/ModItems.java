@@ -7,7 +7,6 @@ import com.korlimann.korlisfoodcraft.items.ItemBase;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFishingRod;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFood;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFoodPotion;
-import com.korlimann.korlisfoodcraft.items.ItemBaseSeed;
 import com.korlimann.korlisfoodcraft.items.ItemBaseSeedFood;
 import com.korlimann.korlisfoodcraft.items.ItemBlockBaseSpecial;
 

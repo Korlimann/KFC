@@ -6,7 +6,6 @@ import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruitLeaves;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.util.RngHelper;
 
-import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockOldLog;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.init.Blocks;

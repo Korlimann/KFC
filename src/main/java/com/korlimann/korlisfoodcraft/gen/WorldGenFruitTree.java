@@ -1,14 +1,12 @@
 package com.korlimann.korlisfoodcraft.gen;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruit;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockCocoa;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockOldLog;

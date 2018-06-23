@@ -5,7 +5,6 @@ import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemSeedFood;
-import net.minecraft.item.ItemSeeds;
 
 public class ItemBaseSeedFood extends ItemSeedFood implements IHasModel {
 

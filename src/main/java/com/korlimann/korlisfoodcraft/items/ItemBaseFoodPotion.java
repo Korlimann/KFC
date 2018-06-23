@@ -1,7 +1,6 @@
 package com.korlimann.korlisfoodcraft.items;
 
 import com.korlimann.korlisfoodcraft.Main;
-import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,7 +8,6 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.stats.StatList;
 import net.minecraft.world.World;
 
 public class ItemBaseFoodPotion extends ItemFood implements IHasModel {
