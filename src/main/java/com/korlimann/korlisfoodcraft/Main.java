@@ -33,7 +33,7 @@ public class Main {
 	
 	@EventHandler
 	public static void init(FMLInitializationEvent event) {
-		
+		ObjectRegistry.initRegistry();
 	}
 	
 	@EventHandler

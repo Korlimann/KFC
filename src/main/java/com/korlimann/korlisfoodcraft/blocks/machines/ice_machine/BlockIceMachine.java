@@ -11,11 +11,14 @@ import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -104,6 +107,13 @@ public class BlockIceMachine extends BlockBase implements ITileEntityProvider {
 	}
 	
 	@Override
+	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
+		TileEntityIceMachine tileentity = (TileEntityIceMachine)worldIn.getTileEntity(pos);
+		InventoryHelper.dropInventoryItems(worldIn, pos, tileentity);
+		super.breakBlock(worldIn, pos, state);
+	}
+	
+	@Override
 	public EnumBlockRenderType getRenderType(IBlockState state) {
 		return EnumBlockRenderType.MODEL;
 	}
@@ -118,4 +128,21 @@ public class BlockIceMachine extends BlockBase implements ITileEntityProvider {
 		return state.withRotation(mirrorIn.toRotation((EnumFacing)state.getValue(FACING)));
 	}
 	
+	@Override
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, new IProperty[] {BURNING, FACING});
+	}
+	
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		EnumFacing facing = EnumFacing.getFront(meta);
+		if(facing.getAxis() == EnumFacing.Axis.Y) facing = EnumFacing.NORTH;
+		return this.getDefaultState().withProperty(FACING, facing);
+	}
+	
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return ((EnumFacing)state.getValue(FACING)).getIndex();
+	}
+		
 }

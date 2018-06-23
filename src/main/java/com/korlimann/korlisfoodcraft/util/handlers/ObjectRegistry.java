@@ -3,6 +3,7 @@ package com.korlimann.korlisfoodcraft.util.handlers;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.gen.KFCWorldGen;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.init.ModItems;
@@ -16,6 +17,7 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @EventBusSubscriber
@@ -41,6 +43,7 @@ public class ObjectRegistry {
 		blocks.add(ModBlocks.SALT_ORE);
 		blocks.add(ModBlocks.SEAWEED_BLOCK);
 		blocks.add(ModBlocks.HERBGARDEN);
+		blocks.add(ModBlocks.ICE_MACHINE);
 		blocks.add(ModBlocks.AVOCADO_BLOCK);
 		blocks.add(ModBlocks.AVOCADO_SAPLING);
 		blocks.add(ModBlocks.OLIVE_LEAVES);
@@ -133,6 +136,7 @@ public class ObjectRegistry {
 		for(Block block : blocks){
 			event.getRegistry().register(block);
 		}
+		TileEntityHandler.registerTileEntity();
 	}
 	
 	//We do not need to call prepareBlocks() in this method, because Blocks are registered before items.
@@ -171,5 +175,9 @@ public class ObjectRegistry {
 	
 	public static void Common() {
 		GameRegistry.registerWorldGenerator(new KFCWorldGen(), 0);
+	}
+
+	public static void initRegistry() {
+		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 	}
 }

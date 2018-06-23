@@ -61,3 +61,5 @@ tile.avocado_block_sapling.name=Avocado Sapling
 tile.olive_sapling.name=Olive Sapling
 tile.orange_block_sapling.name=Orange Sapling
 tile.apple_block_sapling.name=Apple Sapling
+tile.ice_machine.name=Ice Machine
+container.ice_machine=Ice Machine
