@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCake;
+import com.korlimann.korlisfoodcraft.blocks.BlockBaseCoffeeBean;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruit;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruitLeaves;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSaltOre;
@@ -67,6 +68,8 @@ public class ModBlocks {
 	public static final BlockBaseFruitLeaves OLIVE_LEAVES = new BlockBaseFruitLeaves("olive_leaves","olive", Material.PLANTS, ModItems.OLIVE);
 	public static final BlockBaseFruit ORANGE_BLOCK = new BlockBaseFruit("orange_block", Material.PLANTS, ModItems.ORANGE);
 	public static final BlockBaseFruit APPLE_BLOCK = new BlockBaseFruit("apple_block", Material.PLANTS, Items.APPLE);
+	
+	public static final Block COFFEE_BEAN = new BlockBaseCoffeeBean("coffee_bean", false);
 
 	//Fruit Saplings
 	public static final BlockFruitSapling AVOCADO_SAPLING = ModBlocks.AVOCADO_BLOCK.createFruitTreeAndSapling();

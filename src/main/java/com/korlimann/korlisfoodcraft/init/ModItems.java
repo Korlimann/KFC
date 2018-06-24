@@ -3,6 +3,7 @@ package com.korlimann.korlisfoodcraft.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.korlimann.korlisfoodcraft.items.ItemBaseCoffeeBean;
 import com.korlimann.korlisfoodcraft.items.ItemBase;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFishingRod;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFood;
@@ -42,6 +43,7 @@ public class ModItems {
 	public static final Item SEAWEED = new ItemBlockBaseSpecial(ModBlocks.SEAWEED_BLOCK, "seaweed"); //Droppt von Seegras
 	public static final Item TOMATO = new ItemBaseFood("tomato", 3, 0.3f, false); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	public static final Item ORANGE = new ItemBaseFood("orange", 2, 0.6f, false); //Fruchtbaum
+	public static final Item COFFEE_BEAN = new ItemBaseCoffeeBean("coffee_bean"); //Jungle
 	//public static final Item CORN_SEED = new ItemBaseSeed(ModBlocks.CROP_CORN, Blocks.FARMLAND, "corn_seed"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	//public static final Item TOMATOSEEDS = new ItemBase("tomatoseeds"); 
 	
