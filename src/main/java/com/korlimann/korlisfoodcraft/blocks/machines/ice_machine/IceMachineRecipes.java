@@ -1,19 +1,24 @@
 package com.korlimann.korlisfoodcraft.blocks.machines.ice_machine;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Table;
+import com.korlimann.korlisfoodcraft.util.ProcessingInputSet;
+
 import net.minecraft.item.ItemStack;
 
 public class IceMachineRecipes {
 
 	private static final IceMachineRecipes INSTANCE = new IceMachineRecipes();
-	private final Table<ItemStack, ItemStack, ItemStack> smeltingList = HashBasedTable.<ItemStack, ItemStack, ItemStack>create();
-	private final Map<ItemStack, Float> experienceList = Maps.<ItemStack, Float>newHashMap();
-	
+	//private final Table<ItemStack, ItemStack, ItemStack> smeltingList = HashBasedTable.<ItemStack, ItemStack, ItemStack>create();
+	//private final Map<ItemStack, Float> experienceList = Maps.<ItemStack, Float>newHashMap();
+	private final List<ProcessingInputSet> processList = new ArrayList<ProcessingInputSet>();
 	public static IceMachineRecipes getInstance()
 	{
 		return INSTANCE;
@@ -26,26 +31,19 @@ public class IceMachineRecipes {
 	}
 
 	
-	public void addSinteringRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience) 
+	public void addSinteringRecipe(ItemStack input1, ItemStack input2,ItemStack input3, ItemStack result, float experience) 
 	{
-		if(getIceResult(input1, input2) != ItemStack.EMPTY) return;
-		this.smeltingList.put(input1, input2, result);
-		this.experienceList.put(result, Float.valueOf(experience));
+		if(getIceResult(input1, input2,input3) != ItemStack.EMPTY) return;
+		this.processList.add(new ProcessingInputSet(result, experience, input1,input2,input3));
 	}
 	
-	public ItemStack getIceResult(ItemStack input1, ItemStack input2) 
+	public ItemStack getIceResult(ItemStack input1, ItemStack input2, ItemStack input3) 
 	{
-		for(Entry<ItemStack, Map<ItemStack, ItemStack>> entry : this.smeltingList.columnMap().entrySet()) 
+		for(ProcessingInputSet set: processList)
 		{
-			if(this.compareItemStacks(input1, (ItemStack)entry.getKey())) 
+			if(set.isCorrectRecipe(input1,input2,input3))
 			{
-				for(Entry<ItemStack, ItemStack> ent : entry.getValue().entrySet()) 
-				{
-					if(this.compareItemStacks(input2, (ItemStack)ent.getKey())) 
-					{
-						return (ItemStack)ent.getValue();
-					}
-				}
+				return set.getResult();
 			}
 		}
 		return ItemStack.EMPTY;
@@ -56,18 +54,18 @@ public class IceMachineRecipes {
 		return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1.getMetadata());
 	}
 	
-	public Table<ItemStack, ItemStack, ItemStack> getDualSmeltingList() 
+	/*public Table<ItemStack, ItemStack, ItemStack> getDualSmeltingList() 
 	{
 		return this.smeltingList;
 	}
-	
+	*/
 	public float getSinteringExperience(ItemStack stack)
 	{
-		for (Entry<ItemStack, Float> entry : this.experienceList.entrySet()) 
+		for (ProcessingInputSet set: processList) 
 		{
-			if(this.compareItemStacks(stack, (ItemStack)entry.getKey())) 
+			if(this.compareItemStacks(stack, set.getResult())) 
 			{
-				return ((Float)entry.getValue()).floatValue();
+				return set.getExp();
 			}
 		}
 		return 0.0F;

@@ -5,14 +5,14 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
-public class ProccessingInputSet {
+public class ProcessingInputSet {
 
 	private List<ItemStack> inputs;
 	private ItemStack result;
 	private float exp;
 	private boolean specificOrder;
 	
-	public ProccessingInputSet(ItemStack result,float exp,boolean order,ItemStack... inputs)
+	public ProcessingInputSet(ItemStack result,float exp,boolean order,ItemStack... inputs)
 	{
 		this.inputs = new ArrayList<ItemStack>(inputs.length);
 		
@@ -24,7 +24,7 @@ public class ProccessingInputSet {
 		this.result = result;
 		this.exp = exp;
 	}
-	public ProccessingInputSet(ItemStack result,float exp,ItemStack... inputs)
+	public ProcessingInputSet(ItemStack result,float exp,ItemStack... inputs)
 	{
 		this(result,exp,false,inputs);
 	}
@@ -54,7 +54,7 @@ public class ProccessingInputSet {
 		{
 			for (int i =0;i<inputs.length;i++)
 			{
-				if(!(inputs[i].equals(this.inputs.get(i))))
+				if(!(compareItemStacks(inputs[i], this.inputs.get(i))))
 				{
 					return false;
 				}
@@ -63,18 +63,28 @@ public class ProccessingInputSet {
 		else
 		{
 			List<ItemStack> actList = new ArrayList<ItemStack>(this.inputs);
-			for (ItemStack it : inputs)
+			for (int i =0;i<inputs.length;i++)
 			{
-				if(!(actList.contains(it)))
+				boolean flag =false;
+				for(int x=0;x<actList.size();x++)
+				{
+					if(compareItemStacks(inputs[i], actList.get(x)))
+					{
+						flag =true;
+						actList.remove(x);
+						break;
+					}
+				}
+				if(!flag)
 				{
 					return false;
-				}
-				else
-				{
-					actList.remove(it);
 				}
 			}
 		}
 		return true;
+	}
+	private boolean compareItemStacks(ItemStack stack1, ItemStack stack2)
+	{
+		return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1.getMetadata());
 	}
 }
