@@ -356,7 +356,7 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 	@Override
 	public int getFieldCount() 
 	{
-		return 5 ;
+		return 4;
 	}
 
 	@Override

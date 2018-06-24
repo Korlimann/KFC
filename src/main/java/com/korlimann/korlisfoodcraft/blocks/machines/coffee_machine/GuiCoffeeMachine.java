@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiCoffeeMachine extends GuiContainer{
 
-	private static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/gui/ice_machine.png");
+	private static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/gui/coffee_machine.png");
 	private final InventoryPlayer player;
 	private final TileEntityCoffeeMachine tileentity;
 	
@@ -22,7 +22,7 @@ public class GuiCoffeeMachine extends GuiContainer{
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		String tileName = this.tileentity.getDisplayName().getUnformattedText();
-		this.fontRenderer.drawString(tileName, (this.xSize / 2 - this.fontRenderer.getStringWidth(tileName)/2) - 52, 5, 4210752);
+		this.fontRenderer.drawString(tileName, (this.xSize / 2 - this.fontRenderer.getStringWidth(tileName)/2) - 44, 5, 4210752);
 		this.fontRenderer.drawString(this.player.getDisplayName().getUnformattedText(), 120, this.ySize - 96 + 2, 4210752);
 	}
 	

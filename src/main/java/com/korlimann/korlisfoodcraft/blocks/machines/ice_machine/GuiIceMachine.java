@@ -22,7 +22,7 @@ public class GuiIceMachine extends GuiContainer{
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		String tileName = this.tileentity.getDisplayName().getUnformattedText();
-		this.fontRenderer.drawString(tileName, (this.xSize / 2 - this.fontRenderer.getStringWidth(tileName)/2) - 52, 5, 4210752);
+		this.fontRenderer.drawString(tileName, (this.xSize / 2 - this.fontRenderer.getStringWidth(tileName)/2) - 53, 5, 4210752);
 		this.fontRenderer.drawString(this.player.getDisplayName().getUnformattedText(), 120, this.ySize - 96 + 2, 4210752);
 	}
 	
