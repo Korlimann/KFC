@@ -2,10 +2,10 @@
 	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
 	"textures": {
 		"0": "kfc:blocks/ice_machine/ice_machine",
-		"1": "kfc:blocks/ice_machine/ince_machine_cap",
+		"1": "kfc:blocks/ice_machine/ice_machine_cap",
 		"2": "kfc:blocks/ice_machine/blade_still",
 		"3": "kfc:blocks/ice_machine/button",
-		"particle": "blocks/ice_machine/ice_machine"
+		"particle": "kfc:blocks/ice_machine/ice_machine"
 	},
 	"elements": [
 		{

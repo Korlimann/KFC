@@ -91,6 +91,8 @@ public class ModItems {
 	//Küchengeräte
 	public static final Item COOKINGPOT = new ItemBase("cookingpot");
 	public static final Item CUP = new ItemBase("cup");
+	public static final Item WATER_CUP = new ItemBase("water_cup");
+	public static final Item MILK_CUP = new ItemBase("milk_cup");
 	public static final Item GOSMAS = new ItemBase("beer_jug");
 	public static final Item KITCHENKNIFE = new ItemBase("kitchenknife");
 	public static final Item MIXINGBOWL = new ItemBase("mixing_bowl");

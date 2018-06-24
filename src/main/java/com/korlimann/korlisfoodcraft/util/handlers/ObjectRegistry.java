@@ -108,6 +108,8 @@ public class ObjectRegistry {
 		items.add(ModItems.ORANGE);
 		items.add(ModItems.DETAILED_FISHINGROD);
 		items.add(ModItems.COFFEE_BEAN);
+		items.add(ModItems.WATER_CUP);
+		items.add(ModItems.MILK_CUP);
 		//items.add(ModItems.GURKE);
 		//items.add(ModItems.CORN_SEED);
 		//items.add(ModItems.CHAMPIGNONS);

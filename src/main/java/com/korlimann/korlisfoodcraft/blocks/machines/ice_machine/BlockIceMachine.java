@@ -154,6 +154,11 @@ public class BlockIceMachine extends BlockBase implements ITileEntityProvider {
 	}
 	
 	@Override
+	public boolean isTranslucent(IBlockState state) {
+		return true;
+	}
+	
+	@Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) 
     {
         return AABB;

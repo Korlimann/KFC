@@ -2,8 +2,12 @@ package com.korlimann.korlisfoodcraft.blocks.machines.coffee_machine;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.ProcessingInputSet;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public class CoffeeMachineRecipes {
@@ -18,11 +22,12 @@ public class CoffeeMachineRecipes {
 		}
 		
 		public CoffeeMachineRecipes() {
-			// Add Recipes Here
+			addCoffeeRecipe(new ItemStack(ModItems.WATER_CUP), new ItemStack(ModItems.COFFEE_BEAN), new ItemStack(ModItems.COFFEE), 0.0F);
+			addCoffeeRecipe(new ItemStack(ModItems.MILK_CUP), new ItemStack(Blocks.COCOA), new ItemStack(ModItems.CACAO), 0.0F);
 		}
 
 		
-		public void addSinteringRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience) 
+		public void addCoffeeRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience) 
 		{
 			if(getIceResult(input1, input2) != ItemStack.EMPTY) return;
 			this.processList.add(new ProcessingInputSet(result, experience, input1,input2));

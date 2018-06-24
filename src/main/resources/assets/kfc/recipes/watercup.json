@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+    	"###",
+    	"#+#",
+    	"###"
+    ],
+    "key": {
+    	"#": {
+    		"item": "kfc:cup"
+    	},
+    	"+": {
+    		"item": "minecraft:water_bucket"
+    	}
+    },
+    "result": {
+        "item": "kfc:water_cup",
+        "count": 8
+    }
+}
