@@ -27,11 +27,14 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockIceMachine extends BlockBase implements ITileEntityProvider {
 
+	public static final AxisAlignedBB AABB = new AxisAlignedBB(0.125D, 0, 0.125D, 1D, 0.53125D, 0.875D);
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	public static final PropertyBool BURNING = PropertyBool.create("burning");
 	
@@ -144,5 +147,16 @@ public class BlockIceMachine extends BlockBase implements ITileEntityProvider {
 	public int getMetaFromState(IBlockState state) {
 		return ((EnumFacing)state.getValue(FACING)).getIndex();
 	}
+	
+	@Override
+	public boolean isOpaqueCube(IBlockState state) {
+		return false;
+	}
+	
+	@Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) 
+    {
+        return AABB;
+    }
 		
 }

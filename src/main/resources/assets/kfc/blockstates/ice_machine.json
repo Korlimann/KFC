@@ -1,0 +1,13 @@
+{
+    "variants": 
+    {
+        "burning=false,facing=north": { "model": "kfc:ice_machine" },
+        "burning=false,facing=east": { "model": "kfc:ice_machine", "y": 90 },
+        "burning=false,facing=south": { "model": "kfc:ice_machine", "y": 180 },
+        "burning=false,facing=west": { "model": "kfc:ice_machine", "y": 270 },
+        "burning=true,facing=north": { "model": "kfc:ice_machine_active" },
+        "burning=true,facing=east": { "model": "kfc:ice_machine_active", "y": 90 },
+        "burning=true,facing=south": { "model": "kfc:ice_machine_active", "y": 180 },
+        "burning=true,facing=west": { "model": "kfc:ice_machine_active", "y":270  }
+    }
+}

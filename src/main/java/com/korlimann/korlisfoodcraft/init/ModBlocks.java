@@ -64,10 +64,10 @@ public class ModBlocks {
 	
 	//Fruits
 
-	public static final BlockBaseFruit AVOCADO_BLOCK = new BlockBaseFruit("avocado_block", Material.PLANTS,ModItems.AVOCADO);
+	public static final BlockBaseFruit AVOCADO_BLOCK = new BlockBaseFruit("avocado_block", Material.PLANTS, ModItems.AVOCADO);
 	public static final BlockBaseFruitLeaves OLIVE_LEAVES = new BlockBaseFruitLeaves("olive_leaves","olive", Material.PLANTS, ModItems.OLIVE);
-	public static final BlockBaseFruit ORANGE_BLOCK = new BlockBaseFruit("orange_block", Material.PLANTS, ModItems.ORANGE);
-	public static final BlockBaseFruit APPLE_BLOCK = new BlockBaseFruit("apple_block", Material.PLANTS, Items.APPLE);
+	public static final BlockBaseFruit ORANGE_BLOCK = new BlockBaseFruit("orange_block", Material.PLANTS, 0.390625D, 0.671875D, 0.390625D, 0.609375D, 1D, 0.609375D, ModItems.ORANGE, true, true, false);
+	public static final BlockBaseFruit APPLE_BLOCK = new BlockBaseFruit("apple_block", Material.PLANTS, 0.390625D, 0.75D, 0.390625D, 0.609375D, 1D, 0.609375D, Items.APPLE, true, true, false);
 	
 	public static final Block COFFEE_BEAN = new BlockBaseCoffeeBean("coffee_bean", false);
 
