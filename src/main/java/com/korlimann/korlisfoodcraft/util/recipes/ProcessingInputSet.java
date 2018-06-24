@@ -1,4 +1,4 @@
-package com.korlimann.korlisfoodcraft.util;
+package com.korlimann.korlisfoodcraft.util.recipes;
 
 import java.util.ArrayList;
 import java.util.List;

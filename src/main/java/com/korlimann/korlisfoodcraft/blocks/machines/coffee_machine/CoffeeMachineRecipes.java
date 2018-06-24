@@ -2,7 +2,8 @@ package com.korlimann.korlisfoodcraft.blocks.machines.coffee_machine;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.korlimann.korlisfoodcraft.util.ProcessingInputSet;
+
+import com.korlimann.korlisfoodcraft.util.recipes.ProcessingInputSet;
 
 import net.minecraft.item.ItemStack;
 
