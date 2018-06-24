@@ -19,11 +19,12 @@ public class ContainerIceMachine extends Container {
 	
 	public ContainerIceMachine(InventoryPlayer player, TileEntityIceMachine tileentity) {
 		this.tileentity = tileentity;
-		
-		this.addSlotToContainer(new Slot(tileentity, 0, 43, 16));
-		this.addSlotToContainer(new Slot(tileentity, 1, 69, 16));
-		this.addSlotToContainer(new SlotIceMachineFuel(tileentity, 2, 56, 53));
-		this.addSlotToContainer(new SlotIceMachineOutput(player.player, tileentity, 3, 116, 35));
+		//add different coordinates to make it fitting to the bg texture
+		this.addSlotToContainer(new Slot(tileentity, 0, 30, 16));
+		this.addSlotToContainer(new Slot(tileentity, 1, 53, 16));
+		this.addSlotToContainer(new Slot(tileentity,2,79,16));
+		this.addSlotToContainer(new SlotIceMachineFuel(tileentity, 3, 56, 53));
+		this.addSlotToContainer(new SlotIceMachineOutput(player.player, tileentity, 4, 116, 35));
 		
 		for(int y = 0; y < 3; y++) {
 			for(int x = 0; x <9; x++) {
@@ -88,13 +89,15 @@ public class ContainerIceMachine extends Container {
 			ItemStack stack1 = slot.getStack();
 			stack = stack1.copy();
 			
-			if(index == 3) 
+			if(index == 4) 
 			{
-				if(!this.mergeItemStack(stack1, 4, 40, true)) return ItemStack.EMPTY;
+				if(!this.mergeItemStack(stack1, 5, 41, true)) return ItemStack.EMPTY;
 				slot.onSlotChange(stack1, stack);
 			}
-			else if(index != 2 && index != 1 && index != 0) 
+			else if(index != 2 && index != 1 && index != 0 && index!=3) 
 			{		
+				
+				//???  Don't know how to handle this
 				Slot slot1 = (Slot)this.inventorySlots.get(index + 1);
 				
 				if(!IceMachineRecipes.getInstance().getIceResult(stack1, slot1.getStack()).isEmpty())
@@ -105,27 +108,27 @@ public class ContainerIceMachine extends Container {
 					}
 					else if(TileEntityIceMachine.isItemFuel(stack1))
 					{
-						if(!this.mergeItemStack(stack1, 2, 3, false)) return ItemStack.EMPTY;
+						if(!this.mergeItemStack(stack1, 3, 4, false)) return ItemStack.EMPTY;
 					}
 					else if(TileEntityIceMachine.isItemFuel(stack1))
 					{
-						if(!this.mergeItemStack(stack1, 2, 3, false)) return ItemStack.EMPTY;
+						if(!this.mergeItemStack(stack1, 3, 4, false)) return ItemStack.EMPTY;
 					}
 					else if(TileEntityIceMachine.isItemFuel(stack1))
 					{
-						if(!this.mergeItemStack(stack1, 2, 3, false)) return ItemStack.EMPTY;
+						if(!this.mergeItemStack(stack1, 3, 4, false)) return ItemStack.EMPTY;
 					}
-					else if(index >= 4 && index < 31)
+					else if(index >= 4 && index < 32)
 					{
-						if(!this.mergeItemStack(stack1, 31, 40, false)) return ItemStack.EMPTY;
+						if(!this.mergeItemStack(stack1, 32, 41, false)) return ItemStack.EMPTY;
 					}
-					else if(index >= 31 && index < 40 && !this.mergeItemStack(stack1, 4, 31, false))
+					else if(index >= 32 && index < 41 && !this.mergeItemStack(stack1, 5, 32, false))
 					{
 						return ItemStack.EMPTY;
 					}
 				}
 			} 
-			else if(!this.mergeItemStack(stack1, 4, 40, false)) 
+			else if(!this.mergeItemStack(stack1, 5, 41, false)) 
 			{
 				return ItemStack.EMPTY;
 			}
