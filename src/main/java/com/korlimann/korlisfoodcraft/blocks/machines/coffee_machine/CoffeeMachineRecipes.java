@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.korlimann.korlisfoodcraft.init.ModItems;
-import com.korlimann.korlisfoodcraft.util.ProcessingInputSet;
+import com.korlimann.korlisfoodcraft.util.recipes.ProcessingInputSet;
 
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public class CoffeeMachineRecipes {

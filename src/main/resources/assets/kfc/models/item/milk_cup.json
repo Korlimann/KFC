@@ -1,6 +1,6 @@
 {
    "parent": "item/generated",
    "textures": {
-       "layer0": "kfc:items/milkcup"
+       "layer0": "kfc:items/milk_cup"
    }
 }

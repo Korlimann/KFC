@@ -2,7 +2,8 @@ package com.korlimann.korlisfoodcraft.blocks.machines.ice_machine;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.korlimann.korlisfoodcraft.util.ProcessingInputSet;
+
+import com.korlimann.korlisfoodcraft.util.recipes.ProcessingInputSet;
 
 import net.minecraft.item.ItemStack;
 
@@ -19,8 +20,7 @@ public class IceMachineRecipes {
 	
 	private IceMachineRecipes() 
 	{
-		//addSinteringRecipe(new ItemStack(ModBlocks.BLOCK_COPPER), new ItemStack(ModBlocks.ORE_OVERWORLD), new ItemStack(Blocks.ACACIA_FENCE), 5.0F);
-		//addSinteringRecipe(new ItemStack(Blocks.ACACIA_FENCE), new ItemStack(Blocks.ACACIA_FENCE_GATE), new ItemStack(ModBlocks.ICE_MACHINE), 5.0F);
+		//add recipes here
 	}
 
 	

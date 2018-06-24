@@ -1,18 +1,18 @@
-package com.korlimann.korlisfoodcraft.util;
+package com.korlimann.korlisfoodcraft.util.recipes;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
-public class ProcessingInputSet {
+public class AdvancedProcessingInputSet {
 
 	private List<ItemStack> inputs;
-	private ItemStack result;
+	private List<ItemStack> results;
 	private float exp;
 	private boolean specificOrder;
 	
-	public ProcessingInputSet(ItemStack result,float exp,boolean order,ItemStack... inputs)
+	public AdvancedProcessingInputSet(float exp,boolean order,ItemStack[] inputs,ItemStack[] results)
 	{
 		this.inputs = new ArrayList<ItemStack>(inputs.length);
 		
@@ -21,12 +21,16 @@ public class ProcessingInputSet {
 			this.inputs.add(it);
 		}
 		this.specificOrder = order;
-		this.result = result;
+		this.results = new ArrayList<ItemStack>();
+		for(ItemStack it: results)
+		{
+			this.results.add(it);
+		}
 		this.exp = exp;
 	}
-	public ProcessingInputSet(ItemStack result,float exp,ItemStack... inputs)
+	public AdvancedProcessingInputSet(float exp,ItemStack[] inputs,ItemStack[] results)
 	{
-		this(result,exp,false,inputs);
+		this(exp,false,inputs,results);
 	}
 	
 	public float getExp() {
@@ -35,8 +39,8 @@ public class ProcessingInputSet {
 	public List<ItemStack> getInputs() {
 		return inputs;
 	}
-	public ItemStack getResult() {
-		return result;
+	public List<ItemStack> getResults() {
+		return results;
 	}
 	
 	public boolean isSpecificOrder() {

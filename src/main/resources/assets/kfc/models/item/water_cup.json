@@ -1,6 +1,6 @@
 {
    "parent": "item/generated",
    "textures": {
-       "layer0": "kfc:items/watercup"
+       "layer0": "kfc:items/water_cup"
    }
 }

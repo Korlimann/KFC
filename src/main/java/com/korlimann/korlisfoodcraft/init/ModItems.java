@@ -20,6 +20,8 @@ public class ModItems {
 	 * In this class, all our items get initalized before they then get registered by our ObjectRegistry class. Hereby, the
 	 * name every item at least has, is the one that you will need to set all your textures/models-files to.
 	 * */
+	
+	//These are Potion effects split into arrays with the following pattern pattern: effectId, duration, strength
 	static int[] pt1 = {10,6000,2,1,6000,1,3,6000,2,5,6000,3,8,6000,1,11,6000,3,21,6000,3,22,6000,4,23,6000,2,26,6000,5};
 	
 	public static final List<Item> ITEMS = new ArrayList<Item>();
