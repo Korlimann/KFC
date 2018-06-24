@@ -59,12 +59,14 @@ public class ProcessingInputSet {
 					return false;
 				}
 			}
+			return true;
 		}
 		else
 		{
 			List<ItemStack> actList = new ArrayList<ItemStack>(this.inputs);
 			for (int i =0;i<inputs.length;i++)
 			{
+				//a simple find algorithm using compareItemStacks instead of equals and removing already found items
 				boolean flag =false;
 				for(int x=0;x<actList.size();x++)
 				{
@@ -80,8 +82,9 @@ public class ProcessingInputSet {
 					return false;
 				}
 			}
+			return true;
 		}
-		return true;
+		
 	}
 	private boolean compareItemStacks(ItemStack stack1, ItemStack stack2)
 	{
