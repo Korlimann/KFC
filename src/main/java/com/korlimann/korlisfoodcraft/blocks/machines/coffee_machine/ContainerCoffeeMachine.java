@@ -95,10 +95,12 @@ public class ContainerCoffeeMachine extends Container {
 			}
 			else if(index != 2 && index != 1 && index != 0) 
 			{		
-				Slot slot1 = (Slot)this.inventorySlots.get(index + 1);
+				//this bit doesn't make even a tiny bit of sense
+				//same reason as for the iice machine
+				//Slot slot1 = (Slot)this.inventorySlots.get(index + 1);
 				
-				if(!CoffeeMachineRecipes.getInstance().getIceResult(stack1, slot1.getStack()).isEmpty())
-				{
+				/*if(!CoffeeMachineRecipes.getInstance().getIceResult(stack1, slot1.getStack()).isEmpty())
+				{*/
 					if(!this.mergeItemStack(stack1, 0, 2, false)) 
 					{
 						return ItemStack.EMPTY;
@@ -123,7 +125,7 @@ public class ContainerCoffeeMachine extends Container {
 					{
 						return ItemStack.EMPTY;
 					}
-				}
+				//}
 			} 
 			else if(!this.mergeItemStack(stack1, 4, 40, false)) 
 			{

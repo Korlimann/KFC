@@ -98,14 +98,19 @@ public class ContainerIceMachine extends Container {
 			{		
 				
 				//???  Don't know how to handle this
-				Slot slot1 = (Slot)this.inventorySlots.get(index + 1);
+				//since i won't find any sense in this i will just comment it out for now
+				//guessing it's supposed to check if the inventoryslot can actually fit these items
+				//although it would only check this with another player inventory slot thats just next to this one
 				
-				if(!IceMachineRecipes.getInstance().getIceResult(stack1, slot1.getStack()).isEmpty())
-				{
+				//Slot slot1 = (Slot)this.inventorySlots.get(index + 1);
+				
+				/*if(!IceMachineRecipes.getInstance().getIceResult(stack1, slot1.getStack()).isEmpty())
+				{*/
 					if(!this.mergeItemStack(stack1, 0, 2, false)) 
 					{
 						return ItemStack.EMPTY;
 					}
+					//someone has to explain these three 100% equal if's to me
 					else if(TileEntityIceMachine.isItemFuel(stack1))
 					{
 						if(!this.mergeItemStack(stack1, 3, 4, false)) return ItemStack.EMPTY;
@@ -126,7 +131,7 @@ public class ContainerIceMachine extends Container {
 					{
 						return ItemStack.EMPTY;
 					}
-				}
+				//}
 			} 
 			else if(!this.mergeItemStack(stack1, 5, 41, false)) 
 			{
