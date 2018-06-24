@@ -22,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class TileEntityIceMachine extends TileEntity implements IInventory, ITickable {
 	
-	private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
+	private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(5, ItemStack.EMPTY);
 	private String customName;
 	
 	private int burnTime;
@@ -98,7 +98,8 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 		if(index == 0 && index + 1 == 1 && !flag)
 		{
 			ItemStack stack1 = (ItemStack)this.inventory.get(index + 1);
-			this.totalCookTime = this.getCookTime(stack, stack1);
+			ItemStack stack2 = (ItemStack)this.inventory.get(index + 2);
+			this.totalCookTime = this.getCookTime(stack, stack1,stack2);
 			this.cookTime = 0;
 			this.markDirty();
 		}
@@ -157,9 +158,9 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 		
 		if(!this.world.isRemote) 
 		{
-			ItemStack stack = (ItemStack)this.inventory.get(2);
+			ItemStack stack = (ItemStack)this.inventory.get(3);
 			
-			if(this.isBurning() || !stack.isEmpty() && !((((ItemStack)this.inventory.get(0)).isEmpty()) || ((ItemStack)this.inventory.get(1)).isEmpty())) 
+			if(this.isBurning() || !stack.isEmpty() && !((((ItemStack)this.inventory.get(0)).isEmpty()) || ((ItemStack)this.inventory.get(1)).isEmpty())|| ((ItemStack)this.inventory.get(2)).isEmpty()) 
 			{
 				if(!this.isBurning() && this.canSmelt()) 
 				{
@@ -178,7 +179,7 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 							if(stack.isEmpty()) 
 							{
 								ItemStack item1 = item.getContainerItem(stack);
-								this.inventory.set(2, item1);
+								this.inventory.set(3, item1);
 							}
 						}
 					}
@@ -190,7 +191,7 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 					if(this.cookTime == this.totalCookTime) 
 					{
 						this.cookTime = 0;
-						this.totalCookTime = this.getCookTime((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1));
+						this.totalCookTime = this.getCookTime((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1),(ItemStack)this.inventory.get(2));
 						this.smeltItem();
 						flag1 = true;
 					}
@@ -210,21 +211,21 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 		if(flag1) this.markDirty();
 	}
 	
-	public int getCookTime(ItemStack input1, ItemStack input2) 
+	public int getCookTime(ItemStack input1, ItemStack input2,ItemStack input3) 
 	{
 		return 200;
 	}
 	
 	private boolean canSmelt() 
 	{
-		if(((ItemStack)this.inventory.get(0)).isEmpty() || ((ItemStack)this.inventory.get(1)).isEmpty()) return false;
+		if(((ItemStack)this.inventory.get(0)).isEmpty() || ((ItemStack)this.inventory.get(1)).isEmpty()||((ItemStack)this.inventory.get(2)).isEmpty()) return false;
 		else 
 		{
-			ItemStack result = IceMachineRecipes.getInstance().getIceResult((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1));	
+			ItemStack result = IceMachineRecipes.getInstance().getIceResult((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1),(ItemStack)this.inventory.get(2));	
 			if(result.isEmpty()) return false;
 			else
 			{
-				ItemStack output = (ItemStack)this.inventory.get(3);
+				ItemStack output = (ItemStack)this.inventory.get(4);
 				if(output.isEmpty()) return true;
 				if(!output.isItemEqual(result)) return false;
 				int res = output.getCount() + result.getCount();
@@ -239,14 +240,16 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 		{
 			ItemStack input1 = (ItemStack)this.inventory.get(0);
 			ItemStack input2 = (ItemStack)this.inventory.get(1);
-			ItemStack result = IceMachineRecipes.getInstance().getIceResult(input1, input2);
-			ItemStack output = (ItemStack)this.inventory.get(3);
+			ItemStack input3 = (ItemStack)this.inventory.get(2);
+			ItemStack result = IceMachineRecipes.getInstance().getIceResult(input1, input2,input3);
+			ItemStack output = (ItemStack)this.inventory.get(4);
 			
-			if(output.isEmpty()) this.inventory.set(3, result.copy());
+			if(output.isEmpty()) this.inventory.set(4, result.copy());
 			else if(output.getItem() == result.getItem()) output.grow(result.getCount());
 			
 			input1.shrink(1);
 			input2.shrink(1);
+			input3.shrink(1);
 		}
 	}
 	
@@ -303,8 +306,8 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 	public boolean isItemValidForSlot(int index, ItemStack stack) 
 	{
 		
-		if(index == 3) return false;
-		else if(index != 2) return true;
+		if(index == 4) return false;
+		else if(index != 3) return true;
 		else 
 		{
 			return isItemFuel(stack);
