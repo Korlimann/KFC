@@ -2,13 +2,6 @@ package com.korlimann.korlisfoodcraft.blocks.machines.coffee_machine;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.Maps;
-import com.google.common.collect.Table;
-import com.korlimann.korlisfoodcraft.blocks.machines.ice_machine.IceMachineRecipes;
 import com.korlimann.korlisfoodcraft.util.ProcessingInputSet;
 
 import net.minecraft.item.ItemStack;
