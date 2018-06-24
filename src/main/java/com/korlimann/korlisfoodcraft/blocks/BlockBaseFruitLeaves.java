@@ -35,7 +35,7 @@ public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHas
 	public boolean canGrow;
 	public boolean canUseBonemeal;
 	private String type;
-	private boolean CreativeTab;
+	//private boolean CreativeTab;
 	
 	
 	public BlockBaseFruitLeaves(String name,String treeName, Material materialIn, double x1, double y1, double z1, double x2, double y2, double z2, Item fruit, boolean grow, boolean bonemeal, boolean CreativeTab) {
@@ -49,7 +49,7 @@ public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHas
         this.setTickRandomly(true);
         setUnlocalizedName(name);
 		setRegistryName(name);
-		this.CreativeTab = CreativeTab;
+		//this.CreativeTab = CreativeTab;
 	}
 
 	public BlockBaseFruitLeaves(String name,String treeName, Material materialIn, Item fruit)

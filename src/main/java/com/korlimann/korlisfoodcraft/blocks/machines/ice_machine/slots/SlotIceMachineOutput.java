@@ -7,7 +7,9 @@ import net.minecraft.item.ItemStack;
 
 public class SlotIceMachineOutput extends Slot {
 
+	@SuppressWarnings("unused")
 	private final EntityPlayer player;
+	@SuppressWarnings("unused")
 	private int removeCount;
 	
 	public SlotIceMachineOutput(EntityPlayer player, IInventory inventoryIn, int index, int xPosition, int yPosition) {

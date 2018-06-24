@@ -99,7 +99,7 @@ public class BlockBaseSeaweed extends Block implements IHasModel, IPlantable {
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
 		//Gets the block above the seaweed
-		IBlockState state2 = worldIn.getBlockState(pos.up());
+		//IBlockState state2 = worldIn.getBlockState(pos.up());
         //Checks if the block is seaweed
         if (worldIn.getBlockState(pos.down()).getBlock() == ModBlocks.SEAWEED_BLOCK || this.checkForDrop(worldIn, pos, state))
         {
