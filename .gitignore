@@ -23,7 +23,6 @@ options.txt
 usercache.json
 usernamecache.json
 logs/
-crash-reports/
 *.launch# 
 Minecraft
 minecraft
@@ -32,6 +31,5 @@ minecraft
 *.log
 logs
 gradle
-crash-reports
 saves
 screenshots
