@@ -11,6 +11,7 @@ import com.korlimann.korlisfoodcraft.blocks.BlockBaseSaltOre;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSeaweed;
 import com.korlimann.korlisfoodcraft.blocks.BlockFruitSapling;
 import com.korlimann.korlisfoodcraft.blocks.BlockHerbgarden;
+import com.korlimann.korlisfoodcraft.blocks.machines.coffee_machine.BlockCoffeeMachine;
 import com.korlimann.korlisfoodcraft.blocks.machines.ice_machine.BlockIceMachine;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropCorn;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropCucumber;
@@ -75,4 +76,5 @@ public class ModBlocks {
 	
 	//Special Workbenches, Furnaces, etc.
 	public static final Block ICE_MACHINE = new BlockIceMachine("ice_machine");
+	public static final Block COFFEE_MACHINE = new BlockCoffeeMachine("coffee_machine");
 }

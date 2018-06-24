@@ -13,4 +13,5 @@ public class Reference {
 	public static final String COMMON_PROXY_CLASS = "com.korlimann.korlisfoodcraft.proxy.CommonProxy";
 	
 	public static final int GUI_ICE_MACHINE = 0;
+	public static final int GUI_COFFEE_MACHINE = 1;
 }

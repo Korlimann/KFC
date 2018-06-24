@@ -1,4 +1,4 @@
-package com.korlimann.korlisfoodcraft.blocks.machines.ice_machine;
+package com.korlimann.korlisfoodcraft.blocks.machines.coffee_machine;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TileEntityIceMachine extends TileEntity implements IInventory, ITickable {
+public class TileEntityCoffeeMachine extends TileEntity implements IInventory, ITickable {
 	
 	private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
 	private String customName;
@@ -33,7 +33,7 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 	@Override
 	public String getName() 
 	{
-		return this.hasCustomName() ? this.customName : "container.ice_machine";
+		return this.hasCustomName() ? this.customName : "container.coffee_machine";
 	}
 
 	@Override
@@ -204,7 +204,7 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 			if(flag != this.isBurning()) 
 			{
 				flag1 = true;
-				BlockIceMachine.setState(this.isBurning(), this.world, this.pos);
+				BlockCoffeeMachine.setState(this.isBurning(), this.world, this.pos);
 			}
 		} 
 		if(flag1) this.markDirty();
@@ -220,7 +220,7 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 		if(((ItemStack)this.inventory.get(0)).isEmpty() || ((ItemStack)this.inventory.get(1)).isEmpty()) return false;
 		else 
 		{
-			ItemStack result = IceMachineRecipes.getInstance().getIceResult((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1));	
+			ItemStack result = CoffeeMachineRecipes.getInstance().getIceResult((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1));	
 			if(result.isEmpty()) return false;
 			else
 			{
@@ -239,7 +239,7 @@ public class TileEntityIceMachine extends TileEntity implements IInventory, ITic
 		{
 			ItemStack input1 = (ItemStack)this.inventory.get(0);
 			ItemStack input2 = (ItemStack)this.inventory.get(1);
-			ItemStack result = IceMachineRecipes.getInstance().getIceResult(input1, input2);
+			ItemStack result = CoffeeMachineRecipes.getInstance().getIceResult(input1, input2);
 			ItemStack output = (ItemStack)this.inventory.get(3);
 			
 			if(output.isEmpty()) this.inventory.set(3, result.copy());
