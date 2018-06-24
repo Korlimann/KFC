@@ -30,6 +30,5 @@ minecraft
 /logs/
 *.log
 logs
-gradle
 saves
 screenshots
