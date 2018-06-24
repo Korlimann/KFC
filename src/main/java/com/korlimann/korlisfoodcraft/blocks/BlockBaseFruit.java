@@ -26,7 +26,7 @@ import net.minecraft.world.World;
 public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 
 	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 3);
-	public static AxisAlignedBB AABB;
+	public  AxisAlignedBB AABB;
 	public Item fruit;
 	public boolean canGrow;
 	public boolean canUseBonemeal;
