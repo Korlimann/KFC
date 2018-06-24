@@ -138,7 +138,9 @@ public class ObjectRegistry {
 		for(Block block : blocks){
 			event.getRegistry().register(block);
 		}
+		ConsoleLogger.info("Blocks Registered");
 		TileEntityHandler.registerTileEntity();
+		ConsoleLogger.info("TileEntities Registered");
 	}
 	
 	//We do not need to call prepareBlocks() in this method, because Blocks are registered before items.
@@ -151,12 +153,13 @@ public class ObjectRegistry {
 			iblock.setRegistryName(block.getRegistryName());
 			event.getRegistry().register(iblock);
 		}		
-		
+		ConsoleLogger.info("ItemBlocks Registered");
 		prepareItems();
 		
 		for(Item item : items) {
 			event.getRegistry().register(item);
 		}
+		ConsoleLogger.info("Items Registered");
 	}
 	
 	@SubscribeEvent
@@ -181,5 +184,6 @@ public class ObjectRegistry {
 
 	public static void initRegistry() {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
+		ConsoleLogger.info("GuiHandler Registered");
 	}
 }
