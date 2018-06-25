@@ -47,7 +47,7 @@ public class BlockCompostHeap extends Block implements IHasModel {
 	
 	 public IBlockState getStateFromMeta(int meta)
 	    {
-	        return this.getDefaultState().withProperty(FILL, Integer.valueOf((meta & 15) >> 2));
+	        return this.getDefaultState().withProperty(FILL, Integer.valueOf((meta & 15)));
 	    }
 
 	    /**
@@ -56,7 +56,7 @@ public class BlockCompostHeap extends Block implements IHasModel {
 	    public int getMetaFromState(IBlockState state)
 	    {
 	        int i = 0;
-	        i = i | ((Integer)state.getValue(FILL)).intValue() << 2;
+	        i = i | ((Integer)state.getValue(FILL)).intValue();
 	        return i;
 	    }
 

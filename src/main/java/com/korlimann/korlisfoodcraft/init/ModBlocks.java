@@ -47,6 +47,8 @@ public class ModBlocks {
 	public static final BlockBaseCropCucumber CROP_CUCUMBER = new BlockBaseCropCucumber();
 	public static final BlockBaseCropGarlic CROP_GARLIC = new BlockBaseCropGarlic();
 	
+	//Random?
+	public static final Block COMPOST_HEAP = new BlockCompostHeap("compost_heap", true);
 	
 	//"Cakes"
 	static int[] pt1 = {10, 60, 2};
@@ -79,11 +81,12 @@ public class ModBlocks {
 	public static final BlockFruitSapling ORANGE_SAPLING = ModBlocks.ORANGE_BLOCK.createFruitTreeAndSapling();
 	public static final BlockFruitSapling APPLE_SAPLING = ModBlocks.APPLE_BLOCK.createFruitTreeAndSapling();
 	
+
+	
 	//Special Workbenches, Furnaces, etc.
 	public static final Block ICE_MACHINE = new BlockIceMachine("ice_machine");
 	public static final Block COFFEE_MACHINE = new BlockCoffeeMachine("coffee_machine");
 	public static final Block SMOOTHIE_MAKER = new BlockSmoothieMaker("smoothie_maker");
 	
-	//Random?
-	public static final Block COMPOST_HEAP = new BlockCompostHeap("compost_heap", true);
+
 }

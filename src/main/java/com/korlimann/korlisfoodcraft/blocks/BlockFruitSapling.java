@@ -73,7 +73,7 @@ public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
 		// TODO Auto-generated method stub
-		return this.getDefaultState().withProperty(STAGE, Integer.valueOf(meta & 8) >> 3);
+		return this.getDefaultState().withProperty(STAGE, Integer.valueOf(meta & 15));
 	}
 	
 	@Override
@@ -173,7 +173,7 @@ public class BlockFruitSapling extends BlockBush implements IHasModel, IGrowable
 	public int getMetaFromState(IBlockState state) {
 		// TODO Auto-generated method stub
 		int i = 0;
-        i = i | ((Integer)state.getValue(STAGE)).intValue() << 3;
+        i = i | ((Integer)state.getValue(STAGE)).intValue();
         return i;
 	}
 	

@@ -31,6 +31,7 @@ public class ObjectRegistry {
 	public static Set<Block> blocks = new HashSet<Block>();
 	
 	public static void prepareBlocks(){
+		blocks.add(ModBlocks.COMPOST_HEAP);
 		blocks.add(ModBlocks.CROP_CORN);
 		blocks.add(ModBlocks.CROP_HOPS);
 		blocks.add(ModBlocks.CROP_MALT);
@@ -43,7 +44,6 @@ public class ObjectRegistry {
 		blocks.add(ModBlocks.SALT_ORE);
 		blocks.add(ModBlocks.SEAWEED_BLOCK);
 		blocks.add(ModBlocks.HERBGARDEN);
-		blocks.add(ModBlocks.COMPOST_HEAP);
 		blocks.add(ModBlocks.ICE_MACHINE);
 		blocks.add(ModBlocks.COFFEE_MACHINE);
 		blocks.add(ModBlocks.SMOOTHIE_MAKER);
@@ -140,7 +140,7 @@ public class ObjectRegistry {
 		
 		//We make sure that the list gets filled with our blocks.
 		prepareBlocks();
-		
+		int x = blocks.size();
 		for(Block block : blocks){
 			event.getRegistry().register(block);
 		}
