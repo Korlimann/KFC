@@ -14,4 +14,5 @@ public class Reference {
 	
 	public static final int GUI_ICE_MACHINE = 0;
 	public static final int GUI_COFFEE_MACHINE = 1;
+	public static final int GUI_SMOOTHIE_MAKER = 2;
 }

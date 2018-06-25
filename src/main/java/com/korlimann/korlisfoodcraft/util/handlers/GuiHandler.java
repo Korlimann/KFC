@@ -6,6 +6,9 @@ import com.korlimann.korlisfoodcraft.blocks.machines.coffee_machine.TileEntityCo
 import com.korlimann.korlisfoodcraft.blocks.machines.ice_machine.ContainerIceMachine;
 import com.korlimann.korlisfoodcraft.blocks.machines.ice_machine.GuiIceMachine;
 import com.korlimann.korlisfoodcraft.blocks.machines.ice_machine.TileEntityIceMachine;
+import com.korlimann.korlisfoodcraft.blocks.machines.smoothie_maker.ContainerSmoothieMaker;
+import com.korlimann.korlisfoodcraft.blocks.machines.smoothie_maker.GuiSmoothieMaker;
+import com.korlimann.korlisfoodcraft.blocks.machines.smoothie_maker.TileEntitySmoothieMaker;
 import com.korlimann.korlisfoodcraft.util.Reference;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,6 +22,7 @@ public class GuiHandler implements IGuiHandler {
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if(ID == Reference.GUI_ICE_MACHINE) return new ContainerIceMachine(player.inventory, (TileEntityIceMachine)world.getTileEntity(new BlockPos(x, y, z)));
 		if(ID == Reference.GUI_COFFEE_MACHINE) return new ContainerCoffeeMachine(player.inventory, (TileEntityCoffeeMachine)world.getTileEntity(new BlockPos(x, y, z)));
+		if(ID == Reference.GUI_SMOOTHIE_MAKER) return new ContainerSmoothieMaker(player.inventory, (TileEntitySmoothieMaker)world.getTileEntity(new BlockPos(x, y, z)));
 		return null;
 	}
 
@@ -26,6 +30,7 @@ public class GuiHandler implements IGuiHandler {
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if(ID == Reference.GUI_ICE_MACHINE) return new GuiIceMachine(player.inventory, (TileEntityIceMachine)world.getTileEntity(new BlockPos(x, y, z)));
 		if(ID == Reference.GUI_COFFEE_MACHINE) return new GuiCoffeeMachine(player.inventory, (TileEntityCoffeeMachine)world.getTileEntity(new BlockPos(x, y, z)));
+		if(ID == Reference.GUI_SMOOTHIE_MAKER) return new GuiSmoothieMaker(player.inventory, (TileEntitySmoothieMaker)world.getTileEntity(new BlockPos(x, y, z)));
 		return null;
 	}
 

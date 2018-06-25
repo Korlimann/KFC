@@ -65,8 +65,17 @@ tile.orange_block_sapling.name=Orange Sapling
 tile.apple_block_sapling.name=Apple Sapling
 tile.ice_machine.name=Ice Machine
 tile.coffee_machine.name=Coffee Machine
+tile.smoothie_maker.name=Smoothie Maker
+
 container.ice_machine=Ice Machine
 container.coffee_machine=Coffee Machine
+container.smoothie_maker=Smoothie Maker
 
 advancements.machines.get_coffee_machine.title=Stay awake!
-advancements.machines.get_coffee_machine.descriptions=Nights are getting shorter, days are getting longer! You made your first Coffee Machine!
+advancements.machines.get_coffee_machine.description=Nights are getting shorter, days are getting longer! You made your first Coffee Machine
+advancements.machines.get_ice_machine.title=Cool refreshment!
+advancements.machines.get_ice_machine.description=Ice cream for everyone!
+advancements.fruits.pick_fruit.title=Fruity!
+advancements.fruits.pick_fruit.description=You made the first step to creating an amazingly good-tasting smoothie! 
+advancements.fruits.get_all_fruits.title=Gonna catch em all!
+advancements.fruits.get_all_fruits.description=I doubt that it will taste good if you throw everything in your smoothie maker... 

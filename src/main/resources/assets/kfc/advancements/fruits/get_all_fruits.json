@@ -1,0 +1,34 @@
+{
+    "display": {
+        "icon": {
+            "item": "kfc:orange"
+        },
+        "title": {
+            "translate": "advancements.fruits.get_all_fruits.title"
+        },
+        "description": {
+            "translate": "advancements.fruits.get_all_fruits.description"
+        }
+    },
+    "criteria": {
+        "orange": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "kfc:orange"
+                    },
+                    {
+                        "item": "kfc:avocado"
+                    },
+                    {
+                        "item": "minecraft:apple"
+                    },
+                    {
+                        "item": "kfc:olive"
+                    }
+                ]
+            }
+        }
+    }
+}

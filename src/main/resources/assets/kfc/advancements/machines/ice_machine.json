@@ -1,22 +1,22 @@
 {
     "display": {
         "icon": {
-            "item": "kfc:coffee_machine"
+            "item": "kfc:ice_machine"
         },
         "title": {
-            "translate": "advancements.machines.get_coffee_machine.title"
+            "translate": "advancements.machines.get_ice_machine.title"
         },
         "description": {
-            "translate": "advancements.machines.get_coffee_machine.description"
+            "translate": "advancements.machines.get_ice_machine.description"
         }
     },
     "criteria": {
-        "coffee_machine": {
+        "ice_machine": {
             "trigger": "minecraft:inventory_changed",
             "conditions": {
                 "items": [
                     {
-                        "item": "kfc:coffee_machine"
+                        "item": "kfc:ice_machine"
                     }
                 ]
             }

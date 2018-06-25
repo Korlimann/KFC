@@ -1,0 +1,55 @@
+{
+    "display": {
+        "icon": {
+            "item": "kfc:avocado"
+        },
+        "title": {
+            "translate": "advancements.fruits.pick_fruit.title"
+        },
+        "description": {
+            "translate": "advancements.fruits.pick_fruit.description"
+        }
+    },
+    "criteria": {
+        "orange": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "kfc:orange"
+                    }
+                ]
+            }
+        },
+        "apple": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "kfc:apple"
+                    }
+                ]
+            }
+        },
+        "avocado": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "kfc:avocado"
+                    }
+                ]
+            }
+        },
+        "olive": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "kfc:olive"
+                    }
+                ]
+            }
+        }
+    }
+}
