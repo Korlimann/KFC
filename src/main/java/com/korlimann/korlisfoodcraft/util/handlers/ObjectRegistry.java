@@ -43,6 +43,7 @@ public class ObjectRegistry {
 		blocks.add(ModBlocks.SALT_ORE);
 		blocks.add(ModBlocks.SEAWEED_BLOCK);
 		blocks.add(ModBlocks.HERBGARDEN);
+		blocks.add(ModBlocks.COMPOST_HEAP);
 		blocks.add(ModBlocks.ICE_MACHINE);
 		blocks.add(ModBlocks.COFFEE_MACHINE);
 		blocks.add(ModBlocks.SMOOTHIE_MAKER);
@@ -111,6 +112,8 @@ public class ObjectRegistry {
 		items.add(ModItems.COFFEE_BEAN);
 		items.add(ModItems.WATER_CUP);
 		items.add(ModItems.MILK_CUP);
+		items.add(ModItems.BANANA_PEEL);
+		items.add(ModItems.FERTILIZER);
 		//items.add(ModItems.GURKE);
 		//items.add(ModItems.CORN_SEED);
 		//items.add(ModItems.CHAMPIGNONS);

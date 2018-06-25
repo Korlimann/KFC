@@ -49,6 +49,10 @@ public class ModItems {
 	//public static final Item CORN_SEED = new ItemBaseSeed(ModBlocks.CROP_CORN, Blocks.FARMLAND, "corn_seed"); //Gefunden in der Wildnis/Villagerdörfer/Kisten
 	//public static final Item TOMATOSEEDS = new ItemBase("tomatoseeds"); 
 	
+	//"Abfall"
+	public static final Item BANANA_PEEL = new ItemBase("banana_peel");
+	public static final Item FERTILIZER = new ItemBase("fertilizer");
+	
 	//Drops von Blöcken
 	public static final Item SALT = new ItemBase("salt"); //Gefunden in der Wildnis(Erz)/Villagerdörfer/Kisten
 	
