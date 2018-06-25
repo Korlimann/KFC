@@ -67,3 +67,6 @@ tile.ice_machine.name=Ice Machine
 tile.coffee_machine.name=Coffee Machine
 container.ice_machine=Ice Machine
 container.coffee_machine=Coffee Machine
+
+advancements.machines.get_coffee_machine.title=Stay awake!
+advancements.machines.get_coffee_machine.descriptions=Nights are getting shorter, days are getting longer! You made your first Coffee Machine!

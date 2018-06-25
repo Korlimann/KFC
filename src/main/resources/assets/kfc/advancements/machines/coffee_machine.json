@@ -1,0 +1,25 @@
+{
+    "display": {
+        "icon": {
+            "item": "kfc:coffee_machine"
+        },
+        "title": {
+            "translate": "advancements.machines.get_coffee_machine.title"
+        },
+        "description": {
+            "translate": "advancements.story.get_coffee_machine.description"
+        }
+    },
+    "criteria": {
+        "coffee_machine": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "kfc:coffee_machine"
+                    }
+                ]
+            }
+        }
+    }
+}
