@@ -142,7 +142,7 @@ public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHas
      */
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(AGE, Integer.valueOf((meta & 15) >> 2));
+        return this.getDefaultState().withProperty(AGE, Integer.valueOf((meta & 3))).withProperty(DECAYABLE, Boolean.valueOf((meta & 4) == 0)).withProperty(CHECK_DECAY, Boolean.valueOf((meta & 8) > 0));
     }
 
     /**
@@ -151,7 +151,16 @@ public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHas
     public int getMetaFromState(IBlockState state)
     {
         int i = 0;
-        i = i | ((Integer)state.getValue(AGE)).intValue() << 2;
+        i = i | ((Integer)state.getValue(AGE)).intValue();
+        if (!((Boolean)state.getValue(DECAYABLE)).booleanValue())
+        {
+            i |= 4;
+        }
+        if (((Boolean)state.getValue(CHECK_DECAY)).booleanValue())
+        {
+            i |= 8;
+        }
+
         return i;
     }
 
