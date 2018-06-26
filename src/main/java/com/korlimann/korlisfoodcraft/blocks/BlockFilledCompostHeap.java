@@ -29,6 +29,8 @@ public class BlockFilledCompostHeap extends Block implements IHasModel {
 		super(Material.WOOD);
 		setUnlocalizedName(name);
 		setRegistryName(name);
+		this.setTickRandomly(true);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
 		if(creativeTab)
 		setCreativeTab(Main.korlissushicraft);
 	}
@@ -76,6 +78,12 @@ public class BlockFilledCompostHeap extends Block implements IHasModel {
 	            }
 			}
 		}
+	}
+	
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+		// TODO Auto-generated method stub
+		return Item.getItemFromBlock(ModBlocks.COMPOST_HEAP);
 	}
 	
 	/*public boolean AGEHeap(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player) {

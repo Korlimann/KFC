@@ -27,6 +27,7 @@ public class BlockCompostHeap extends Block implements IHasModel {
 		super(Material.WOOD);
 		setUnlocalizedName(name);
 		setRegistryName(name);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FILL, Integer.valueOf(0)));
 		if(creativeTab)
 		setCreativeTab(Main.korlissushicraft);
 	}

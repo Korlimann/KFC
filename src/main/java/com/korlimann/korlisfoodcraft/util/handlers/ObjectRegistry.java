@@ -32,6 +32,7 @@ public class ObjectRegistry {
 	
 	public static void prepareBlocks(){
 		blocks.add(ModBlocks.COMPOST_HEAP);
+		blocks.add(ModBlocks.FILLED_COMPOST_HEAP);
 		blocks.add(ModBlocks.CROP_CORN);
 		blocks.add(ModBlocks.CROP_HOPS);
 		blocks.add(ModBlocks.CROP_MALT);
