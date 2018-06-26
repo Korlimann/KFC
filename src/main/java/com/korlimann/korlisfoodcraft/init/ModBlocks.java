@@ -11,6 +11,7 @@ import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruitLeaves;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSaltOre;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSeaweed;
 import com.korlimann.korlisfoodcraft.blocks.BlockCompostHeap;
+import com.korlimann.korlisfoodcraft.blocks.BlockFilledCompostHeap;
 import com.korlimann.korlisfoodcraft.blocks.BlockFruitSapling;
 import com.korlimann.korlisfoodcraft.blocks.BlockHerbgarden;
 import com.korlimann.korlisfoodcraft.blocks.machines.coffee_machine.BlockCoffeeMachine;
@@ -49,6 +50,7 @@ public class ModBlocks {
 	
 	//Random?
 	public static final Block COMPOST_HEAP = new BlockCompostHeap("compost_heap", true);
+	public static final Block FILLED_COMPOST_HEAP = new BlockFilledCompostHeap("filled_compost_heap", false);
 	
 	//"Cakes"
 	static int[] pt1 = {10, 60, 2};
