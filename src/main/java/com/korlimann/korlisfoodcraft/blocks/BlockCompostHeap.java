@@ -23,7 +23,7 @@ import net.minecraft.world.World;
 public class BlockCompostHeap extends Block implements IHasModel {
 
 	public static final PropertyInteger FILL = PropertyInteger.create("fill", 0, 7);
-	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 3);
+	//public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 3);
 	
 	public BlockCompostHeap(String name, boolean creativeTab) {
 		super(Material.WOOD);
@@ -62,18 +62,19 @@ public class BlockCompostHeap extends Block implements IHasModel {
 						return true;
 					}
 				} else {return false;}
-			} else if(((Integer)state.getValue(AGE)).intValue()==3) {
+			} else //if(((Integer)state.getValue(AGE)).intValue()==3) 
+				{
 					playerIn.addItemStackToInventory(new ItemStack(ModItems.FERTILIZER));
 					worldIn.setBlockState(pos, state.withProperty(FILL, Integer.valueOf(0)), 2);
-					worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(0)), 2);
+					//worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(0)), 2);
 					return true;
 			}
-			return false;
+			//return false;
 		}
 		return false;
 	}
 	
-	@Override
+	/*@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if(!worldIn.isRemote) {
 			if(((Integer)state.getValue(FILL)).intValue()==7) {	
@@ -86,7 +87,7 @@ public class BlockCompostHeap extends Block implements IHasModel {
 	            }
 			}
 		}
-	}
+	}*/
 	
 	/*public boolean fillHeap(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player) {
 		
@@ -94,7 +95,7 @@ public class BlockCompostHeap extends Block implements IHasModel {
 	
 	 public IBlockState getStateFromMeta(int meta)
 	    {
-	        return this.getDefaultState().withProperty(FILL, Integer.valueOf((meta & 15)));
+	        return this.getDefaultState().withProperty(FILL, Integer.valueOf(meta & 7));
 	    }
 
 	    /**
