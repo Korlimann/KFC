@@ -8,21 +8,27 @@ import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.Mirror;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class BlockFilledCompostHeap extends Block implements IHasModel {
 
+	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 3);
 	
 	public BlockFilledCompostHeap(String name, boolean creativeTab) {
@@ -30,9 +36,64 @@ public class BlockFilledCompostHeap extends Block implements IHasModel {
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		this.setTickRandomly(true);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)).withProperty(FACING, EnumFacing.NORTH));
 		if(creativeTab)
 		setCreativeTab(Main.korlissushicraft);
+	}
+	
+	@Override
+	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
+		if (!worldIn.isRemote) {
+            IBlockState north = worldIn.getBlockState(pos.north());
+            IBlockState south = worldIn.getBlockState(pos.south());
+            IBlockState west = worldIn.getBlockState(pos.west());
+            IBlockState east = worldIn.getBlockState(pos.east());
+            EnumFacing face = (EnumFacing)state.getValue(FACING);
+
+            if (face == EnumFacing.NORTH && north.isFullBlock() && !south.isFullBlock()) face = EnumFacing.SOUTH;
+            else if (face == EnumFacing.SOUTH && south.isFullBlock() && !north.isFullBlock()) face = EnumFacing.NORTH;
+            else if (face == EnumFacing.WEST && west.isFullBlock() && !east.isFullBlock()) face = EnumFacing.EAST;
+            else if (face == EnumFacing.EAST && east.isFullBlock() && !west.isFullBlock()) face = EnumFacing.WEST;
+            worldIn.setBlockState(pos, state.withProperty(FACING, face), 2);
+        }
+	}
+	
+	@Override
+	public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
+		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+	}
+	
+	@Override
+	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer,
+			ItemStack stack) {
+		worldIn.setBlockState(pos, this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
+	}
+	
+	@Override
+	public IBlockState withRotation(IBlockState state, Rotation rot) {
+		return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
+	}
+	
+	@Override
+	public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
+		return state.withRotation(mirrorIn.toRotation((EnumFacing)state.getValue(FACING)));
+	}
+	
+	@Override
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, new IProperty[] {AGE, FACING});
+	}
+	
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		EnumFacing facing = EnumFacing.getFront(meta);
+		if(facing.getAxis() == EnumFacing.Axis.Y) facing = EnumFacing.NORTH;
+		return this.getDefaultState().withProperty(FACING, facing);
+	}
+	
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return ((EnumFacing)state.getValue(FACING)).getIndex();
 	}
 
 	/*@Override
@@ -90,25 +151,25 @@ public class BlockFilledCompostHeap extends Block implements IHasModel {
 		
 	}*/
 	
-	 public IBlockState getStateFromMeta(int meta)
+	 /*public IBlockState getStateFromMeta(int meta)
 	    {
 	        return this.getDefaultState().withProperty(AGE, Integer.valueOf((meta & 15)));
 	    }
 
-	    /**
-	     * Convert the BlockState into the correct metadata value
-	     */
-	    public int getMetaFromState(IBlockState state)
-	    {
-	        int i = 0;
-	        i = i | ((Integer)state.getValue(AGE)).intValue();
-	        return i;
-	    }
-
-	    protected BlockStateContainer createBlockState()
-	    {
-	        return new BlockStateContainer(this, new IProperty[] {AGE});
-	    }
+    /**
+     * Convert the BlockState into the correct metadata value
+     */
+    /*public int getMetaFromState(IBlockState state)
+    {
+        int i = 0;
+        i = i | ((Integer)state.getValue(AGE)).intValue();
+        return i;
+    }*/
+    
+    @Override
+	public boolean isOpaqueCube(IBlockState state) {
+		return false;
+	}
 	
 	@Override
 	public void registerModels() {

@@ -59,6 +59,7 @@ tile.beer_and_lemonade.name=Beer and lemonade
 tile.salt_ore.name=Salt Ore
 tile.seaweed_block.name=Seaweed Block
 tile.herbs.name=Garden
+tile.compost_heap.name=Compost Heap
 tile.avocado_block_sapling.name=Avocado Sapling
 tile.olive_sapling.name=Olive Sapling
 tile.orange_block_sapling.name=Orange Sapling
