@@ -1,5 +1,7 @@
 package com.korlimann.korlisfoodcraft.blocks.compost_heap;
 
+import javax.annotation.Nullable;
+
 import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.blocks.BlockTileEntity;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
@@ -8,25 +10,31 @@ import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockCompostHeap extends Block implements IHasModel {
+public class BlockCompostHeap extends Block implements IHasModel, ITileEntityProvider {
 
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	public static final PropertyInteger FILL = PropertyInteger.create("fill", 0, 3);
@@ -35,7 +43,7 @@ public class BlockCompostHeap extends Block implements IHasModel {
 		super(Material.WOOD);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(FILL, Integer.valueOf(0)).withProperty(FACING, EnumFacing.NORTH));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		if(creativeTab)
 		setCreativeTab(Main.korlissushicraft);
 	}
@@ -80,21 +88,20 @@ public class BlockCompostHeap extends Block implements IHasModel {
 	
 	@Override
 	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[] {FILL, FACING});
+		return new BlockStateContainer(this, new IProperty[] { FACING});
 	}
 	
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
 		EnumFacing facing = EnumFacing.getFront(meta & 3);
 		if(facing.getAxis() == EnumFacing.Axis.Y) facing = EnumFacing.NORTH;
-		return this.getDefaultState().withProperty(FILL, meta & 3)/*.withProperty(FACING, facing)*/;
+		return this.getDefaultState().withProperty(FACING, facing);
 		}
 	
 	@Override
 	public int getMetaFromState(IBlockState state) {
 		int i = 0;
-		i = i | ((Integer)state.getValue(FILL)).intValue();
-		//i = i | ((EnumFacing)state.getValue(FACING)).getIndex() << 2;
+		i = i | ((EnumFacing)state.getValue(FACING)).getIndex();
         return i;
 
 	}
@@ -116,7 +123,7 @@ public class BlockCompostHeap extends Block implements IHasModel {
 		}
 	}*/
 	
-	@Override
+	/*@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		ItemStack hhi = playerIn.getHeldItem(hand);
 			
@@ -141,8 +148,42 @@ public class BlockCompostHeap extends Block implements IHasModel {
 			return false;
 		}
 		return false;
-	}
+	}*/
 	
+	 private TileEntityCompostHeap getTE(World world, BlockPos pos) {
+	        return (TileEntityCompostHeap) world.getTileEntity(pos);
+	    }
+	@Override
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
+			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		if (!worldIn.isRemote) {
+			if(playerIn.getHeldItem(hand).getItem() == ModItems.BANANA_PEEL)
+			{
+			TileEntityCompostHeap te = getTE(worldIn,pos);
+            if (facing == state.getValue(FACING)) {
+                if(te!=null)
+                {
+                	if(te.getFill() <= 7)
+                	{
+                		te.incrementFill();
+                		return true;
+                	}
+                	else if(te.getAge() == 3)
+                	{
+                		playerIn.addItemStackToInventory(new ItemStack(ModItems.FERTILIZER,4));
+                		te.clear();
+                		return true;
+                	}
+                	else
+                	{
+                		return false;
+                	}
+                }
+            }
+			}
+        }
+		return false;
+	}
 	/*@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if(!worldIn.isRemote) {
@@ -157,7 +198,7 @@ public class BlockCompostHeap extends Block implements IHasModel {
 			}
 		}
 	}*/
-	
+
 	/*public boolean fillHeap(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player) {
 		
 	}*/
@@ -177,17 +218,21 @@ public class BlockCompostHeap extends Block implements IHasModel {
         return i;
     }*/
 	    
-	@Override
-	public boolean isOpaqueCube(IBlockState state) {
-		return false;
-	}
 	
 	@Override
 	public void registerModels() {
 		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
 	}
-	
+
 	@Override
+	public TileEntity createNewTileEntity(World worldIn, int meta) {
+		// TODO Auto-generated method stub
+		return new TileEntityCompostHeap();
+	}
+
+	  
+	 
+	/*@Override
 	public boolean hasTileEntity() {
 		// TODO Auto-generated method stub
 		return true;
@@ -197,5 +242,5 @@ public class BlockCompostHeap extends Block implements IHasModel {
 	public TileEntity createTileEntity(World world, IBlockState state) {
 		// TODO Auto-generated method stub
 		return new TileEntityCompostHeap();
-	}
+	}*/
 }
