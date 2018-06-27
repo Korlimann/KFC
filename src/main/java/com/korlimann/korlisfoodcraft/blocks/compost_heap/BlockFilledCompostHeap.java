@@ -1,4 +1,4 @@
-package com.korlimann.korlisfoodcraft.blocks;
+package com.korlimann.korlisfoodcraft.blocks.compost_heap;
 
 import java.util.Random;
 
@@ -86,14 +86,18 @@ public class BlockFilledCompostHeap extends Block implements IHasModel {
 	
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		EnumFacing facing = EnumFacing.getFront(meta);
+		EnumFacing facing = EnumFacing.getFront(meta & 3);
 		if(facing.getAxis() == EnumFacing.Axis.Y) facing = EnumFacing.NORTH;
-		return this.getDefaultState().withProperty(FACING, facing);
-	}
+		return this.getDefaultState().withProperty(AGE, meta & 3)/*.withProperty(FACING, facing)*/;
+		}
 	
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		return ((EnumFacing)state.getValue(FACING)).getIndex();
+		int i = 0;
+		i = i | ((Integer)state.getValue(AGE)).intValue();
+		//i = i | ((EnumFacing)state.getValue(FACING)).getIndex() << 2;
+        return i;
+
 	}
 
 	/*@Override

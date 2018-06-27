@@ -1,6 +1,7 @@
-package com.korlimann.korlisfoodcraft.blocks;
+package com.korlimann.korlisfoodcraft.blocks.compost_heap;
 
 import com.korlimann.korlisfoodcraft.Main;
+import com.korlimann.korlisfoodcraft.blocks.BlockTileEntity;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
@@ -17,6 +18,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.Mirror;
@@ -27,7 +29,7 @@ import net.minecraft.world.World;
 public class BlockCompostHeap extends Block implements IHasModel {
 
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
-	public static final PropertyInteger FILL = PropertyInteger.create("fill", 0, 8);
+	public static final PropertyInteger FILL = PropertyInteger.create("fill", 0, 3);
 	
 	public BlockCompostHeap(String name, boolean creativeTab) {
 		super(Material.WOOD);
@@ -83,14 +85,18 @@ public class BlockCompostHeap extends Block implements IHasModel {
 	
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		EnumFacing facing = EnumFacing.getFront(meta);
+		EnumFacing facing = EnumFacing.getFront(meta & 3);
 		if(facing.getAxis() == EnumFacing.Axis.Y) facing = EnumFacing.NORTH;
-		return this.getDefaultState().withProperty(FACING, facing);
-	}
+		return this.getDefaultState().withProperty(FILL, meta & 3)/*.withProperty(FACING, facing)*/;
+		}
 	
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		return ((EnumFacing)state.getValue(FACING)).getIndex();
+		int i = 0;
+		i = i | ((Integer)state.getValue(FILL)).intValue();
+		//i = i | ((EnumFacing)state.getValue(FACING)).getIndex() << 2;
+        return i;
+
 	}
 
 	/*@Override
@@ -115,20 +121,23 @@ public class BlockCompostHeap extends Block implements IHasModel {
 		ItemStack hhi = playerIn.getHeldItem(hand);
 			
 		if(!worldIn.isRemote) {
-			if(((Integer)state.getValue(FILL)).intValue()<8) {
+			if(((Integer)state.getValue(FILL)).intValue()<3) {
 				if(hhi.getItem() != null) {
 					if(hhi.getItem() == ModItems.BANANA_PEEL) {
 						worldIn.setBlockState(pos, state.withProperty(FILL, Integer.valueOf(((Integer)state.getValue(FILL)).intValue() + 1)), 2);
-						if(((Integer)state.getValue(FILL)).intValue()==7) {
-							worldIn.setBlockState(pos, ModBlocks.FILLED_COMPOST_HEAP.getDefaultState(), 2);
-						}
+						
 						if(!playerIn.isCreative()) {
 							playerIn.getHeldItem(hand).shrink(1);
 						}
 						return true;
 					}
 				} else {return false;}
-			} 
+			} else{
+				worldIn.setBlockState(pos, ModBlocks.FILLED_COMPOST_HEAP.getDefaultState().withProperty(FACING, state.getValue(FACING)), 2);
+				if(!playerIn.isCreative()) {
+					playerIn.getHeldItem(hand).shrink(1);
+				}
+			}
 			return false;
 		}
 		return false;
@@ -178,5 +187,15 @@ public class BlockCompostHeap extends Block implements IHasModel {
 		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
 	}
 	
+	@Override
+	public boolean hasTileEntity() {
+		// TODO Auto-generated method stub
+		return true;
+	}
 	
+	@Override
+	public TileEntity createTileEntity(World world, IBlockState state) {
+		// TODO Auto-generated method stub
+		return new TileEntityCompostHeap();
+	}
 }

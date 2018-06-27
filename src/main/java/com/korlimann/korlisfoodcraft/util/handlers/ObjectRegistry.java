@@ -142,9 +142,11 @@ public class ObjectRegistry {
 		//We make sure that the list gets filled with our blocks.
 		prepareBlocks();
 		int x = blocks.size();
-		for(Block block : blocks){
+		for(Block block : blocks) {
+			ConsoleLogger.debug("registering: " + block.getRegistryName());	
 			event.getRegistry().register(block);
-		}
+			ConsoleLogger.debug(block.getRegistryName()+ " registered");		
+			}
 		ConsoleLogger.info("Blocks Registered");
 		TileEntityHandler.registerTileEntity();
 		ConsoleLogger.info("TileEntities Registered");

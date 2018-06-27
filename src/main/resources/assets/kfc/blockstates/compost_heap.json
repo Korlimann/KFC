@@ -12,21 +12,6 @@
         "facing=north,fill=3": [
             { "model": "kfc:compost_heap/3" }
         ],
-        "facing=north,fill=4": [
-            { "model": "kfc:compost_heap/4" }
-        ],
-        "facing=north,fill=5": [
-            { "model": "kfc:compost_heap/5" }
-        ],
-        "facing=north,fill=6": [
-            { "model": "kfc:compost_heap/6" }
-        ],
-        "facing=north,fill=7": [
-            { "model": "kfc:compost_heap/4" }
-        ],
-        "facing=north,fill=8": [
-            { "model": "kfc:compost_heap/5" }
-        ],
         "facing=south,fill=0": [
             { "model": "kfc:compost_heap/0" }
         ],
@@ -38,21 +23,6 @@
         ],
         "facing=south,fill=3": [
             { "model": "kfc:compost_heap/3" }
-        ],
-        "facing=south,fill=4": [
-            { "model": "kfc:compost_heap/4" }
-        ],
-        "facing=south,fill=5": [
-            { "model": "kfc:compost_heap/5" }
-        ],
-        "facing=south,fill=6": [
-            { "model": "kfc:compost_heap/6" }
-        ],
-        "facing=south,fill=7": [
-            { "model": "kfc:compost_heap/4" }
-        ],
-        "facing=south,fill=8": [
-            { "model": "kfc:compost_heap/5" }
         ],
         "facing=west,fill=0": [
             { "model": "kfc:compost_heap/0" }
@@ -66,21 +36,6 @@
         "facing=west,fill=3": [
             { "model": "kfc:compost_heap/3" }
         ],
-        "facing=west,fill=4": [
-            { "model": "kfc:compost_heap/4" }
-        ],
-        "facing=west,fill=5": [
-            { "model": "kfc:compost_heap/5" }
-        ],
-        "facing=west,fill=6": [
-            { "model": "kfc:compost_heap/6" }
-        ],
-        "facing=west,fill=7": [
-            { "model": "kfc:compost_heap/4" }
-        ],
-        "facing=west,fill=8": [
-            { "model": "kfc:compost_heap/5" }
-        ],
         "facing=east,fill=0": [
             { "model": "kfc:compost_heap/0" }
         ],
@@ -92,21 +47,6 @@
         ],
         "facing=east,fill=3": [
             { "model": "kfc:compost_heap/3" }
-        ],
-        "facing=east,fill=4": [
-            { "model": "kfc:compost_heap/4" }
-        ],
-        "facing=east,fill=5": [
-            { "model": "kfc:compost_heap/5" }
-        ],
-        "facing=east,fill=6": [
-            { "model": "kfc:compost_heap/6" }
-        ],
-        "facing=east,fill=7": [
-            { "model": "kfc:compost_heap/4" }
-        ],
-        "facing=east,fill=8": [
-            { "model": "kfc:compost_heap/5" }
-        ]         
+        ]       
     }
 }
