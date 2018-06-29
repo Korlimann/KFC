@@ -169,7 +169,7 @@ public class BlockBaseCake extends BlockCake implements IHasModel {
 
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(Items.CAKE);
+        return new ItemStack(ModItems.GOSMAS);
     }
 
     /**

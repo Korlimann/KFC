@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "facing=north": [
+            { "model": "kfc:compost_heap/0" }
+        ],
+        "facing=south": [
+            { "model": "kfc:compost_heap/0", "y": 180 }
+        ],
+        "facing=west": [
+            { "model": "kfc:compost_heap/0", "y": 270 }
+        ],
+        "facing=east": [
+            { "model": "kfc:compost_heap/0", "y": 90 }
+        ]
+    }
+}

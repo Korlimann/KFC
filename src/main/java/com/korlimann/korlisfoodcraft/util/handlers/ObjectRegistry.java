@@ -2,14 +2,12 @@ package com.korlimann.korlisfoodcraft.util.handlers;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.gen.KFCWorldGen;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.init.ModItems;
 import com.korlimann.korlisfoodcraft.util.ConsoleLogger;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -140,9 +138,8 @@ public class ObjectRegistry {
 		
 		//We make sure that the list gets filled with our blocks.
 		prepareBlocks();
-		int x = blocks.size();
-		for(Block block : blocks){
-			event.getRegistry().register(block);
+		for(Block block : blocks) {
+			event.getRegistry().register(block);		
 		}
 		ConsoleLogger.info("Blocks Registered");
 		TileEntityHandler.registerTileEntity();

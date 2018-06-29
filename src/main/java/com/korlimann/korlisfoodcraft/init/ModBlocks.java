@@ -6,13 +6,10 @@ import java.util.List;
 
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCake;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseCoffeeBean;
-import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruit;
-import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruitLeaves;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSaltOre;
 import com.korlimann.korlisfoodcraft.blocks.BlockBaseSeaweed;
-import com.korlimann.korlisfoodcraft.blocks.BlockCompostHeap;
-import com.korlimann.korlisfoodcraft.blocks.BlockFruitSapling;
 import com.korlimann.korlisfoodcraft.blocks.BlockHerbgarden;
+import com.korlimann.korlisfoodcraft.blocks.compost_heap.BlockCompostHeap;
 import com.korlimann.korlisfoodcraft.blocks.machines.coffee_machine.BlockCoffeeMachine;
 import com.korlimann.korlisfoodcraft.blocks.machines.ice_machine.BlockIceMachine;
 import com.korlimann.korlisfoodcraft.blocks.machines.smoothie_maker.BlockSmoothieMaker;
@@ -23,6 +20,9 @@ import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropHops;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropMalt;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropOnion;
 import com.korlimann.korlisfoodcraft.blocks.crops.BlockBaseCropRice;
+import com.korlimann.korlisfoodcraft.blocks.fruits.BlockBaseFruit;
+import com.korlimann.korlisfoodcraft.blocks.fruits.BlockBaseFruitLeaves;
+import com.korlimann.korlisfoodcraft.blocks.fruits.BlockFruitSapling;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;

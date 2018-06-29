@@ -2,7 +2,7 @@ package com.korlimann.korlisfoodcraft.gen;
 
 import java.util.Random;
 
-import com.korlimann.korlisfoodcraft.blocks.BlockBaseFruitLeaves;
+import com.korlimann.korlisfoodcraft.blocks.fruits.BlockBaseFruitLeaves;
 import com.korlimann.korlisfoodcraft.init.ModBlocks;
 import com.korlimann.korlisfoodcraft.util.RngHelper;
 

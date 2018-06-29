@@ -1,0 +1,84 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 3/2/18 8:34 AM
+Description: Exception while ticking a block
+
+java.lang.IllegalArgumentException: Cannot get property PropertyInteger{name=level, clazz=class java.lang.Integer, values=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]} as it does not exist in BlockStateContainer{block=kfc:seaweed_block, properties=[age]}
+	at net.minecraft.block.state.BlockStateContainer$StateImplementation.getValue(BlockStateContainer.java:204)
+	at net.minecraft.block.BlockDynamicLiquid.getPossibleFlowDirections(BlockDynamicLiquid.java:230)
+	at net.minecraft.block.BlockDynamicLiquid.updateTick(BlockDynamicLiquid.java:137)
+	at net.minecraft.world.WorldServer.tickUpdates(WorldServer.java:772)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:232)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:829)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:741)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:590)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.block.state.BlockStateContainer$StateImplementation.getValue(BlockStateContainer.java:204)
+	at net.minecraft.block.BlockDynamicLiquid.getPossibleFlowDirections(BlockDynamicLiquid.java:230)
+	at net.minecraft.block.BlockDynamicLiquid.updateTick(BlockDynamicLiquid.java:137)
+
+-- Block being ticked --
+Details:
+	Block: minecraft:flowing_water[level=0]
+	Block location: World: (-90,61,109), Chunk: (at 6,3,13 in -6,6; contains blocks -96,0,96 to -81,255,111), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+Stacktrace:
+	at net.minecraft.world.WorldServer.tickUpdates(WorldServer.java:772)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:232)
+
+-- Affected level --
+Details:
+	Level name: SeaweedTest4
+	All players: 1 total; [EntityPlayerMP['Korlimann'/967, l='SeaweedTest4', x=51.50, y=67.00, z=218.50]]
+	Chunk stats: ServerChunkCache: 626 Drop: 0
+	Level seed: -1427827276964903635
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (47,64,214), Chunk: (at 15,4,6 in 2,13; contains blocks 32,0,208 to 47,255,223), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 16 game time, 16 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 44688 (now: false), thunder time: 15104 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:829)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:741)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:590)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_162, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 582874192 bytes (555 MB) / 1038876672 bytes (990 MB) up to 4260102144 bytes (4062 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx4096M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.2.2611 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID        | Version      | Source                           | Signature |
+	|:--------- |:--------- |:------------ |:-------------------------------- |:--------- |
+	| UCHIJAAAA | minecraft | 1.12.2       | minecraft.jar                    | None      |
+	| UCHIJAAAA | mcp       | 9.42         | minecraft.jar                    | None      |
+	| UCHIJAAAA | FML       | 8.0.99.99    | forgeSrc-1.12.2-14.23.2.2611.jar | None      |
+	| UCHIJAAAA | forge     | 14.23.2.2611 | forgeSrc-1.12.2-14.23.2.2611.jar | None      |
+	| UCHIJAAAA | kfc       | v1.0         | bin                              | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['Korlimann'/967, l='SeaweedTest4', x=51.50, y=67.00, z=218.50]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

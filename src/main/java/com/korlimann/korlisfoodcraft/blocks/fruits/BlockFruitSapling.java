@@ -1,4 +1,4 @@
-package com.korlimann.korlisfoodcraft.blocks;
+package com.korlimann.korlisfoodcraft.blocks.fruits;
 
 import java.util.Random;
 
