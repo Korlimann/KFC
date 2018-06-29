@@ -21,16 +21,6 @@
                 ]
             }
         },
-        "apple": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-                "items": [
-                    {
-                        "item": "kfc:apple"
-                    }
-                ]
-            }
-        },
         "avocado": {
             "trigger": "minecraft:inventory_changed",
             "conditions": {

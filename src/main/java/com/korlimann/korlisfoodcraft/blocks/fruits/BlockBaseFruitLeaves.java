@@ -1,11 +1,15 @@
-package com.korlimann.korlisfoodcraft.blocks;
+package com.korlimann.korlisfoodcraft.blocks.fruits;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -23,10 +27,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
+public class BlockBaseFruitLeaves extends BlockLeaves implements IGrowable, IHasModel {
 
-	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 3);
-	public  AxisAlignedBB AABB;
+	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 2);
+	public static AxisAlignedBB AABB;
 	public Item fruit;
 	public boolean canGrow;
 	public boolean canUseBonemeal;
@@ -34,23 +38,23 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 	//private boolean CreativeTab;
 	
 	
-	public BlockBaseFruit(String name, Material materialIn, double x1, double y1, double z1, double x2, double y2, double z2, Item fruit, boolean grow, boolean bonemeal, boolean CreativeTab) {
-		super(materialIn);
+	public BlockBaseFruitLeaves(String name,String treeName, Material materialIn, double x1, double y1, double z1, double x2, double y2, double z2, Item fruit, boolean grow, boolean bonemeal, boolean CreativeTab) {
+		
 		this.fruit = fruit;
 		this.canGrow = grow;
 		this.canUseBonemeal = bonemeal;
-		this.type=name;
+		this.type=treeName;
 		AABB = new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(true)).withProperty(BlockLeaves.DECAYABLE, Boolean.valueOf(true)));
         this.setTickRandomly(true);
         setUnlocalizedName(name);
 		setRegistryName(name);
 		//this.CreativeTab = CreativeTab;
 	}
 
-	public BlockBaseFruit(String name, Material materialIn, Item fruit)
+	public BlockBaseFruitLeaves(String name,String treeName, Material materialIn, Item fruit)
 	{
-		this(name,materialIn,0.25D, 0.25D, 0.25D, 0.75D, 1D, 0.75D, fruit, true, true,true);
+		this(name,treeName,materialIn,0.25D, 0.25D, 0.25D, 0.75D, 1D, 0.75D, fruit, true, true,true);
 	}
 	@Override
 	public void registerModels() {
@@ -80,7 +84,7 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 	@Override
 	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
 		// TODO Auto-generated method stub
-		return NULL_AABB;
+		return Block.FULL_BLOCK_AABB;
 	}
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
@@ -92,7 +96,7 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
         {
             int i = ((Integer)state.getValue(AGE)).intValue();
 
-            if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(5) == 0))
+            if (i < 2 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt(5) == 0))
             {
                 worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(i + 1)), 2);
                 net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state, worldIn.getBlockState(pos));
@@ -102,8 +106,7 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 
     public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
     {
-        IBlockState iblockstate = worldIn.getBlockState(pos.up());
-        return iblockstate.getBlock() == Blocks.LEAVES;
+        return true;
     }
     
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
@@ -139,7 +142,7 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
      */
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(AGE, Integer.valueOf((meta & 15)));
+        return this.getDefaultState().withProperty(AGE, Integer.valueOf((meta & 3))).withProperty(DECAYABLE, Boolean.valueOf((meta & 4) == 0)).withProperty(CHECK_DECAY, Boolean.valueOf((meta & 8) > 0));
     }
 
     /**
@@ -149,12 +152,21 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
     {
         int i = 0;
         i = i | ((Integer)state.getValue(AGE)).intValue();
+        if (!((Boolean)state.getValue(DECAYABLE)).booleanValue())
+        {
+            i |= 4;
+        }
+        if (((Boolean)state.getValue(CHECK_DECAY)).booleanValue())
+        {
+            i |= 8;
+        }
+
         return i;
     }
 
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, new IProperty[] {AGE});
+        return new BlockStateContainer(this, new IProperty[] {AGE, BlockLeaves.CHECK_DECAY, BlockLeaves.DECAYABLE});
     }
 
     /**
@@ -168,13 +180,13 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 	@Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) 
     {
-        return AABB;
+        return Block.FULL_BLOCK_AABB;
     }
 	
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		if(((Integer)state.getValue(AGE)).intValue()==3) {
+		if(((Integer)state.getValue(AGE)).intValue()==2) {
 			playerIn.addItemStackToInventory(new ItemStack(fruit));
 			worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(0)), 2);
 			return true;
@@ -196,6 +208,20 @@ public class BlockBaseFruit extends Block implements IGrowable, IHasModel {
 	public String getTypeName()
 	{
 		return type;
+	}
+
+	@Override
+	public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
+		// TODO Auto-generated method stub
+		List<ItemStack> l = new ArrayList<ItemStack> ();
+		l.add(item);
+		return l;
+	}
+
+	@Override
+	public EnumType getWoodType(int meta) {
+		// TODO Auto-generated method stub
+		return EnumType.OAK;
 	}
 	
 	

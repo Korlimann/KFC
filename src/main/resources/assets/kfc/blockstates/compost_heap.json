@@ -1,52 +1,16 @@
 {
     "variants": {
-        "facing=north,fill=0": [
+        "facing=north": [
             { "model": "kfc:compost_heap/0" }
         ],
-        "facing=north,fill=1": [
-            { "model": "kfc:compost_heap/1" }
+        "facing=south": [
+            { "model": "kfc:compost_heap/0", "y": 180 }
         ],
-        "facing=north,fill=2": [
-            { "model": "kfc:compost_heap/2" }
+        "facing=west": [
+            { "model": "kfc:compost_heap/0", "y": 270 }
         ],
-        "facing=north,fill=3": [
-            { "model": "kfc:compost_heap/3" }
-        ],
-        "facing=south,fill=0": [
-            { "model": "kfc:compost_heap/0" }
-        ],
-        "facing=south,fill=1": [
-            { "model": "kfc:compost_heap/1" }
-        ],
-        "facing=south,fill=2": [
-            { "model": "kfc:compost_heap/2" }
-        ],
-        "facing=south,fill=3": [
-            { "model": "kfc:compost_heap/3" }
-        ],
-        "facing=west,fill=0": [
-            { "model": "kfc:compost_heap/0" }
-        ],
-        "facing=west,fill=1": [
-            { "model": "kfc:compost_heap/1" }
-        ],
-        "facing=west,fill=2": [
-            { "model": "kfc:compost_heap/2" }
-        ],
-        "facing=west,fill=3": [
-            { "model": "kfc:compost_heap/3" }
-        ],
-        "facing=east,fill=0": [
-            { "model": "kfc:compost_heap/0" }
-        ],
-        "facing=east,fill=1": [
-            { "model": "kfc:compost_heap/1" }
-        ],
-        "facing=east,fill=2": [
-            { "model": "kfc:compost_heap/2" }
-        ],
-        "facing=east,fill=3": [
-            { "model": "kfc:compost_heap/3" }
-        ]       
+        "facing=east": [
+            { "model": "kfc:compost_heap/0", "y": 90 }
+        ]
     }
 }
