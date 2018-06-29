@@ -16,6 +16,8 @@ public class TileEntityCompostHeap extends TileEntity implements ITickable {
 	private int age;
 	private int time;
 	
+	private static final int tickTime = 100;
+	
 	@Override
 	public void readFromNBT(NBTTagCompound compound) {
 		super.readFromNBT(compound);
@@ -36,7 +38,7 @@ public class TileEntityCompostHeap extends TileEntity implements ITickable {
 	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate) {
 		return false;
 	}*/
-	public int incrementAge()
+	private int incrementAge()
 	{
 		this.age++;
 		this.setBlockToUpdate();
@@ -100,7 +102,7 @@ public class TileEntityCompostHeap extends TileEntity implements ITickable {
 					this.incrementAge();
 	}
 	private boolean canAge() {
-		if(time ==  100)
+		if(time ==  tickTime)
 		{
 			time=0;
 			return true;
