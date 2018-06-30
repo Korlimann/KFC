@@ -41,7 +41,7 @@ public class TileEntityCompostHeap extends TileEntity implements ITickable {
 	private int incrementAge()
 	{
 		this.age++;
-		this.setBlockToUpdate();
+		//markDirty();
 		return this.age;
 	}
 	
@@ -73,6 +73,7 @@ public class TileEntityCompostHeap extends TileEntity implements ITickable {
 	@Override
 	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
 		super.onDataPacket(net, pkt);
+		world.notifyBlockUpdate(pos, getState(), getState(), 3);
 		handleUpdateTag(pkt.getNbtCompound());
 	}
 	@Override
@@ -88,12 +89,13 @@ public class TileEntityCompostHeap extends TileEntity implements ITickable {
 	private void sendUpdates() {
 		world.markBlockRangeForRenderUpdate(pos, pos);
 		world.notifyBlockUpdate(pos, getState(), getState(), 3);
-		world.scheduleBlockUpdate(pos,this.getBlockType(),0,0);
+		//world.scheduleBlockUpdate(pos,this.getBlockType(),0,0);
 		markDirty();
 	}
 	private IBlockState getState() {
 		return world.getBlockState(pos);
 	}
+
 	@Override
 	public void update() {
 		if(fill==7) 

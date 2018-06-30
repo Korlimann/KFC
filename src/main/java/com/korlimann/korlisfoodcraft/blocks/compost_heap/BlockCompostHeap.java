@@ -23,12 +23,15 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ChunkCache;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 
 public class BlockCompostHeap extends Block implements IHasModel, ITileEntityProvider {
 
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
-	public static final PropertyInteger FILL = PropertyInteger.create("fill", 0, 3);
+	public static final PropertyInteger FILL = PropertyInteger.create("fill", 0, 7);
 	
 	public BlockCompostHeap(String name, boolean creativeTab) {
 		super(Material.WOOD);
@@ -79,7 +82,7 @@ public class BlockCompostHeap extends Block implements IHasModel, ITileEntityPro
 	
 	@Override
 	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[] {FACING});
+		return new BlockStateContainer(this, new IProperty[] {FACING,FILL});
 	}
 	
 	@Override
@@ -159,6 +162,7 @@ public class BlockCompostHeap extends Block implements IHasModel, ITileEntityPro
             			{
                 			playerIn.getHeldItem(hand).shrink(1);                			
                 			te.incrementFill();
+                			worldIn.notifyBlockUpdate(pos, state, state, 3);
                 			return true;
             			}
                 	}
@@ -236,6 +240,20 @@ public class BlockCompostHeap extends Block implements IHasModel, ITileEntityPro
 		return false;
 	}
 	
+	@Override
+	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+		
+		TileEntity tileentity = worldIn instanceof ChunkCache ? ((ChunkCache)worldIn).getTileEntity(pos, Chunk.EnumCreateEntityType.CHECK) : worldIn.getTileEntity(pos);
+		if(tileentity instanceof TileEntityCompostHeap)
+		{
+			TileEntityCompostHeap te = (TileEntityCompostHeap)worldIn.getTileEntity(pos);
+			
+			return state.withProperty(FILL, te.getFill());
+	 	
+		}
+		return state.withProperty(FILL, 0);
+	}
+	
 	/* 
 	@Override
 	public boolean hasTileEntity() {
@@ -248,4 +266,6 @@ public class BlockCompostHeap extends Block implements IHasModel, ITileEntityPro
 		// TODO Auto-generated method stub
 		return new TileEntityCompostHeap();
 	}*/
+	
+
 }
