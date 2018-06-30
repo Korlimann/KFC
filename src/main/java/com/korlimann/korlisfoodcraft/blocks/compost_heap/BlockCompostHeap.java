@@ -162,7 +162,6 @@ public class BlockCompostHeap extends Block implements IHasModel, ITileEntityPro
             			{
                 			playerIn.getHeldItem(hand).shrink(1);                			
                 			te.incrementFill();
-                			worldIn.notifyBlockUpdate(pos, state, state, 3);
                 			return true;
             			}
                 	}
