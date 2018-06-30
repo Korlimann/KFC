@@ -31,7 +31,7 @@ import net.minecraft.world.chunk.Chunk;
 public class BlockCompostHeap extends Block implements IHasModel, ITileEntityProvider {
 
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
-	public static final PropertyInteger FILL = PropertyInteger.create("fill", 0, 7);
+	public static final PropertyInteger FILL = PropertyInteger.create("fill", 0, TileEntityCompostHeap.MAXFILL);
 	
 	public BlockCompostHeap(String name, boolean creativeTab) {
 		super(Material.WOOD);
@@ -156,7 +156,7 @@ public class BlockCompostHeap extends Block implements IHasModel, ITileEntityPro
             if (facing == state.getValue(FACING) || facing == EnumFacing.UP) {
                 if(te!=null)
                 {
-                	if(te.getFill() < 7)
+                	if(te.getFill() < TileEntityCompostHeap.MAXFILL)
                 	{
                 		if(playerIn.getHeldItem(hand).getItem() == ModItems.BANANA_PEEL)
             			{
@@ -165,7 +165,7 @@ public class BlockCompostHeap extends Block implements IHasModel, ITileEntityPro
                 			return true;
             			}
                 	}
-                	else if(te.getAge() == 3)
+                	else if(te.getAge() == TileEntityCompostHeap.MAXAGE)
                 	{
                 		playerIn.addItemStackToInventory(new ItemStack(ModItems.FERTILIZER,4));
                 		te.clear();

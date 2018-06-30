@@ -1,6 +1,9 @@
 package com.korlimann.korlisfoodcraft.blocks.compost_heap;
 
 import javax.annotation.Nullable;
+
+import com.korlimann.korlisfoodcraft.util.ConsoleLogger;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -16,8 +19,9 @@ public class TileEntityCompostHeap extends TileEntity implements ITickable {
 	private int age;
 	private int time;
 	
-	private static final int tickTime = 100;
-	
+	private static final int TICKTIME = 100;
+	public static final int MAXAGE =3;
+	public static final int MAXFILL = 7;
 	@Override
 	public void readFromNBT(NBTTagCompound compound) {
 		super.readFromNBT(compound);
@@ -40,14 +44,17 @@ public class TileEntityCompostHeap extends TileEntity implements ITickable {
 	}*/
 	private int incrementAge()
 	{
-		this.age++;
-		//markDirty();
+		if(age<MAXAGE)
+		{
+			this.age++;
+			setBlockToUpdate();
+		}
 		return this.age;
 	}
 	
 	public int incrementFill()
 	{
-		if(this.fill<7)
+		if(this.fill<MAXFILL)
 		{
 			this.fill++;
 			setBlockToUpdate();
@@ -98,13 +105,70 @@ public class TileEntityCompostHeap extends TileEntity implements ITickable {
 
 	@Override
 	public void update() {
-		if(fill==7) 
-			if(age<3)
-				if(this.canAge())
-					this.incrementAge();
+		if(checkTEState())
+		{
+			if(fill==MAXFILL) 
+				if(age<MAXAGE)
+					if(this.canAge())
+						this.incrementAge();
+		}else
+		{
+			ConsoleLogger.error("Illegal TE State at: " + "x= " + pos.getX() + ", y= " + pos.getY() + ", z= " + pos.getZ() + "; for Block: " + world.getBlockState(pos).getBlock().getUnlocalizedName() + ". Attempting Fix");
+			if(fixTEState())
+			{
+				ConsoleLogger.error("Fixed Illegal TE State at: "+ "x= " + pos.getX() + ", y= " + pos.getY() + ", z= " + pos.getZ() + "; for Block: " + world.getBlockState(pos).getBlock().getUnlocalizedName()+".");
+				setBlockToUpdate();
+			}
+			else
+			{
+				ConsoleLogger.fatal("Failed to Fix Illegal TE State at: "+ "x= " + pos.getX() + ", y= " + pos.getY() + ", z= " + pos.getZ() + "; for Block: " + world.getBlockState(pos).getBlock().getUnlocalizedName()+ ". Clearing TE Data");
+				clear();
+			}
+		}
 	}
+	private boolean fixTEState() {
+		if(age>MAXAGE)
+		{
+			age=MAXAGE;
+		}
+		if(age<0)
+		{
+			age=0;
+		}
+		if(fill<0)
+		{
+			fill=0;
+		}
+		if(fill>MAXFILL)
+		{
+			fill=MAXFILL;
+		}
+		if(time>TICKTIME||time<0)
+		{
+			time=0;
+		}
+		
+		return checkTEState();
+	}
+	private boolean checkTEState() {
+		if(!(age<=MAXAGE && age>=0))
+		{
+			return false;
+		}
+		if(!(fill<=MAXFILL && age>=0))
+		{
+			return false;
+		}
+		if(!(time<=TICKTIME&&time>=0))
+		{
+			return false;
+		}
+		return true;
+	}
+	
+	
 	private boolean canAge() {
-		if(time ==  tickTime)
+		if(time ==  TICKTIME)
 		{
 			time=0;
 			return true;
