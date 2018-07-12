@@ -2,6 +2,7 @@ package com.korlimann.korlisfoodcraft.blocks.compost_heap;
 
 import com.korlimann.korlisfoodcraft.Main;
 import com.korlimann.korlisfoodcraft.init.ModItems;
+import com.korlimann.korlisfoodcraft.items.ICompostableItem;
 import com.korlimann.korlisfoodcraft.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
@@ -158,7 +159,7 @@ public class BlockCompostHeap extends Block implements IHasModel, ITileEntityPro
                 {
                 	if(te.getFill() < TileEntityCompostHeap.MAXFILL)
                 	{
-                		if(playerIn.getHeldItem(hand).getItem() == ModItems.BANANA_PEEL)
+                		if(playerIn.getHeldItem(hand).getItem() instanceof ICompostableItem)
             			{
                 			playerIn.getHeldItem(hand).shrink(1);                			
                 			te.incrementFill();

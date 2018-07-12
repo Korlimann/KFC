@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.korlimann.korlisfoodcraft.items.ItemBaseCoffeeBean;
+import com.korlimann.korlisfoodcraft.items.ItemBaseCompostable;
 import com.korlimann.korlisfoodcraft.items.ItemBase;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFishingRod;
 import com.korlimann.korlisfoodcraft.items.ItemBaseFood;
@@ -50,7 +51,7 @@ public class ModItems {
 	//public static final Item TOMATOSEEDS = new ItemBase("tomatoseeds"); 
 	
 	//"Abfall"
-	public static final Item BANANA_PEEL = new ItemBase("banana_peel");
+	public static final Item BANANA_PEEL = new ItemBaseCompostable("banana_peel");
 	public static final Item FERTILIZER = new ItemBase("fertilizer");
 	
 	//Drops von Blöcken
