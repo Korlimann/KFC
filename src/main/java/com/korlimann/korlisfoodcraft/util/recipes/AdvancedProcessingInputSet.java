@@ -2,6 +2,7 @@ package com.korlimann.korlisfoodcraft.util.recipes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 import net.minecraft.item.ItemStack;
 
@@ -11,8 +12,9 @@ public class AdvancedProcessingInputSet {
 	private List<ItemStack> results;
 	private float exp;
 	private boolean specificOrder;
+	private IMetaCondition metaCondition;
 	
-	public AdvancedProcessingInputSet(float exp,boolean order,ItemStack[] inputs,ItemStack[] results)
+	public AdvancedProcessingInputSet(float exp,boolean order,ItemStack[] inputs,ItemStack[] results,IMetaCondition condition)
 	{
 		this.inputs = new ArrayList<ItemStack>(inputs.length);
 		
@@ -27,10 +29,19 @@ public class AdvancedProcessingInputSet {
 			this.results.add(it);
 		}
 		this.exp = exp;
+		this.metaCondition = condition;
 	}
 	public AdvancedProcessingInputSet(float exp,ItemStack[] inputs,ItemStack[] results)
 	{
-		this(exp,false,inputs,results);
+		this(exp,false,inputs,results,new IMetaCondition() {
+			@Override
+			public boolean isFullfilled() {
+				return true;
+			}});
+	}
+	public AdvancedProcessingInputSet(float exp,ItemStack[] inputs,ItemStack[] results,IMetaCondition condition)
+	{
+		this(exp,false,inputs,results,condition);
 	}
 	
 	public float getExp() {
@@ -49,7 +60,7 @@ public class AdvancedProcessingInputSet {
 	
 	public boolean isCorrectRecipe(ItemStack... inputs)
 	{
-		if(inputs.length != this.inputs.size())
+		if(inputs.length != this.inputs.size()||!metaCondition.isFullfilled())
 		{
 			return false;
 		}
