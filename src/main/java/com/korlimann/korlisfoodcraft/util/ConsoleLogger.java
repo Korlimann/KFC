@@ -10,7 +10,7 @@ public class ConsoleLogger {
 
 	private static final Logger logger = LogManager.getLogger(Reference.MOD_ID);
 	
-	
+	//this is a default private constructor to prevent object initialisation
 	private ConsoleLogger() {}
 	
 	public static void log(Level level,Object msg)

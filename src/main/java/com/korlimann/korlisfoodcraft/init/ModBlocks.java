@@ -88,5 +88,6 @@ public class ModBlocks {
 	public static final Block COFFEE_MACHINE = new BlockCoffeeMachine("coffee_machine");
 	public static final Block SMOOTHIE_MAKER = new BlockSmoothieMaker("smoothie_maker");
 	
-
+	//this is a default private constructor to prevent object initialisation
+	private ModBlocks() {}
 }

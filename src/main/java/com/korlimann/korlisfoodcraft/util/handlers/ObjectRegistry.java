@@ -189,4 +189,7 @@ public class ObjectRegistry {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 		ConsoleLogger.info("GuiHandler Registered");
 	}
+	
+	//this is a default private constructor to prevent object initialisation
+	private ObjectRegistry() {}
 }

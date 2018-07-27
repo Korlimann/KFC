@@ -110,4 +110,7 @@ public class ModItems {
 	
 	//Dools
 	public static final Item DETAILED_FISHINGROD = new ItemBaseFishingRod("detailed_fishingrod", 128);
+	
+	
+	private ModItems() {}
 }

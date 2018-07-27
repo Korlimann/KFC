@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class RngHelper {
 
+	//this is a default private constructor to prevent object initialisation
 	private RngHelper()
 	{
 		

@@ -15,4 +15,7 @@ public class TileEntityHandler {
 		GameRegistry.registerTileEntity(TileEntitySmoothieMaker.class, "smoothie_maker");
 		GameRegistry.registerTileEntity(TileEntityCompostHeap.class, "compost_heap");
 	}
+	
+	//this is a default private constructor to prevent object initialisation
+	private TileEntityHandler() {}
 }
