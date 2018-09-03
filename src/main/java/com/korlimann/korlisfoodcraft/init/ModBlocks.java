@@ -64,7 +64,7 @@ public class ModBlocks {
 	//public static final Block SUNFLOWER = new BlockBaseSunflower("sunflower");
 	
 
-	public static final BlockBush HERBGARDEN = new BlockHerbgarden("herbs");
+	public static final BlockHerbgarden HERBGARDEN = new BlockHerbgarden("herbs");
 	
 	//Fruits
 

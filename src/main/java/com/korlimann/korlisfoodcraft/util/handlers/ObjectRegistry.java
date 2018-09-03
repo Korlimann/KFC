@@ -42,6 +42,9 @@ public class ObjectRegistry {
 		blocks.add(ModBlocks.SALT_ORE);
 		blocks.add(ModBlocks.SEAWEED_BLOCK);
 		blocks.add(ModBlocks.HERBGARDEN);
+		
+		ModBlocks.HERBGARDEN.setDroplist(ModItems.CORN, ModItems.ICEBERG_SALAD,ModItems.HOPS,ModItems.LEEK,ModItems.MALT,ModItems.OREGANO,ModItems.PARSLEY,ModItems.PEPPER,ModItems.TOMATO,ModItems.RICE,ModItems.GARLIC,ModItems.CUCUMBER);
+		
 		blocks.add(ModBlocks.ICE_MACHINE);
 		blocks.add(ModBlocks.COFFEE_MACHINE);
 		blocks.add(ModBlocks.SMOOTHIE_MAKER);

@@ -1,5 +1,6 @@
 package com.korlimann.korlisfoodcraft.blocks;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import com.korlimann.korlisfoodcraft.Main;
@@ -21,12 +22,20 @@ public class BlockHerbgarden extends BlockBush implements IHasModel {
 
 	public static final AxisAlignedBB AABB = new AxisAlignedBB(0.0625D,0,0.0625D,0.9375D,0.9375D,0.9375D);
 	
+	public ArrayList<Item> Droplist = new ArrayList<Item>();
+	
 	public BlockHerbgarden(String name) {
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(Main.korlissushicraft);
 	}
 	
+	public void setDroplist(Item... drops) {
+		for(Item it:drops)
+		{
+			Droplist.add(it);
+		}
+	}
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return null;
@@ -42,19 +51,8 @@ public class BlockHerbgarden extends BlockBush implements IHasModel {
 		if(rand == 4) dropsCount = 4;
 		
 		for(int i = 0; i<dropsCount; i++) {
-			r1 = r.nextInt(12)+1; 
-			if(r1 == 1) drops.add(new ItemStack(ModItems.CORN));
-			if(r1 == 2) drops.add(new ItemStack(ModItems.ICEBERG_SALAD));
-			if(r1 == 3) drops.add(new ItemStack(ModItems.HOPS));
-			if(r1 == 4) drops.add(new ItemStack(ModItems.LEEK));
-			if(r1 == 5) drops.add(new ItemStack(ModItems.MALT));
-			if(r1 == 6) drops.add(new ItemStack(ModItems.OREGANO));
-			if(r1 == 7) drops.add(new ItemStack(ModItems.PARSLEY));
-			if(r1 == 8) drops.add(new ItemStack(ModItems.PEPPER));
-			if(r1 == 9) drops.add(new ItemStack(ModItems.TOMATO));
-			if(r1 == 10) drops.add(new ItemStack(ModItems.RICE));
-			if(r1 == 11) drops.add(new ItemStack(ModItems.GARLIC));
-			if(r1 == 12) drops.add(new ItemStack(ModItems.CUCUMBER));
+			r1 = r.nextInt(Droplist.size()); 
+			drops.add(new ItemStack(Droplist.get(i)));
 		}
 	}
 	
